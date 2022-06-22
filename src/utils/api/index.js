@@ -13,3 +13,4 @@ export const getDefaultServicesAPIOptions = () => {
 };
 
 export * from './organisations';
+export * from './documents';
