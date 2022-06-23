@@ -1,5 +1,4 @@
 <template>
-  <p class="pb-3 text-base font-bold">IATI files published in the IATI Registry</p>
   <p class="pb-3 text-base">
     The file(s) with a validation report available are marked with a status. If the file is flagged with a
     <span class="font-bold text-critical">Critical</span>, <span class="font-bold text-error">Error</span>, or

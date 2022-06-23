@@ -13,7 +13,7 @@
   import BasicCard from '../components/BasicCard.vue';
   import CardHeader from '../components/CardHeader.vue';
   import ContentContainer from '../components/layout/ContentContainer.vue';
-  import OrganisationPageInfo from '../components/organisation/OrganisationPageInfo.vue';
+  import FileStatusInfo from '../components/FileStatusInfo.vue';
   import DocumentList from '../components/organisation/DocumentList.vue';
   import DocumentListItem from '../components/organisation/DocumentListItem.vue';
   import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
@@ -73,7 +73,8 @@
           <CardHeader>Public data</CardHeader>
         </template>
 
-        <OrganisationPageInfo />
+        <p class="pb-3 text-base font-bold">IATI files published in the IATI Registry</p>
+        <FileStatusInfo />
 
         <div class="-mx-3.5 -mb-3.5">
           <CaptionedLoadingSpinner v-if="loading" class="pb-3"> Loading Reports... </CaptionedLoadingSpinner>
