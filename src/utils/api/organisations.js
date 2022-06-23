@@ -18,7 +18,7 @@ export const fetchOrganisations = async () => {
   return [];
 };
 
-export const getOrganisationURL = (value, lookupKey = 'id') =>
+export const getOrganisationURL = (value, lookupKey = 'name') =>
   `${SERVICES_URL}/pvt/publishers/${value}?lookupKey=${lookupKey}`;
 export const fetchOrganisationByName = async (name) => {
   const url = getOrganisationURL(name);
