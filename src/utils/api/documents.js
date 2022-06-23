@@ -12,3 +12,16 @@ export const fetchDocumentByID = async (documentID) => {
 
   return null;
 };
+
+export const validationReportURL = (documentID) => `${SERVICES_URL}/pub/validation/existing?id=${documentID}`;
+export const fetchValidationReport = async (documentID) => {
+  const url = validationReportURL(documentID);
+  const response = await window.fetch(url, getDefaultServicesAPIOptions());
+  if (response.status === 200) {
+    const data = await response.json();
+
+    return data;
+  }
+
+  return null;
+};

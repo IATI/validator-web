@@ -1,3 +1,4 @@
+fetchValidationReportvalidationReportURL
 <script setup>
   import useSWRV from 'swrv';
   import { ref, watchEffect } from 'vue';
@@ -7,14 +8,17 @@
     getDocumentFileName,
     getDocumentURL,
     fetchDocumentByID,
+    fetchValidationReport,
     getOrganisationURL,
     fetchOrganisationByID,
+    validationReportURL,
   } from '../utils';
   import ContentContainer from '../components/layout/ContentContainer.vue';
   import StyledLink from '../components/StyledLink.vue';
   import BasicCard from '../components/BasicCard.vue';
   import FileStatusInfo from '../components/FileStatusInfo.vue';
   import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
+  import DocumentInfo from '../components/report/DocumentInfo.vue';
 
   setPageTitle('File validation report');
   const route = useRoute();
@@ -27,27 +31,40 @@
     () => (document && document.value ? getOrganisationURL(document.value.publisher, 'id') : null),
     () => fetchOrganisationByID(document.value.publisher)
   );
+  const { data: dataset, error: datasetError } = useSWRV(
+    () => validationReportURL(route.params.id, 'id'),
+    () => fetchValidationReport(route.params.id)
+  );
 
   watchEffect(() => {
-    if (documentError && documentError.value) {
+    if (documentError.value) {
       loading.value = false;
       console.log('Document Error: ', documentError.value);
-    } else if (organisationError && organisationError.value) {
+    } else if (organisationError.value) {
       loading.value = false;
       console.log('Organisation Error: ', organisationError.value);
-    } else if (document && document.value && organisation && organisation.value) {
+    } else if (document.value && organisation.value) {
       loading.value = false;
+    }
+    if (datasetError.value) {
+      console.log('Data Set Error: ', datasetError.value);
     }
   });
 </script>
 
 <template>
   <ContentContainer class="pt-0 pb-8">
-    <CaptionedLoadingSpinner v-if="!organisation || !document" class="pb-3"> Loading Info ... </CaptionedLoadingSpinner>
-    <h3 v-else>
-      <StyledLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</StyledLink> -
-      <StyledLink :to="document.url" :external="true">{{ getDocumentFileName(document) }}</StyledLink>
-    </h3>
+    <CaptionedLoadingSpinner v-if="!organisation || !document" class="pb-3">
+      Loading Document Info ...
+    </CaptionedLoadingSpinner>
+    <div v-else>
+      <h3>
+        <StyledLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</StyledLink> -
+        <StyledLink :to="document.url" :external="true">{{ getDocumentFileName(document) }}</StyledLink>
+      </h3>
+      <CaptionedLoadingSpinner v-if="!dataset" class="pb-3"> Loading Report ... </CaptionedLoadingSpinner>
+      <DocumentInfo v-else :document="document" :report="dataset.report" />
+    </div>
 
     <div class="-mx-3.5 flex flex-wrap">
       <BasicCard>
