@@ -14,6 +14,7 @@
   import StyledLink from '../components/StyledLink.vue';
   import BasicCard from '../components/BasicCard.vue';
   import FileStatusInfo from '../components/FileStatusInfo.vue';
+  import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
 
   setPageTitle('File validation report');
   const route = useRoute();
@@ -42,7 +43,8 @@
 
 <template>
   <ContentContainer class="pt-0 pb-8">
-    <h3 v-if="document && organisation">
+    <CaptionedLoadingSpinner v-if="!organisation || !document" class="pb-3"> Loading Info ... </CaptionedLoadingSpinner>
+    <h3 v-else>
       <StyledLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</StyledLink> -
       <StyledLink :to="document.url" :external="true">{{ getDocumentFileName(document) }}</StyledLink>
     </h3>
