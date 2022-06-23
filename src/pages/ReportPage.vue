@@ -12,6 +12,8 @@
   } from '../utils';
   import ContentContainer from '../components/layout/ContentContainer.vue';
   import StyledLink from '../components/StyledLink.vue';
+  import BasicCard from '../components/BasicCard.vue';
+  import FileStatusInfo from '../components/FileStatusInfo.vue';
 
   setPageTitle('File validation report');
   const route = useRoute();
@@ -39,10 +41,16 @@
 </script>
 
 <template>
-  <ContentContainer class="pt-6 pb-8">
+  <ContentContainer class="pt-0 pb-8">
     <h3 v-if="document && organisation">
       <StyledLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</StyledLink> -
-      <StyledLink :to="document.url">{{ getDocumentFileName(document) }}</StyledLink>
+      <StyledLink :to="document.url" :external="true">{{ getDocumentFileName(document) }}</StyledLink>
     </h3>
+
+    <div class="-mx-3.5 flex flex-wrap">
+      <BasicCard>
+        <FileStatusInfo />
+      </BasicCard>
+    </div>
   </ContentContainer>
 </template>
