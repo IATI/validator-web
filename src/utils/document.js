@@ -85,10 +85,11 @@ export const getDocumentValidationStatus = (document) => {
   return { value: 'normal', caption: 'N/A' };
 };
 
-export const getDocumentDatastoreAvailability = (document, fileStatus) => {
+export const getDocumentDatastoreAvailability = (document) => {
   /* see this ticket for full explanation on these availability statuses
   https://trello.com/c/XeovXQrf/232-front-end-indicator-that-file-is-partially-in-ds-for-al-validation */
   const { report, solrize_end, alv_end, alv_start, alv_error } = document;
+  const fileStatus = getDocumentValidationStatus(document).value;
 
   if (solrize_end) {
     const formatedDate = formatDate(solrize_end);
