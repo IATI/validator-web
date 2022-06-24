@@ -58,9 +58,11 @@ fetchValidationReportvalidationReportURL
       Loading Document Info ...
     </CaptionedLoadingSpinner>
     <div v-else>
-      <h3>
-        <StyledLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</StyledLink> -
-        <StyledLink :to="document.url" :external="true">{{ getDocumentFileName(document) }}</StyledLink>
+      <h3 class="text-lg">
+        <StyledLink :to="`/organisation/${organisation.name}`" class="underline">{{ organisation.title }}</StyledLink> -
+        <StyledLink :to="document.url" :external="true" class="underline">
+          {{ getDocumentFileName(document) }}
+        </StyledLink>
       </h3>
       <CaptionedLoadingSpinner v-if="!dataset" class="pb-3"> Loading Report ... </CaptionedLoadingSpinner>
       <DocumentInfo v-else :document="document" :report="dataset.report" />
