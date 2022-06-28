@@ -1,14 +1,13 @@
 <script setup>
   import { computed } from 'vue';
   import { getDocumentReportCategories, getDocumentReportSeverities } from '../../utils';
+  import SeverityItem from './SeverityItem.vue';
+  import CategoryItem from './CategoryItem.vue';
 
   const props = defineProps({ document: { type: Object, default: null }, report: { type: Object, default: null } });
 
   const categories = computed(() => getDocumentReportCategories(props.report));
   const severities = computed(() => getDocumentReportSeverities(props.report));
-
-  console.table(categories.value);
-  console.table(severities.value);
 </script>
 
 <template>
@@ -17,18 +16,18 @@
       <div class="m-2.5">
         <h3 class="text-xl font-bold">Filters</h3>
         <div class="bg-slate-300">
-          <div class="px-4 pt-2">
+          <div class="px-4 py-2">
             <h4 class="text-base font-bold">View by message type</h4>
             <div class="text-sm text-slate-700">Click to show or hide individual message types</div>
           </div>
-          <div class="px-4 pt-2">
-            <div class="text-sm text-slate-700">Filters Go Here</div>
-          </div>
+          <template v-for="severity in severities">
+            <SeverityItem v-if="severity.types.length" :key="severity.id" :severity="severity" />
+          </template>
           <div class="px-4 pt-2">
             <h4 class="text-base font-bold">View by category</h4>
           </div>
           <div class="px-4 py-2">
-            <div class="text-sm text-slate-700">Filters Go Here</div>
+            <CategoryItem v-for="category in categories" :key="category.id" :category="category" />
           </div>
         </div>
       </div>
