@@ -12,6 +12,7 @@ fetchValidationReportvalidationReportURL
     getOrganisationURL,
     fetchOrganisationByID,
     validationReportURL,
+    getDocumentReportCategories,
   } from '../utils';
   import ContentContainer from '../components/layout/ContentContainer.vue';
   import StyledLink from '../components/StyledLink.vue';
@@ -24,6 +25,7 @@ fetchValidationReportvalidationReportURL
   setPageTitle('File validation report');
   const route = useRoute();
   const loading = ref(true);
+  const categories = ref(null);
 
   const { data: document, error: documentError } = useSWRV(getDocumentURL(route.params.id), () =>
     fetchDocumentByID(route.params.id)
@@ -49,6 +51,9 @@ fetchValidationReportvalidationReportURL
     }
     if (datasetError.value) {
       console.log('Data Set Error: ', datasetError.value);
+    } else if (dataset.value) {
+      const { report } = dataset.value;
+      categories.value = getDocumentReportCategories(report);
     }
   });
 </script>

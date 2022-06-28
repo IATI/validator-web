@@ -146,3 +146,33 @@ const getDownloadErrorString = (document) => (document.download_error ? document
 
 const checkDocumentHasErrorVersions = (versions, errors) =>
   !!(errors && errors.find((error) => versions.includes(error.identifier))); // TODO: check with Nick if identifier == id
+
+const getCategoryLabel = (category) => {
+  const categories = {
+    schema: 'Schema',
+    information: 'Basic activity information',
+    financial: 'Financial',
+    identifiers: 'Identification',
+    organisation: 'Basic organisation information',
+    participating: 'Participating organisations',
+    geo: 'Geopolitical information',
+    classifications: 'Classifications',
+    documents: 'Related documents',
+    performance: 'Performance',
+    iati: 'IATI file',
+    relations: 'Relations',
+  };
+  return categories[category];
+};
+
+export const getDocumentReportCategories = (report) => {
+  return report.errors.reduce((categories, file) => {
+    file.errors.forEach((error) => {
+      if (!categories.some((u) => u.id === error.category)) {
+        categories.push({ id: error.category, name: getCategoryLabel(error.category) });
+      }
+    });
+
+    return categories;
+  }, []);
+};
