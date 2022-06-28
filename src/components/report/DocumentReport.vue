@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+  import { computed } from 'vue';
+  import { getDocumentReportCategories, getDocumentReportSeverities } from '../../utils';
+
+  const props = defineProps({ document: { type: Object, default: null }, report: { type: Object, default: null } });
+
+  const categories = computed(() => getDocumentReportCategories(props.report));
+  const severities = computed(() => getDocumentReportSeverities(props.report));
+
+  console.table(categories.value);
+  console.table(severities.value);
+</script>
 
 <template>
   <div class="-mx-3.5 flex flex-wrap">
