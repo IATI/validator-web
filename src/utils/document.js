@@ -176,3 +176,83 @@ export const getDocumentReportCategories = (report) => {
     return categories;
   }, []);
 };
+
+export const getSeverities = () => {
+  return [
+    {
+      id: 'critical',
+      slug: 'critical',
+      name: 'Critical',
+      description: 'Files with critical errors will not be processed by the datastore',
+      count: null,
+      order: 1,
+      show: true,
+      types: [],
+    },
+    {
+      id: 'error',
+      slug: 'error',
+      name: 'Errors',
+      description: 'Errors make it hard or impossible to use the data.',
+      count: null,
+      order: 2,
+      show: true,
+      types: [],
+    },
+    {
+      id: 'warning',
+      slug: 'warning',
+      name: 'Warnings',
+      description: 'Warnings indicate where the data can be more valuable.',
+      count: null,
+      order: 3,
+      show: true,
+      types: [],
+    },
+    {
+      id: 'improvement',
+      slug: 'info',
+      name: 'Improvements',
+      description: 'Improvements can make the data more useful.',
+      count: null,
+      order: 4,
+      show: true,
+      types: [],
+    },
+    {
+      id: 'notification',
+      slug: 'success',
+      name: 'Notifications',
+      description: 'Notifications are for your information.',
+      count: null,
+      order: 5,
+      show: true,
+      types: [],
+    },
+  ];
+};
+
+export const getDocumentReportSeverities = (report) => {
+  const severities = getSeverities();
+  const errorTypes = report.errors.reduce((types, file) => {
+    file.errors.forEach((errorCategory) => {
+      errorCategory.errors.forEach((error) => {
+        const { message, severity, id } = error;
+        if (!types.some((t) => t.id === id)) {
+          const newType = { sev: severity, id, text: message };
+          types.push(newType);
+        }
+      });
+    });
+
+    return types;
+  }, []);
+  errorTypes.forEach((t) => {
+    const sev = severities.find((s) => s.id === t.sev);
+    if (sev !== undefined) {
+      sev.types.push({ id: t.id, text: t.text, show: true });
+    }
+  });
+
+  return severities;
+};

@@ -1,4 +1,3 @@
-fetchValidationReportvalidationReportURL
 <script setup>
   import useSWRV from 'swrv';
   import { ref, watchEffect } from 'vue';
@@ -13,6 +12,7 @@ fetchValidationReportvalidationReportURL
     fetchOrganisationByID,
     validationReportURL,
     getDocumentReportCategories,
+    getDocumentReportSeverities,
   } from '../utils';
   import ContentContainer from '../components/layout/ContentContainer.vue';
   import StyledLink from '../components/StyledLink.vue';
@@ -26,6 +26,7 @@ fetchValidationReportvalidationReportURL
   const route = useRoute();
   const loading = ref(true);
   const categories = ref(null);
+  const severities = ref(null);
 
   const { data: document, error: documentError } = useSWRV(getDocumentURL(route.params.id), () =>
     fetchDocumentByID(route.params.id)
@@ -54,6 +55,7 @@ fetchValidationReportvalidationReportURL
     } else if (dataset.value) {
       const { report } = dataset.value;
       categories.value = getDocumentReportCategories(report);
+      severities.value = getDocumentReportSeverities(report);
     }
   });
 </script>
