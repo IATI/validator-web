@@ -19,6 +19,7 @@ fetchValidationReportvalidationReportURL
   import FileStatusInfo from '../components/FileStatusInfo.vue';
   import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
   import DocumentInfo from '../components/report/DocumentInfo.vue';
+  import DocumentReport from '../components/report/DocumentReport.vue';
 
   setPageTitle('File validation report');
   const route = useRoute();
@@ -64,7 +65,7 @@ fetchValidationReportvalidationReportURL
           {{ getDocumentFileName(document) }}
         </StyledLink>
       </h3>
-      <CaptionedLoadingSpinner v-if="!dataset" class="pb-3"> Loading Report ... </CaptionedLoadingSpinner>
+      <CaptionedLoadingSpinner v-if="!dataset" class="py-3"> Loading Report ... </CaptionedLoadingSpinner>
       <DocumentInfo v-else :document="document" :report="dataset.report" />
     </div>
 
@@ -73,5 +74,8 @@ fetchValidationReportvalidationReportURL
         <FileStatusInfo />
       </BasicCard>
     </div>
+
+    <CaptionedLoadingSpinner v-if="!dataset" class="py-3"> Loading Report ... </CaptionedLoadingSpinner>
+    <DocumentReport v-else />
   </ContentContainer>
 </template>
