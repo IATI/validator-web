@@ -1,10 +1,14 @@
 <script setup>
-  const props = defineProps({ id: { type: String, default: '' }, label: { type: String, default: '' } });
+  const props = defineProps({
+    id: { type: String, default: '' },
+    label: { type: String, default: '' },
+  });
+  const emit = defineEmits(['click']);
 </script>
 <template>
   <div class="icheck-green">
     <input :id="props.id" type="checkbox" />
-    <label :for="props.id">{{ props.label }}</label>
+    <label :for="props.id" @click="emit('click')">{{ props.label }}</label>
   </div>
 </template>
 <style>
