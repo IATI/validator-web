@@ -1,6 +1,21 @@
 <script setup>
+  import CheckBox from '../CheckBox.vue';
+
   const props = defineProps({ category: { type: Object, default: null } });
 
-  console.log(props.category);
+  const onFilter = (category, checked = false) => {
+    console.log(checked ? 'Checked:' : 'Unchecked:', category);
+  };
 </script>
-<template><div>Category Goes Here</div></template>
+<template>
+  <div>
+    <CheckBox
+      :id="props.category.id"
+      :label="props.category.name"
+      :name="props.category.name"
+      :checked="true"
+      @checked="onFilter(props.category.name, true)"
+      @unchecked="onFilter(props.category.name)"
+    />
+  </div>
+</template>
