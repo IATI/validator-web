@@ -1,14 +1,23 @@
 <script setup>
+  import { ref, watch } from 'vue';
+
   const props = defineProps({
     id: { type: String, default: '' },
     label: { type: String, default: '' },
+    name: { type: String, default: '' },
+    checked: { type: Boolean, default: false },
   });
-  const emit = defineEmits(['click']);
+  const emit = defineEmits(['checked', 'unchecked']);
+  const checked = ref(props.checked);
+
+  watch(checked, () => {
+    emit(checked.value ? 'checked' : 'unchecked');
+  });
 </script>
 <template>
   <div class="icheck-green">
-    <input :id="props.id" type="checkbox" />
-    <label :for="props.id" @click="emit('click')">{{ props.label }}</label>
+    <input :id="props.id" v-model="checked" type="checkbox" :name="props.name" />
+    <label :for="props.id">{{ props.label }}</label>
   </div>
 </template>
 <style>
