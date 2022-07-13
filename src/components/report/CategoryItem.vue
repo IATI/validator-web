@@ -11,7 +11,7 @@
   <div>
     <CheckBox
       :id="props.category.id"
-      :label="props.category.name"
+      :label="`${props.category.count} x ${props.category.name}`"
       :name="props.category.name"
       :checked="true"
       @checked="onFilter(props.category.name, true)"

@@ -165,11 +165,27 @@ const getCategoryLabel = (category) => {
   return categories[category];
 };
 
+const getCategoryCount = (reportErrors, categoryID) => {
+  return reportErrors.reduce((count, activeOrgFile) => {
+    activeOrgFile.errors.forEach((errorCatGroup) => {
+      if (errorCatGroup.category === categoryID) {
+        count += errorCatGroup.errors.length;
+      }
+    });
+
+    return count;
+  }, 0);
+};
+
 export const getDocumentReportCategories = (report) => {
   return report.errors.reduce((categories, file) => {
     file.errors.forEach((error) => {
       if (!categories.some((u) => u.id === error.category)) {
-        categories.push({ id: error.category, name: getCategoryLabel(error.category) });
+        categories.push({
+          id: error.category,
+          name: getCategoryLabel(error.category),
+          count: getCategoryCount(report.errors, error.category),
+        });
       }
     });
 
