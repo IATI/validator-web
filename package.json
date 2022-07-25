@@ -34,7 +34,7 @@
     "postcss": "^8.4.14",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.12",
-    "sass": "^1.53.0",
+    "sass": "^1.54.0",
     "serve": "^14.0.1",
     "tailwindcss": "^3.1.6",
     "vite": "^2.9.14"
