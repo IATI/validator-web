@@ -19,7 +19,7 @@
     "date-fns": "^2.29.2",
     "localforage": "^1.10.0",
     "swrv": "^1.0.0-beta.8",
-    "vue": "^3.2.37",
+    "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
