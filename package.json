@@ -16,7 +16,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "date-fns": "^2.29.2",
+    "date-fns": "^2.29.3",
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "swrv": "^1.0.0-beta.8",
