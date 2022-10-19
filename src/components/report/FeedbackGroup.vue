@@ -1,10 +1,11 @@
 <script setup>
-  import { computed, inject } from 'vue';
+  import { computed, inject, ref } from 'vue';
   import { getFileErrorsMessageTypeCount } from '../../utils';
   import AppAccordion from '../AppAccordion.vue';
   import AppBadge from '../AppBadge.vue';
   import StyledLink from '../StyledLink.vue';
   import FeedbackList from './FeedbackList.vue';
+  import StyledIcon from '../StyledIcon.vue';
 
   const props = defineProps({ activity: { type: Object, default: null } });
   const organisation = inject('organisation');
@@ -18,6 +19,14 @@
       }))
       .filter((messageType) => messageType.count > 0)
   );
+
+  let copy = ref(false);
+  const copyActivityLink = () => {
+    copy.value = true;
+    setTimeout(() => {
+      copy.value = false;
+    }, 3000);
+  };
 
   const cleanIdentifier = (identifier) => {
     const newLineIndex = identifier.indexOf('\n');
@@ -39,8 +48,17 @@
   <AppAccordion :open="false" class="mb-4">
     <template #title>
       <div class="w-full bg-slate-100 px-4 py-2 text-left">
-        <div class="font-medium">
+        <div class="group font-medium">
           {{ props.activity.title || 'Untitled Activity' }}
+          <span
+            id="copyIcon"
+            class="invisible group-hover:visible"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Tooltip on top"
+          >
+            <StyledIcon :icon="copy ? 'fa-solid fa-check' : 'fa-regular fa-copy'" @click="copyActivityLink" />
+          </span>
         </div>
         <div class="text-sm">
           <StyledLink
