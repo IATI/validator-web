@@ -28,7 +28,7 @@
     "uuid": "^9.0.0",
     "vue": "^3.2.41",
     "vue-multiselect": "^3.0.0-alpha.2",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.4",
