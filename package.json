@@ -18,7 +18,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.3",
+    "@formkit/auto-animate": "^1.0.0-beta.4",
     "copy-to-clipboard": "^3.3.3",
     "date-fns": "^2.29.3",
     "js-cookie": "^3.0.1",
