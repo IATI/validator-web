@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Cypress CI Run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           wait-on: 'https://validator.iatistandard.org'
           config-file: cypress.config.prod.js

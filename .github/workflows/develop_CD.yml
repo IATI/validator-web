@@ -63,7 +63,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Cypress CI Run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           wait-on: 'https://dev-validator.iatistandard.org'
           config-file: cypress.config.dev.js
