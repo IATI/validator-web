@@ -29,7 +29,7 @@
     "swrv": "^1.0.3",
     "uuid": "^9.0.0",
     "vue": "^3.2.47",
-    "vue-multiselect": "^3.0.0-alpha.2",
+    "vue-multiselect": "^3.0.0-beta.1",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
