@@ -1,7 +1,6 @@
 <script setup>
   import { computed } from 'vue';
-  import { formatDate } from '../../utils';
-  import { getDocumentDatastoreAvailability, getDocumentValidationStatus } from '../../utils/document';
+  import { getDocumentValidationStatus } from '../../utils/document';
   const props = defineProps({ document: { type: Object, default: null }, report: { type: Object, default: null } });
 
   const validationStatus = computed(() => getDocumentValidationStatus({ ...props.document, report: props.report }));
@@ -16,10 +15,6 @@
   <div>
     <span>IATI version: {{ props.report.iatiVersion }}</span>
     <span> | Type: {{ props.report.fileType }}</span>
-    <span v-if="props.document"> | Report Generated: {{ formatDate(props.document.validation_created) }}</span>
-    <span v-if="props.document">
-      | Available in Datastore: {{ getDocumentDatastoreAvailability({ ...props.document, report: props.report }) }}
-    </span>
   </div>
   <div :class="validationStatusClass">{{ validationStatus.caption }}</div>
 </template>

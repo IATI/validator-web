@@ -10,6 +10,7 @@
   import ContentContainer from '../components/layout/ContentContainer.vue';
   import DocumentInfo from '../components/report/DocumentInfo.vue';
   import DocumentReport from '../components/report/DocumentReport.vue';
+  import ReportDocumentStatus from '../components/report/ReportDocumentStatus.vue';
   import StyledLink from '../components/StyledLink.vue';
   import { setPageTitle } from '../state';
   import {
@@ -20,6 +21,9 @@
     getDocumentURL,
     getOrganisationURL,
     validationReportURL,
+    fetchTempWorkspace,
+    getFileStatusClass,
+    getFileValidationStatus,
   } from '../utils';
 
   setPageTitle('File validation report');
@@ -30,11 +34,13 @@
   const errors = ref([]);
   const dataset = ref(null);
   const document = ref(null);
+  const workSpaceData = ref([]);
 
   const { data: documentResponse, error: documentError } = useSWRV(
     !isTestFile ? getDocumentURL(route.params?.name) : null,
     () => fetchDocument(route.params.name)
   );
+  const headerClassNames = 'hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block';
 
   const { data: organisation, error: organisationError } = useSWRV(
     () => document.value && getOrganisationURL(document.value.publisher, 'id'),
@@ -69,6 +75,20 @@
         }
         loading.value = false;
       }
+    }
+  });
+
+  watch(dataset, () => {
+    if (dataset.value) {
+      fetchTempWorkspace(dataset.value.session_id)
+        .then((data) => {
+          for (const element of data) {
+            element.class = getFileStatusClass(element);
+            element.status = getFileValidationStatus(element);
+          }
+          workSpaceData.value = data;
+        })
+        .catch((error) => window.console.error('Failed to load iati data', error));
     }
   });
 
@@ -125,6 +145,32 @@
         <div v-if="dataset && isTestFile" class="font-semibold">{{ dataset.filename }}</div>
       </h3>
       <DocumentInfo v-if="dataset && dataset.report" :document="document" :report="dataset.report" />
+      <CaptionedLoadingSpinner v-if="(!dataset || !dataset.report) && !errors.length" class="py-3">
+        Loading Report ...
+      </CaptionedLoadingSpinner>
+      <BasicCard class="mx-0">
+        <div class="grid-cols- -mx-3.5 -mb-3.5 -mt-3.5 grid">
+          <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 border-t-0 bg-white">
+            <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
+            <div :class="headerClassNames">Identified in Registry</div>
+            <div :class="headerClassNames">Validated</div>
+            <div :class="headerClassNames">Validation Status</div>
+            <div :class="headerClassNames">Available in IATI Datastore</div>
+          </div>
+          <div v-else class="grid grid-cols-4 gap-0 border-t-0 bg-white">
+            <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
+            <div :class="headerClassNames">Uploaded</div>
+            <div :class="headerClassNames">Validated</div>
+            <div :class="headerClassNames">Validation Status</div>
+          </div>
+          <ReportDocumentStatus
+            v-if="dataset && dataset.report"
+            :document="document"
+            :dataset="dataset"
+            :workspacedata="workSpaceData"
+          />
+        </div>
+      </BasicCard>
     </div>
 
     <CaptionedLoadingSpinner v-if="loading && !errors.length" class="pb-3">

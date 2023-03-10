@@ -35,8 +35,6 @@ describe('The Public Data Viewer (organisations) page', () => {
         cy.get('h1').should('have.text', 'IATI Validator').siblings().should('have.text', 'File validation report');
         cy.contains('IATI version');
         cy.contains('Type');
-        cy.contains('Report Generated');
-        cy.contains('Available in Datastore');
       });
     });
   });
