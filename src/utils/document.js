@@ -531,6 +531,10 @@ export const constructCSV = (results) => {
     }
     if (result.report && result.report.errors) {
       const activities = result.report.errors;
+      if (activities.length === 0) {
+        const row = [registryName, documentUrl, validationStatus, fileValid, '', '', '', '', '', '', ''];
+        tabularData.push(row);
+      }
       activities.forEach((activity) => {
         const activityTitle = activity.title;
         const activityId = activity.identifier;
