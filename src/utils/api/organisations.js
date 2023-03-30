@@ -55,3 +55,18 @@ export const fetchOrganisationDocuments = async (organisationID) => {
 
   return [];
 };
+
+export const getOrganisationReportsURL = (organisationID) => `${SERVICES_URL}/pvt/publishers/${organisationID}/reports`;
+export const fetchOrganisationReports = async (organisationID) => {
+  const url = getOrganisationReportsURL(organisationID);
+  const response = await window.fetch(url, getDefaultServicesAPIOptions());
+  if (response.status === 200) {
+    const data = await response.json();
+
+    if (data && data.length) {
+      return data;
+    }
+  }
+
+  return [];
+};

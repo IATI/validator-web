@@ -18,20 +18,25 @@
     documentValidationStatus,
     fetchOrganisationByName,
     fetchOrganisationDocuments,
+    fetchOrganisationReports,
     getDefaultSortingCriteria,
     getDocumentCount,
     getOrganisationDocumentsURL,
+    getOrganisationReportsURL,
     getOrganisationURL,
     getStatusColor,
     sortOptions,
   } from '../utils';
+  import { constructCSV } from '../utils/document';
 
   const layout = setPageTitle('Loading...');
   const route = useRoute();
   const loading = ref(true);
+  const reportsLoading = ref(true);
   const selected = ref('');
   const organisation = ref(null);
   const errorMessage = ref(null);
+  const downloadCSV = ref(null);
 
   const { data: organisationResponse, error: organisationError } = useSWRV(getOrganisationURL(route.params.name), () =>
     fetchOrganisationByName(route.params.name)
@@ -39,6 +44,10 @@
   const { data: documents, error: documentsError } = useSWRV(
     () => (organisation.value && organisation.value ? getOrganisationDocumentsURL(organisation.value.org_id) : null),
     () => fetchOrganisationDocuments(organisation.value.org_id)
+  );
+  const { data: reports, error: reportsError } = useSWRV(
+    () => (organisation.value && organisation.value ? getOrganisationReportsURL(organisation.value.org_id) : null),
+    () => fetchOrganisationReports(organisation.value.org_id)
   );
 
   watchEffect(() => {
@@ -70,8 +79,30 @@
     }
   });
   watchEffect(() => {
+    if (reportsError && reportsError.value) {
+      console.log(reportsError.value);
+    } else if (reports && reports.value) {
+      reportsLoading.value = false;
+    }
+  });
+  watchEffect(() => {
     if (documents && documents.value) {
       selected.value = getDefaultSortingCriteria(documents.value);
+    }
+  });
+  watchEffect(() => {
+    if (reports && reports.value) {
+      downloadCSV.value = () => {
+        const text = encodeURIComponent(constructCSV(reports.value));
+        const filename = `${organisation.value.name}.csv`;
+        const element = document.createElement('a');
+        element.setAttribute('href', `data:text/csv;charset=utf-8,${text}`);
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      };
     }
   });
 </script>
@@ -116,6 +147,10 @@
                 | <label :class="getStatusColor(status)">{{ status }}</label
                 >: {{ getDocumentCount(documents, status) }}
               </span>
+              <span v-if="!reportsLoading">
+                |
+                <button class="underline" @click="downloadCSV()">Download CSV</button></span
+              >
             </div>
             <div v-if="documents && documents.length" class="flex flex-col sm:mt-0 sm:flex-row">
               <label id="documentSort" for="documentSort" class="whitespace-nowrap sm:py-2">Sort by:</label>

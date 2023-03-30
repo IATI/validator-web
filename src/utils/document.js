@@ -1,3 +1,4 @@
+import { stringify } from 'csv-stringify/browser/esm/sync';
 import { formatDate } from '.';
 
 const validationStatusOrder = ['Critical', 'Error', 'Warning', 'Success', 'N/A'];
@@ -496,4 +497,80 @@ export const getDefaultSortingCriteria = (docs) => {
       return 'Validation Status: N/A';
     }
   }
+};
+
+export const constructCSV = (results) => {
+  const tabularData = [
+    [
+      'Registry name',
+      'URL',
+      'Validation Status',
+      'File Valid',
+      'Activity Title',
+      'Activity Identifier',
+      'Category',
+      'Severity',
+      'ID',
+      'Message',
+      'Contexts',
+    ],
+  ];
+  results.forEach((result) => {
+    const registryName = result.registry_name;
+    const documentUrl = result.document_url;
+    const documentValid = result.valid;
+    let fileValid = '';
+    let validationStatus = 'Validated';
+    if (documentValid === true) {
+      fileValid = 'True';
+    } else if (documentValid === false) {
+      fileValid = 'False';
+    } else {
+      fileValid = '';
+      validationStatus = 'Pending Validation';
+    }
+    if (result.report && result.report.errors) {
+      const activities = result.report.errors;
+      activities.forEach((activity) => {
+        const activityTitle = activity.title;
+        const activityId = activity.identifier;
+        const activityErrorCats = activity.errors;
+        activityErrorCats.forEach((activityErrorCat) => {
+          const errorCategory = activityErrorCat.category;
+          const { errors } = activityErrorCat;
+          errors.forEach((error) => {
+            const errorId = error.id;
+            const errorSeverity = error.severity;
+            const errorMessage = error.message;
+            const errorContexts = error.context;
+            let contextText = '';
+            errorContexts.forEach((context) => {
+              if (context.text) {
+                contextText += context.text;
+                contextText += ' ';
+              }
+            });
+            const row = [
+              registryName,
+              documentUrl,
+              validationStatus,
+              fileValid,
+              activityTitle,
+              activityId,
+              errorCategory,
+              errorSeverity,
+              errorId,
+              errorMessage,
+              contextText,
+            ];
+            tabularData.push(row);
+          });
+        });
+      });
+    } else {
+      const row = [registryName, documentUrl, validationStatus, fileValid, '', '', '', '', '', '', ''];
+      tabularData.push(row);
+    }
+  });
+  return stringify(tabularData);
 };
