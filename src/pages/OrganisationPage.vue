@@ -149,7 +149,7 @@
               </span>
               <span v-if="!reportsLoading">
                 |
-                <button class="underline" @click="downloadCSV()">Download CSV</button></span
+                <button class="underline" @click="downloadCSV()">Download Validation Report CSV</button></span
               >
             </div>
             <div v-if="documents && documents.length" class="flex flex-col sm:mt-0 sm:flex-row">
