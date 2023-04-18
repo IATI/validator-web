@@ -10,6 +10,7 @@
   import LoadingSpinner from '../components/LoadingSpinner.vue';
   import StyledButton from '../components/StyledButton.vue';
   import StyledLink from '../components/StyledLink.vue';
+  import AppAlert from '../components/AppAlert.vue';
   import { setPageTitle } from '../state';
   import { fetchTempWorkspace, formatDate, getFileStatusClass, getFileValidationStatus } from '../utils';
 
@@ -22,6 +23,7 @@
   const subscribeTimer = ref();
   const addressCopied = ref(false);
   const loading = ref(true);
+  const workSpaceDataError = ref('');
 
   onMounted(() => {
     subscribeTimer.value = timer(100, 2500).subscribe(() => loadData());
@@ -56,7 +58,10 @@
 
         workspaceData.value = data;
       })
-      .catch((error) => window.console.error('Failed to load iati data', error));
+      .catch((error) => {
+        window.console.error('Failed to load iati data', error);
+        workSpaceDataError.value = 'Failed to load iati data please try again later';
+      });
   };
 
   const copyToClipboard = (text) => {
@@ -103,8 +108,11 @@
       </p>
     </div>
     <FileStatusInfo />
-    <CaptionedLoadingSpinner v-if="!workspaceData.length">Loading</CaptionedLoadingSpinner>
+    <CaptionedLoadingSpinner v-if="!workspaceData.length && !workSpaceDataError">Loading</CaptionedLoadingSpinner>
 
+    <AppAlert v-if="workSpaceDataError" variant="error">
+      {{ workSpaceDataError }}
+    </AppAlert>
     <div v-if="workspaceData.length" class="grid grid-cols-1 border border-solid border-gray-300">
       <div class="sticky top-0 grid grid-cols-4 gap-0 bg-white">
         <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
@@ -123,18 +131,18 @@
           <p class="text-base font-bold sm:hidden">File Name</p>
           <span>{{ item.filename }}</span>
         </div>
-        <div class="pl-3.5 pt-0 pb-2 sm:py-2" :class="textClasses">
+        <div class="pb-2 pl-3.5 pt-0 sm:py-2" :class="textClasses">
           <p class="text-base font-bold sm:hidden">Uploaded</p>
           <span>{{ formatDate(item.created) }}<LoadingSpinner v-if="loading && !item.created" class="h-6 w-6" /></span>
         </div>
-        <div class="pt-0 pb-2 pl-3.5 sm:py-2" :class="textClasses">
+        <div class="pb-2 pl-3.5 pt-0 sm:py-2" :class="textClasses">
           <p class="text-base font-bold sm:hidden">Validated</p>
           <span>
             {{ formatDate(item.validated) }}
             <LoadingSpinner v-if="loading && !item.validated" class="h-6 w-6" />
           </span>
         </div>
-        <div class="pt-0 pb-2 pl-3.5 sm:py-2" :class="textClasses">
+        <div class="pb-2 pl-3.5 pt-0 sm:py-2" :class="textClasses">
           <span class="pr-2 text-base font-bold sm:hidden">Validation Status:</span>
           <span :class="item.class" class="text-base font-bold">
             {{ item.status }}
