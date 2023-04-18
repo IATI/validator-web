@@ -502,7 +502,7 @@ export const getDefaultSortingCriteria = (docs) => {
 export const constructCSV = (results) => {
   const tabularData = [
     [
-      'Registry name',
+      'Registry file name',
       'URL',
       'Validation Status',
       'File Valid',
@@ -512,7 +512,7 @@ export const constructCSV = (results) => {
       'Severity',
       'ID',
       'Message',
-      'Contexts',
+      'Location where rule was broken',
     ],
   ];
   results.forEach((result) => {
@@ -561,7 +561,7 @@ export const constructCSV = (results) => {
               fileValid,
               activityTitle,
               activityId,
-              errorCategory,
+              getCategoryLabel(errorCategory),
               errorSeverity,
               errorId,
               errorMessage,
