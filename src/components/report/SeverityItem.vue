@@ -67,7 +67,7 @@
 
         return;
       }
-    } else {
+    } else if (selectAll.value) {
       selectAll.value = false;
 
       return;

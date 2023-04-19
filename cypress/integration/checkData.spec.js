@@ -48,4 +48,21 @@ describe('The Ad Hoc Validate Check Data page', () => {
     cy.contains('IATI version');
     cy.contains('Type');
   });
+  it('displays error message on validation page when the api is down', () => {
+    cy.intercept('GET', 'https://api.iatistandard.org/vs/pvt/adhoc/session/?sessionId=*', {
+      statusCode: 500,
+      body: { error: 'Something went wrong' },
+    });
+    cy.intercept('GET', 'https://dev-api.iatistandard.org/vs/pvt/adhoc/session/?sessionId=*', {
+      statusCode: 500,
+      body: { error: 'Something went wrong' },
+    });
+    cy.get('input[type=file').selectFile('cypress/fixtures/iati-act-no-errors.xml', { force: true });
+    cy.contains('iati-act-no-errors.xml');
+    cy.contains('button', 'Upload').should('not.be.disabled').click();
+    cy.contains('File(s) have been uploaded successfully');
+    cy.contains('a', 'View Progress and Reports').parent().should('not.have.class', 'pointer-events-none');
+    cy.contains('a', 'View Progress and Reports').click();
+    cy.contains('Failed to load iati data please try again later');
+  });
 });

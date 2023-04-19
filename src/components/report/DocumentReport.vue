@@ -113,7 +113,7 @@
       activity.errors.forEach((item) => {
         item.errors = item.errors.filter(
           (feedback) =>
-            severities.value.some((sev) => sev.show === true && sev.slug === feedback.severity) && // filter by severity
+            severities.value.some((sev) => sev.slug === feedback.severity) && // filter by severity
             severities.value.some((t) => t.types.some((m) => m.show === true && m.id === feedback.id)) // filter by severity message type
         );
       });
