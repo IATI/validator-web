@@ -49,6 +49,10 @@ describe('The Ad Hoc Validate Check Data page', () => {
     cy.contains('Type');
   });
   it('displays error message on validation page when the api is down', () => {
+    cy.intercept('GET', 'http://api.iatistandard.org/vs/pvt/adhoc/session/?sessionId=*', {
+      statusCode: 500,
+      body: { error: 'Something went wrong' },
+    });
     cy.intercept('GET', 'https://dev-api.iatistandard.org/vs/pvt/adhoc/session/?sessionId=*', {
       statusCode: 500,
       body: { error: 'Something went wrong' },
