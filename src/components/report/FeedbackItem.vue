@@ -1,7 +1,7 @@
 <script setup>
   import { computed, inject } from 'vue';
   import AppAlert from '../AppAlert.vue';
-  import { GUIDANCE_LINK_URL } from '../../utils';
+  import { GUIDANCE_LINK_URL, getSpacedAttributeCode } from '../../utils';
   import StyledLink from '../StyledLink.vue';
 
   const props = defineProps({ item: { type: Object, default: null } });
@@ -52,7 +52,13 @@
         v-if="props.item.context.length > 1 || (props.item.context.length && props.item.context[0].text !== '')"
         class="list-disc pl-10"
       >
-        <li v-for="(context, index) of props.item.context" :key="index">{{ context.text }}</li>
+        <li v-for="(context, index) of props.item.context" :key="index">
+          <span v-if="getSpacedAttributeCode(context.text)"
+            >{{ context.text }}
+            <p class="text-error">An empty space was added to the attribute</p></span
+          >
+          <span v-else>{{ context.text }}</span>
+        </li>
       </ul>
     </div>
   </AppAlert>
