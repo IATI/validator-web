@@ -578,3 +578,11 @@ export const constructCSV = (results) => {
   });
   return stringify(tabularData);
 };
+
+export const getSpacedAttributeCode = (text) => {
+  if (text.includes('not a valid value for attribute')) {
+    const splitText = text.split('"');
+    const code = splitText[1];
+    if (code.includes(' ')) return code;
+  }
+};
