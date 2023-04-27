@@ -1,0 +1,170 @@
+{
+  "registry_hash": "bc600160900fd8f9de39af2aba85bad04bbc6016",
+  "registry_id": "b5b664eb-5243-40b0-b0d0-7967420e545d",
+  "registry_name": "ares-activities",
+  "document_url": "https://aidstream.s3.us-west-2.amazonaws.com/xml/ares-activities.xml",
+  "valid": true,
+  "report": {
+      "valid": true,
+      "errors": [
+          {
+              "title": "PG 2017-2021_Outcome_ Renforcement et valorisation, par des partenariats, de la contribution des acteurs académiques au développement humain durable du République Démocratique du Congo_ARES",
+              "errors": [
+                  {
+                      "errors": [
+                          {
+                              "id": "9.90.1",
+                              "context": [
+                                  {
+                                      "text": "\"12000 \" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                                  }
+                              ],
+                              "message": "The OECD DAC sector is invalid.",
+                              "codelist": "Sector",
+                              "severity": "error"
+                          }
+                      ],
+                      "category": "financial"
+                  }
+              ],
+              "identifier": "BE-BCE_KBO-0546740696-PG2017-2021_CD"
+          },
+          {
+              "title": "PG 2017-2021_Outcome_ Renforcement et valorisation, par des partenariats, de la contribution des acteurs académiques au développement humain durable du Vietnam_ARES",
+              "errors": [
+                  {
+                      "errors": [
+                          {
+                              "id": "9.90.1",
+                              "context": [
+                                  {
+                                      "text": "\"11400\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                                  }
+                              ],
+                              "message": "The OECD DAC sector is invalid.",
+                              "codelist": "Sector",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "9.90.1",
+                              "context": [
+                                  {
+                                      "text": "\"11400\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                                  }
+                              ],
+                              "message": "The OECD DAC sector is invalid.",
+                              "codelist": "Sector",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "9.90.1",
+                              "context": [
+                                  {
+                                      "text": "\"11400\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                                  }
+                              ],
+                              "message": "The OECD DAC sector is invalid.",
+                              "codelist": "Sector",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "9.90.1",
+                              "context": [
+                                  {
+                                      "text": "\"11400\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                                  }
+                              ],
+                              "message": "The OECD DAC sector is invalid.",
+                              "codelist": "Sector",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8230, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8245, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8787, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8819, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8953, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8968, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          },
+                          {
+                              "id": "6.9.2",
+                              "context": [
+                                  {
+                                      "text": "For <receiver-org> at line: 8983, column: 7"
+                                  }
+                              ],
+                              "message": "The receiver organisation must have an organisation identifier or a narrative.",
+                              "severity": "error"
+                          }
+                      ],
+                      "category": "financial"
+                  }
+              ],
+              "identifier": "BE-BCE_KBO-0546740696-PG2017-2021_VN"
+          }
+      ],
+      "summary": {
+          "error": 12,
+          "warning": 0,
+          "critical": 0
+      },
+      "fileType": "iati-activities",
+      "apiVersion": "2.1.4",
+      "iatiVersion": "2.03",
+      "rulesetCommitSha": "2cd1a14f6c584000ae6d76e708c73ddcc12b6c40",
+      "codelistCommitSha": "98074bdc3450fc3db6d7e553c586b8fba3819307",
+      "orgIdPrefixFileName": "org-id-fb39b8e73f.json"
+  }
+}
