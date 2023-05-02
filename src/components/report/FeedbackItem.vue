@@ -1,7 +1,7 @@
 <script setup>
   import { computed, inject } from 'vue';
   import AppAlert from '../AppAlert.vue';
-  import { GUIDANCE_LINK_URL, getSpacedAttributeCode } from '../../utils';
+  import { GUIDANCE_LINK_URL, containsQuotedTrailingWhitespace } from '../../utils';
   import StyledLink from '../StyledLink.vue';
 
   const props = defineProps({ item: { type: Object, default: null } });
@@ -53,7 +53,7 @@
         class="list-disc pl-10"
       >
         <li v-for="(context, index) of props.item.context" :key="index">
-          <span v-if="getSpacedAttributeCode(context.text)"
+          <span v-if="containsQuotedTrailingWhitespace(context.text)"
             >{{ context.text }}
             <p class="text-error">An empty space was added to the attribute</p></span
           >
