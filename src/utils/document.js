@@ -580,7 +580,7 @@ export const constructCSV = (results) => {
 };
 
 export const containsQuotedTrailingWhitespace = (text) => {
-  const quotedStrings = text.match(/"(.*?)"/g).map((item) => item.slice(1, -1));
-  const noWhitespace = quotedStrings.map((str) => str.trim() === str).every((item) => item === true);
-  return !noWhitespace;
+  const quotedStrings = text.match(/"(.*?)"/g)?.map((item) => item.slice(1, -1));
+  const hasTrailingWhitespace = quotedStrings?.some((str) => str.trim() !== str);
+  return hasTrailingWhitespace;
 };
