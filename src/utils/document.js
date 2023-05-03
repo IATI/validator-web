@@ -578,3 +578,9 @@ export const constructCSV = (results) => {
   });
   return stringify(tabularData);
 };
+
+export const containsQuotedTrailingWhitespace = (text) => {
+  const quotedStrings = text.match(/"(.*?)"/g)?.map((item) => item.slice(1, -1));
+  const hasTrailingWhitespace = quotedStrings?.some((str) => str.trim() !== str);
+  return hasTrailingWhitespace;
+};
