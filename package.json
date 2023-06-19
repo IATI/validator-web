@@ -18,7 +18,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.6",
+    "@formkit/auto-animate": "^1.0.0-pre-alpha.3",
     "copy-to-clipboard": "^3.3.3",
     "csv-stringify": "^6.4.0",
     "date-fns": "^2.30.0",
