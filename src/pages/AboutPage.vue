@@ -82,7 +82,7 @@
       </p>
       <CheckedList>
         <ListItem>
-          IATI Technical Team helpdesk:
+          IATI Secretariat helpdesk:
           <StyledLink to="mailto:support@iatistandard.org" :external="true">support@iatistandard.org</StyledLink>
         </ListItem>
         <ListItem>
