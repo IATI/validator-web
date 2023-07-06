@@ -27,7 +27,7 @@
     "lodash": "^4.17.21",
     "plausible-tracker": "^0.3.8",
     "rxjs": "^7.8.1",
-    "swrv": "^1.0.3",
+    "swrv": "^1.0.4",
     "uuid": "^9.0.0",
     "vue": "^3.3.4",
     "vue-multiselect": "^3.0.0-beta.2",
