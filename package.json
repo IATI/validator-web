@@ -20,7 +20,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-pre-alpha.3",
     "copy-to-clipboard": "^3.3.3",
-    "csv-stringify": "^6.4.2",
+    "csv-stringify": "^6.4.3",
     "date-fns": "^2.30.0",
     "js-cookie": "^3.0.5",
     "localforage": "^1.10.0",
