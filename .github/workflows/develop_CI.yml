@@ -17,10 +17,10 @@ jobs:
     name: 'Build and CI'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Cypress CI Run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           build: npm run build:development
           start: npm run serve
@@ -34,6 +34,6 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.8.0
+      - uses: fastify/github-action-merge-dependabot@v3.9.1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}

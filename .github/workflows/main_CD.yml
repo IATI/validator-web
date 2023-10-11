@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3.5.1
@@ -43,10 +43,10 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Cypress CI Run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           wait-on: 'https://validator.iatistandard.org'
           config-file: cypress.config.prod.js

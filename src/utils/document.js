@@ -32,7 +32,7 @@ export const getDocumentDownloadStatus = (document) => {
     }
     if (
       ['400', '401', '403', '404', '500', '501', '502', '503', '504', '505', '506', '507', '509', '510'].includes(
-        downloadErrorString
+        downloadErrorString,
       )
     ) {
       return `Failed Download (HTTP Error ${document.download_error})`;
@@ -91,13 +91,17 @@ export const getDocumentValidationStatus = (document) => {
 export const getDocumentDatastoreAvailability = (document) => {
   /* see this ticket for full explanation on these availability statuses
   https://trello.com/c/XeovXQrf/232-front-end-indicator-that-file-is-partially-in-ds-for-al-validation */
-  const { report, solrize_end, clean_end, clean_start, clean_error, file_schema_valid } = document;
+  const { report, solrize_end, clean_end, clean_start, clean_error, file_schema_valid, last_solrize_end } = document;
   const fileStatus = getDocumentValidationStatus(document).value;
 
   if (solrize_end) {
     const formatedDate = formatDate(solrize_end);
 
     return `${fileStatus === 'critical' && clean_end && !file_schema_valid ? 'Partial' : 'Yes'} - ${formatedDate}`;
+  }
+
+  if (last_solrize_end) {
+    return 'Old version';
   }
 
   if (
