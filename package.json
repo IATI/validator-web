@@ -21,7 +21,7 @@
     "@formkit/auto-animate": "^1.0.0-pre-alpha.3",
     "copy-to-clipboard": "^3.3.3",
     "csv-stringify": "^6.4.5",
-    "date-fns": "^3.0.5",
+    "date-fns": "^3.0.6",
     "js-cookie": "^3.0.5",
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
