@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite --mode development",
+    "dev:local": "vite --mode localdev",    
     "dev:production": "vite --mode production",
     "build:development": "vite build --mode development",
     "build:production": "vite build --mode production",
@@ -18,7 +19,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-pre-alpha.3",
+    "@formkit/auto-animate": "^0.8.1",
     "copy-to-clipboard": "^3.3.3",
     "csv-stringify": "^6.4.6",
     "date-fns": "^3.6.0",
