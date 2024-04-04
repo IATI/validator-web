@@ -14,7 +14,7 @@
   const fileType = inject('fileType');
   const messages = computed(() => props.activity.errors.filter((message) => message.errors.length));
   const messageTypes = computed(() =>
-    ['critical', 'error', 'warning', 'info', 'success']
+    ['critical', 'error', 'warning', 'advisory', 'info', 'success']
       .map((messageType) => ({
         type: messageType,
         count: getFileErrorsMessageTypeCount(props.activity.errors, messageType),
@@ -74,7 +74,7 @@
             v-for="messageType in messageTypes"
             :key="messageType.type"
             :variant="messageType.type"
-            class="relative top-[-2px]"
+            class="relative top-[-2px] text-white"
           >
             {{ messageType.count }}
           </AppBadge>

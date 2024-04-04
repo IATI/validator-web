@@ -28,6 +28,7 @@ module.exports = {
         error: '#dc0930',
         success: '#00802b',
         warning: '#b34700',
+        advisory: '#045153'
       },
       fontFamily: {
         sans: ['Avenir', 'Helvetica', 'Arial', 'sans-serif'],

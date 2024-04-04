@@ -4,6 +4,7 @@
   const borderColour = {
     'border-iati-blue': props.variant === 'default',
     'border-success': props.variant === 'success',
+    'border-advisory': props.variant === 'advisory',
     'border-warning': props.variant === 'warning',
     'border-error': props.variant === 'error',
     'border-critical': props.variant === 'critical',
