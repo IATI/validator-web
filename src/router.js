@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AboutPage from './pages/AboutPage.vue';
 import HomePage from './pages/HomePage.vue';
 import NotFound from './pages/NotFound.vue';
 import OrganisationPage from './pages/OrganisationPage.vue';
@@ -10,7 +9,6 @@ import ValidationResult from './pages/ValidationResult.vue';
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: '/about', component: AboutPage },
   { path: '/validate', component: ValidatePage },
   { path: '/validate/:tempWorkspaceID', component: ValidationResult },
   { path: '/organisations', component: OrganisationsPage },

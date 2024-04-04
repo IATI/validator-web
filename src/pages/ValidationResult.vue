@@ -12,7 +12,7 @@
   import StyledLink from '../components/StyledLink.vue';
   import AppAlert from '../components/AppAlert.vue';
   import { setPageTitle } from '../state';
-  import { fetchTempWorkspace, formatDate, getFileStatusClass, getFileValidationStatus } from '../utils';
+  import { fetchTempWorkspace, formatDate, getDocumentValidationStatus } from '../utils';
 
   setPageTitle('Validation results');
   const route = useRoute();
@@ -52,8 +52,9 @@
     fetchTempWorkspace(workspaceID)
       .then((data) => {
         for (const element of data) {
-          element.class = getFileStatusClass(element);
-          element.status = getFileValidationStatus(element);
+          const datasetStatus = getDocumentValidationStatus(element);          
+          element.class = `text-${datasetStatus.value}`;
+          element.status = datasetStatus.caption;
         }
 
         workspaceData.value = data;

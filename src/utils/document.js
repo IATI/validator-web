@@ -1,7 +1,7 @@
 import { stringify } from 'csv-stringify/browser/esm/sync';
 import { formatDate } from '.';
 
-const validationStatusOrder = ['Critical', 'Error', 'Warning', 'Success', 'N/A'];
+const validationStatusOrder = ['Critical', 'Error', 'Warning', 'Success (with Advisories)', 'Success', 'N/A'];
 export const getDocumentFileName = (document) =>
   document.url ? window.decodeURI(document.url).replace(/\/$/, '').split('/').pop() : '';
 export const compareDocumentSeverity = (docOne, docTwo) => getDocumentSeverity(docOne) - getDocumentSeverity(docTwo);
@@ -67,13 +67,16 @@ export const getDocumentDownloadStatus = (document) => {
 export const getDocumentValidationStatus = (document) => {
   const { report } = document;
   const { valid } = report || { valid: null };
-  const { error, warning } = report ? report.summary : { error: -1, warning: -1 };
+  const { error, warning, advisory } = report ? report.summary : { error: -1, warning: -1, advisory: -1 };
 
   if (document.report === null) {
     return { value: 'normal', caption: 'N/A' };
   }
-  if (valid === true && error === 0 && warning === 0) {
+  if (valid === true && error === 0 && warning === 0 && advisory === 0) {
     return { value: 'success', caption: 'Success' };
+  }  
+  if (valid === true && error === 0 && warning === 0) {
+    return { value: 'advisory', caption: 'Success (with Advisories)' };
   }
   if (valid === true && error === 0) {
     return { value: 'warning', caption: 'Warning' };
@@ -135,10 +138,12 @@ export const getDocumentDatastoreAvailability = (document) => {
 
 const getDocumentSeverity = (document) => {
   const { validation, valid, report } = document;
-  const { error, warning } = report ? report.summary : { error: -1, warning: -1 };
+  const { error, warning, advisory } = report ? report.summary : { error: -1, warning: -1, advisory: -1 };
 
   if (!validation) {
     return 2;
+  } else if (valid === true && error === 0 && warning === 0 && advisory === 0) {
+    return 6;
   } else if (valid === true && error === 0 && warning === 0) {
     return 5;
   } else if (valid === true && error === 0) {
@@ -246,12 +251,22 @@ export const getSeverities = () => {
       types: [],
     },
     {
+      id: 'advisory',
+      slug: 'advisory',
+      name: 'Advisories',
+      description: 'Advisories show ways that the data can be improved beyond the requirements of the IATI Standards.',
+      count: null,
+      order: 5,
+      show: true,
+      types: [],
+    },
+    {
       id: 'notification',
       slug: 'success',
       name: 'Notifications',
       description: 'Notifications are for your information.',
       count: null,
-      order: 5,
+      order: 6,
       show: true,
       types: [],
     },
@@ -495,6 +510,8 @@ export const getDefaultSortingCriteria = (docs) => {
       return 'Validation Status: Error';
     } else if (availableValidationStatusList.includes('Warning')) {
       return 'Validation Status: Warning';
+    } else if (availableValidationStatusList.includes('Success (with Advisories)')) {
+      return 'Validation Status: Success (with Advisories)';
     } else if (availableValidationStatusList.includes('Success')) {
       return 'Validation Status: Success';
     } else {

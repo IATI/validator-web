@@ -31,6 +31,7 @@
   });
   const bgClass = {
     'bg-success': props.severity.id === 'success',
+    'bg-advisory': props.severity.id === 'advisory',
     'bg-warning': props.severity.id === 'warning',
     'bg-error': props.severity.id === 'error',
     'bg-critical': props.severity.id === 'critical',
@@ -43,7 +44,7 @@
         selectAll.value = props.severity.show;
         errorTypes.value = props.severity.types;
       }
-    }
+    },
   );
   watch(selectAll, () => {
     errorTypes.value = setErrorTypesVisibility(selectAll.value);
