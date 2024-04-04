@@ -21,7 +21,7 @@ describe('The Ad Hoc Validate Check Data page', () => {
     cy.contains('Validation results');
     cy.contains('iati-act-no-errors.xml');
     // have to use a defined wait due to the polling architecture: https://github.com/cypress-io/cypress/issues/7729
-    cy.wait(15000);
+    cy.wait(17500);
     cy.get('.doc-list-item').eq(0).click();
     cy.get('h1').should('have.text', 'IATI Validator').siblings().should('have.text', 'File validation report');
     cy.contains('IATI version');
@@ -42,7 +42,7 @@ describe('The Ad Hoc Validate Check Data page', () => {
       'https://raw.githubusercontent.com/IATI/IATI-Extra-Documentation/version-2.03/en/activity-standard/activity-standard-example-annotated.xml'
     );
     // have to use a defined wait due to the polling architecture: https://github.com/cypress-io/cypress/issues/7729
-    cy.wait(15000);
+    cy.wait(17500);
     cy.get('.doc-list-item').eq(0).click();
     cy.get('h1').should('have.text', 'IATI Validator').siblings().should('have.text', 'File validation report');
     cy.contains('IATI version');
@@ -57,9 +57,15 @@ describe('The Ad Hoc Validate Check Data page', () => {
       statusCode: 500,
       body: { error: 'Something went wrong' },
     });
+    cy.intercept('GET', 'http://localhost*/api/pvt/adhoc/session/?sessionId=*', {
+      statusCode: 500,
+      body: { error: 'Something went wrong' },
+    });
     cy.get('input[type=file').selectFile('cypress/fixtures/iati-act-no-errors.xml', { force: true });
+    cy.wait(2000);
     cy.contains('iati-act-no-errors.xml');
     cy.contains('button', 'Upload').should('not.be.disabled').click();
+    cy.wait(5000);
     cy.contains('File(s) have been uploaded successfully');
     cy.contains('a', 'View Progress and Reports').parent().should('not.have.class', 'pointer-events-none');
     cy.contains('a', 'View Progress and Reports').click();
