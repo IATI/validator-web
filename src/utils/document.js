@@ -72,9 +72,14 @@ export const getDocumentValidationStatus = (document) => {
   if (document.report === null) {
     return { value: 'normal', caption: 'N/A' };
   }
-  if (valid === true && error === 0 && warning === 0 && advisory === 0) {
+  if (
+    valid === true &&
+    error === 0 &&
+    warning === 0 &&
+    (advisory === 0 || (report && !Object.prototype.hasOwnProperty.call(report.summary, 'advisory')))
+  ) {
     return { value: 'success', caption: 'Success' };
-  }  
+  }
   if (valid === true && error === 0 && warning === 0) {
     return { value: 'advisory', caption: 'Success (with Advisories)' };
   }
@@ -214,7 +219,7 @@ export const getSeverities = () => {
       id: 'critical',
       slug: 'critical',
       name: 'Critical',
-      description: 'Files with critical errors will not be processed by the datastore',
+      description: 'XML schema validation fails. This means that data will not update in the IATI Datastore',
       count: null,
       order: 1,
       show: true,
@@ -224,7 +229,8 @@ export const getSeverities = () => {
       id: 'error',
       slug: 'error',
       name: 'Errors',
-      description: 'Errors make it hard or impossible to use the data.',
+      description:
+        'XML schema validation passes, but not all IATI ruleset rules stating that a condition "must" be met.',
       count: null,
       order: 2,
       show: true,
@@ -234,7 +240,8 @@ export const getSeverities = () => {
       id: 'warning',
       slug: 'warning',
       name: 'Warnings',
-      description: 'Warnings indicate where the data can be more valuable.',
+      description:
+        'XML Schema validation passes, but not all IATI ruleset rules stating that a condition "should" be met.',
       count: null,
       order: 3,
       show: true,
@@ -254,7 +261,7 @@ export const getSeverities = () => {
       id: 'advisory',
       slug: 'advisory',
       name: 'Advisories',
-      description: 'Advisories show ways that the data can be improved beyond the requirements of the IATI Standards.',
+      description: 'No errors or warnings, but there are advisories relating to potential issues with the data.',
       count: null,
       order: 5,
       show: true,
