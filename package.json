@@ -2,11 +2,11 @@
   "name": "validator-web",
   "type": "module",
   "private": true,
-  "version": "2.7.0",
+  "version": "2.8.0",
   "scripts": {
     "start": "npm run dev",
     "dev": "vite --mode development",
-    "dev:local": "vite --mode localdev",    
+    "dev:local": "vite --mode localdev",
     "dev:production": "vite --mode production",
     "build:development": "vite build --mode development",
     "build:production": "vite build --mode production",
