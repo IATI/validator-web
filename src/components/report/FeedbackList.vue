@@ -1,8 +1,8 @@
 <script setup>
-  import { getFeedbackCategoryLabel } from '../../utils';
-  import AppBadge from '../AppBadge.vue';
-  import CenteredLoadingSpinner from '../CenteredLoadingSpinner.vue';
-  import FeedbackItem from './FeedbackItem.vue';
+  import { getFeedbackCategoryLabel } from "../../utils";
+  import AppBadge from "../AppBadge.vue";
+  import CenteredLoadingSpinner from "../CenteredLoadingSpinner.vue";
+  import FeedbackItem from "./FeedbackItem.vue";
 
   const props = defineProps({ message: { type: Object, default: null } });
 </script>

@@ -1,10 +1,10 @@
-import js from '@eslint/js';
-import gitignore from 'eslint-config-flat-gitignore';
-import globals from 'globals';
-import eslintPluginCypress from 'eslint-plugin-cypress/flat';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import eslintPluginVue from 'eslint-plugin-vue';
-import ts from 'typescript-eslint';
+import js from "@eslint/js";
+import gitignore from "eslint-config-flat-gitignore";
+import globals from "globals";
+import eslintPluginCypress from "eslint-plugin-cypress/flat";
+import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginVue from "eslint-plugin-vue";
+import ts from "typescript-eslint";
 
 export default ts.config(
   gitignore(),
@@ -20,20 +20,20 @@ export default ts.config(
   ...ts.configs.recommended,
   eslintPluginCypress.configs.globals,
   eslintPluginCypress.configs.recommended,
-  ...eslintPluginVue.configs['flat/recommended'],
+  ...eslintPluginVue.configs["flat/recommended"],
   {
-    files: ['*.vue', '**/*.vue'],
+    files: ["*.vue", "**/*.vue"],
     languageOptions: {
       parserOptions: {
-        parser: '@typescript-eslint/parser',
+        parser: "@typescript-eslint/parser",
       },
     },
   },
   eslintConfigPrettier,
   {
     rules: {
-      '@typescript-eslint/no-this-alias': 'warn',
-      'cypress/no-unnecessary-waiting': 'warn',
+      "@typescript-eslint/no-this-alias": "warn",
+      "cypress/no-unnecessary-waiting": "warn",
     },
   },
 );

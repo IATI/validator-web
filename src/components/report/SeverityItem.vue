@@ -1,18 +1,18 @@
 <script setup>
-  import { computed, ref, watch } from 'vue';
-  import AppAccordion from '../AppAccordion.vue';
-  import AppBadge from '../AppBadge.vue';
-  import CheckBox from '../CheckBox.vue';
+  import { computed, ref, watch } from "vue";
+  import AppAccordion from "../AppAccordion.vue";
+  import AppBadge from "../AppBadge.vue";
+  import CheckBox from "../CheckBox.vue";
 
   const props = defineProps({ severity: { type: Object, default: null } });
-  const emit = defineEmits(['select']);
+  const emit = defineEmits(["select"]);
   const label = computed(() => {
     if (props.severity) {
       const { name, types } = props.severity;
-      return `${name}: ${types.length} ${types.length == 1 ? 'type' : 'types'}`;
+      return `${name}: ${types.length} ${types.length == 1 ? "type" : "types"}`;
     }
 
-    return '';
+    return "";
   });
   const setErrorTypesVisibility = (visible) =>
     props.severity.types.map((_type) => {
@@ -27,14 +27,14 @@
 
     return visibleErrorTypes.length !== errorTypes.value.length
       ? `${visibleErrorTypes.length} of ${errorTypes.value.length} messages selected`
-      : '';
+      : "";
   });
   const bgClass = {
-    'bg-success': props.severity.id === 'success',
-    'bg-advisory': props.severity.id === 'advisory',
-    'bg-warning': props.severity.id === 'warning',
-    'bg-error': props.severity.id === 'error',
-    'bg-critical': props.severity.id === 'critical',
+    "bg-success": props.severity.id === "success",
+    "bg-advisory": props.severity.id === "advisory",
+    "bg-warning": props.severity.id === "warning",
+    "bg-error": props.severity.id === "error",
+    "bg-critical": props.severity.id === "critical",
   };
 
   watch(
@@ -48,7 +48,7 @@
   );
   watch(selectAll, () => {
     errorTypes.value = setErrorTypesVisibility(selectAll.value);
-    emit('select', { ...props.severity, types: errorTypes.value, show: selectAll.value });
+    emit("select", { ...props.severity, types: errorTypes.value, show: selectAll.value });
   });
 
   const onToggleSeverity = () => {
@@ -73,7 +73,7 @@
 
       return;
     }
-    emit('select', { ...props.severity, types: errorTypes.value });
+    emit("select", { ...props.severity, types: errorTypes.value });
   };
 </script>
 <template>

@@ -1,14 +1,14 @@
 <script setup>
-  import { ref, watch } from 'vue';
-  import StyledButton from './StyledButton.vue';
-  import AppAlert from './AppAlert.vue';
+  import { ref, watch } from "vue";
+  import StyledButton from "./StyledButton.vue";
+  import AppAlert from "./AppAlert.vue";
 
   const props = defineProps({
     disabled: { type: Boolean, default: false },
-    accept: { type: String, default: '*' },
+    accept: { type: String, default: "*" },
     multiple: { type: Boolean, default: false },
   });
-  const emit = defineEmits(['change']);
+  const emit = defineEmits(["change"]);
   const files = ref([]);
   const errors = ref([]);
   const MAX_FILE_SIZE = 60000000; // in bytes
@@ -27,7 +27,7 @@
   };
 
   watch(files, () => {
-    emit('change', files.value);
+    emit("change", files.value);
   });
 </script>
 <template>

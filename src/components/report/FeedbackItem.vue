@@ -1,33 +1,33 @@
 <script setup>
-  import { computed, inject } from 'vue';
-  import AppAlert from '../AppAlert.vue';
-  import { GUIDANCE_LINK_URL, containsQuotedTrailingWhitespace } from '../../utils';
-  import StyledLink from '../StyledLink.vue';
+  import { computed, inject } from "vue";
+  import AppAlert from "../AppAlert.vue";
+  import { GUIDANCE_LINK_URL, containsQuotedTrailingWhitespace } from "../../utils";
+  import StyledLink from "../StyledLink.vue";
 
   const props = defineProps({ item: { type: Object, default: null } });
-  const guidanceLinks = inject('guidanceLinks');
-  const report = inject('report');
+  const guidanceLinks = inject("guidanceLinks");
+  const report = inject("report");
 
-  const version = computed(() => report.value.iatiVersion.replace('.', ''));
+  const version = computed(() => report.value.iatiVersion.replace(".", ""));
   const isGuidanceAvailable = computed(
-    () => guidanceLinks.value && guidanceLinks.value.version && props.item.id in guidanceLinks.value.content
+    () => guidanceLinks.value && guidanceLinks.value.version && props.item.id in guidanceLinks.value.content,
   );
   const guidanceLink = computed(() => {
     if (isGuidanceAvailable.value) {
       const { id } = props.item;
       const { content } = guidanceLinks.value;
-      if ('url' in content[id]) {
+      if ("url" in content[id]) {
         return content[id].url;
       }
-      if ('path' in content[id]) {
+      if ("path" in content[id]) {
         return `${GUIDANCE_LINK_URL}/${version.value}/${content[id].path}`;
       }
     }
 
-    return '';
+    return "";
   });
   const codelistLink = computed(() =>
-    'codelist' in props.item ? `${GUIDANCE_LINK_URL}/${version.value}/codelists/${props.item.codelist}` : ''
+    "codelist" in props.item ? `${GUIDANCE_LINK_URL}/${version.value}/codelists/${props.item.codelist}` : "",
   );
 </script>
 

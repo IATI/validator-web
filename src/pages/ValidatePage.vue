@@ -1,38 +1,38 @@
 <script setup>
-  import Cookies from 'js-cookie';
-  import { computed, onMounted, ref } from 'vue';
-  import { useRoute } from 'vue-router';
-  import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
-  import CheckBox from '../components/CheckBox.vue';
-  import IconChevron from '../components/IconChevron.vue';
-  import ContentContainer from '../components/layout/ContentContainer.vue';
-  import LocalFilesValidator from '../components/LocalFilesValidator.vue';
-  import RemoteFIlesValidator from '../components/RemoteFIlesValidator.vue';
-  import StyledLink from '../components/StyledLink.vue';
-  import { setPageTitle } from '../state';
+  import Cookies from "js-cookie";
+  import { computed, onMounted, ref } from "vue";
+  import { useRoute } from "vue-router";
+  import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
+  import CheckBox from "../components/CheckBox.vue";
+  import IconChevron from "../components/IconChevron.vue";
+  import ContentContainer from "../components/layout/ContentContainer.vue";
+  import LocalFilesValidator from "../components/LocalFilesValidator.vue";
+  import RemoteFIlesValidator from "../components/RemoteFIlesValidator.vue";
+  import StyledLink from "../components/StyledLink.vue";
+  import { setPageTitle } from "../state";
 
-  setPageTitle('Check data');
+  setPageTitle("Check data");
 
   const route = useRoute();
   const workspaceID = computed(() => {
     if (route.query.tempWorkspaceID) return route.query.tempWorkspaceID;
 
-    if (Cookies.get('adhocsession')) {
-      return Cookies.get('adhocsession');
+    if (Cookies.get("adhocsession")) {
+      return Cookies.get("adhocsession");
     }
 
     const tempWorkspaceID = Date.now().toString(36) + Math.random().toString(36).substr(2);
-    Cookies.set('adhocsession', tempWorkspaceID);
+    Cookies.set("adhocsession", tempWorkspaceID);
 
     return tempWorkspaceID;
   });
-  const fileSource = ref('');
+  const fileSource = ref("");
 
   onMounted(() => {
-    if (workspaceID.value && (!Cookies.get('adhocsession') || Cookies.get('adhocsession') !== workspaceID.value)) {
-      Cookies.set('adhocsession', workspaceID.value);
+    if (workspaceID.value && (!Cookies.get("adhocsession") || Cookies.get("adhocsession") !== workspaceID.value)) {
+      Cookies.set("adhocsession", workspaceID.value);
     }
-    fileSource.value = 'upload';
+    fileSource.value = "upload";
   });
 </script>
 

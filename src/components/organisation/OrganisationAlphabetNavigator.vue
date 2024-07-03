@@ -3,9 +3,9 @@
 
   const navigate = (event) => {
     const id = event.target.innerHTML;
-    const target = window.document.getElementById(id === '0 - 9' ? '123' : id.toLowerCase());
+    const target = window.document.getElementById(id === "0 - 9" ? "123" : id.toLowerCase());
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 </script>

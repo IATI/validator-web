@@ -1,20 +1,20 @@
 <script setup>
-  import { cloneDeep } from 'lodash';
-  import useSWRV from 'swrv';
-  import { computed, provide, ref, watch, watchEffect } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
+  import { cloneDeep } from "lodash";
+  import useSWRV from "swrv";
+  import { computed, provide, ref, watch, watchEffect } from "vue";
+  import { useRoute, useRouter } from "vue-router";
   import {
     fetchGuidanceLinks,
     getDocumentReportCategories,
     getDocumentReportSeverities,
     getGuidanceLinksURL,
-  } from '../../utils';
-  import SearchFilter from '../SearchFilter.vue';
-  import StyledButton from '../StyledButton.vue';
-  import ActivityErrors from './ActivityErrors.vue';
-  import CategoryItem from './CategoryItem.vue';
-  import FileErrors from './FileErrors.vue';
-  import SeverityItem from './SeverityItem.vue';
+  } from "../../utils";
+  import SearchFilter from "../SearchFilter.vue";
+  import StyledButton from "../StyledButton.vue";
+  import ActivityErrors from "./ActivityErrors.vue";
+  import CategoryItem from "./CategoryItem.vue";
+  import FileErrors from "./FileErrors.vue";
+  import SeverityItem from "./SeverityItem.vue";
 
   const props = defineProps({ document: { type: Object, default: null }, report: { type: Object, default: null } });
   const route = useRoute();
@@ -22,9 +22,9 @@
 
   const { data: guidanceLinks } = useSWRV(
     () => (props.report && props.report.iatiVersion ? getGuidanceLinksURL(props.report.iatiVersion) : null),
-    () => fetchGuidanceLinks(props.report.iatiVersion)
+    () => fetchGuidanceLinks(props.report.iatiVersion),
   );
-  provide('guidanceLinks', guidanceLinks);
+  provide("guidanceLinks", guidanceLinks);
   const activeSeverity = ref(null);
   const activeCategory = ref(null);
   const categories = computed(() => {
@@ -65,39 +65,39 @@
   });
   const filteredReport = ref(props.report);
   const fileType = ref(null);
-  const fileErrorsTitle = ref('');
-  const activityErrorsTitle = ref('');
+  const fileErrorsTitle = ref("");
+  const activityErrorsTitle = ref("");
   const searchText = ref(route.query.id);
 
-  provide('fileType', fileType);
-  provide('report', filteredReport);
+  provide("fileType", fileType);
+  provide("report", filteredReport);
 
   watch(
     () => route.query.id,
-    () => (searchText.value = route.query.id)
+    () => (searchText.value = route.query.id),
   );
   watchEffect(() => {
     if (props.report) {
-      if (props.report.fileType === 'iati-activities') {
-        fileType.value = 'activity';
-        fileErrorsTitle.value = 'Activity file feedback';
-        activityErrorsTitle.value = 'Feedback per activity';
+      if (props.report.fileType === "iati-activities") {
+        fileType.value = "activity";
+        fileErrorsTitle.value = "Activity file feedback";
+        activityErrorsTitle.value = "Feedback per activity";
       }
-      if (props.report.fileType === 'iati-organisations') {
-        fileType.value = 'organisation';
-        fileErrorsTitle.value = 'Organisation file feedback';
-        activityErrorsTitle.value = 'Organisation feedback';
+      if (props.report.fileType === "iati-organisations") {
+        fileType.value = "organisation";
+        fileErrorsTitle.value = "Organisation file feedback";
+        activityErrorsTitle.value = "Organisation feedback";
       }
 
-      if (!props.report.fileType === 'iati-activities' && !props.report.fileType === 'iati-organisations') {
+      if (!props.report.fileType === "iati-activities" && !props.report.fileType === "iati-organisations") {
         fileType.value = null;
-        fileErrorsTitle.value = 'Not an IATI file';
-        activityErrorsTitle.value = '';
+        fileErrorsTitle.value = "Not an IATI file";
+        activityErrorsTitle.value = "";
       }
     } else {
       fileType.value = null;
-      fileErrorsTitle.value = 'Not an IATI file';
-      activityErrorsTitle.value = '';
+      fileErrorsTitle.value = "Not an IATI file";
+      activityErrorsTitle.value = "";
     }
   });
 
@@ -107,14 +107,14 @@
     report.errors.forEach((activity) => {
       // filter report by category
       activity.errors = activity.errors.filter((feedback) =>
-        categories.value.some((c) => c.show === true && c.id === feedback.category)
+        categories.value.some((c) => c.show === true && c.id === feedback.category),
       );
       // filter report by severity
       activity.errors.forEach((item) => {
         item.errors = item.errors.filter(
           (feedback) =>
             severities.value.some((sev) => sev.slug === feedback.severity) && // filter by severity
-            severities.value.some((t) => t.types.some((m) => m.show === true && m.id === feedback.id)) // filter by severity message type
+            severities.value.some((t) => t.types.some((m) => m.show === true && m.id === feedback.id)), // filter by severity message type
         );
       });
     });

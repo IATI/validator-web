@@ -1,10 +1,10 @@
 <script setup>
   const props = defineProps({ outline: { type: Boolean, default: false } });
-  const emit = defineEmits(['click']);
+  const emit = defineEmits(["click"]);
 
   const classes = {
-    'bg-iati-green !text-white hover:bg-iati-blue': !props.outline,
-    'bg-white !text-iati-green hover:bg-iati-green hover:!text-white border-iati-green border border-solid':
+    "bg-iati-green !text-white hover:bg-iati-blue": !props.outline,
+    "bg-white !text-iati-green hover:bg-iati-green hover:!text-white border-iati-green border border-solid":
       props.outline,
   };
 </script>

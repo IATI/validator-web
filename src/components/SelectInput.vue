@@ -1,5 +1,5 @@
 <script setup>
-  import VueMultiselect from 'vue-multiselect';
+  import VueMultiselect from "vue-multiselect";
 </script>
 <template>
   <VueMultiselect />
