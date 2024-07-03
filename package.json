@@ -54,9 +54,5 @@
   "lint-staged": {
     "*.{js,vue}": "eslint --cache --fix",
     "*.{js,css,md,vue}": "prettier --write"
-  },
-  "engines": {
-    "node": ">=16 <17",
-    "npm": ">=8"
   }
 }
