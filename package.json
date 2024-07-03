@@ -14,7 +14,7 @@
     "preview": "vite preview",
     "cy:open": "cypress open --config-file cypress.config.local.js",
     "cy:run": "cypress run --config-file cypress.config.local.js",
-    "lint": "eslint .",
+    "lint": "eslint . && prettier . --check",
     "format": "prettier . --write"
   },
   "dependencies": {
