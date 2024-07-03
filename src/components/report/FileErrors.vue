@@ -13,7 +13,7 @@
   const report = inject('report');
   const messages = computed(() => getReportErrorsByIdentifier(report.value).filter((item) => item.errors.length)); // only include items with feedback to show
 
-  const messageTypes = ['critical', 'error', 'warning', 'info', 'success']
+  const messageTypes = ['critical', 'error', 'warning', 'advisory', 'info', 'success']
     .map((messageType) => ({ type: messageType, count: getFileErrorsMessageTypeCount(messages.value, messageType) }))
     .filter((messageType) => messageType.count > 0);
 </script>

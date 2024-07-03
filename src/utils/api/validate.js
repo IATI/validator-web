@@ -1,6 +1,7 @@
 import { last } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { getDefaultServicesAPIOptions, SERVICES_URL } from '.';
+import { getDocumentValidationStatus } from '../document';
 
 export const uploadFile = async (file, tmpWorkspaceId) => {
   if (!file) {
@@ -49,25 +50,10 @@ export const fetchTempWorkspace = async (workspaceID) => {
   return null;
 };
 
-const getValidationReportStatus = (dataset) => {
-  const { error, warning, critical } = dataset.report.summary;
-
-  if (!dataset.valid || critical) return 'critical';
-  if (dataset.valid && error) return 'error';
-  if (dataset.valid && warning) return 'warning';
-
-  return 'success';
-};
-
 export const getFileStatusClass = (dataset) => {
   if (dataset.report) {
-    const status = getValidationReportStatus(dataset);
-    return {
-      'text-error': status === 'error',
-      'text-critical': status === 'critical',
-      'text-warning': status === 'warning',
-      'text-success': status === 'success',
-    };
+    const status = getDocumentValidationStatus(dataset);
+    return `text-${status.value}`;
   }
 
   return { 'text-default': true };
@@ -75,12 +61,8 @@ export const getFileStatusClass = (dataset) => {
 
 export const getFileValidationStatus = (dataset) => {
   if (dataset.report) {
-    const status = getValidationReportStatus(dataset);
-
-    return status
-      .split('')
-      .map((c, index) => (index === 0 ? c.toUpperCase() : c))
-      .join('');
+    const status = getDocumentValidationStatus(dataset);
+    return status.caption;
   }
 
   return null;

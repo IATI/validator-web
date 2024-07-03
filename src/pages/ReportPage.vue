@@ -22,8 +22,7 @@
     getOrganisationURL,
     validationReportURL,
     fetchTempWorkspace,
-    getFileStatusClass,
-    getFileValidationStatus,
+    getDocumentValidationStatus
   } from '../utils';
 
   setPageTitle('File validation report');
@@ -83,8 +82,9 @@
       fetchTempWorkspace(dataset.value.session_id)
         .then((data) => {
           for (const element of data) {
-            element.class = getFileStatusClass(element);
-            element.status = getFileValidationStatus(element);
+            const datasetStatus = getDocumentValidationStatus(element);
+            element.class = `text-${datasetStatus.value}`; 
+            element.status = datasetStatus.caption; 
           }
           workSpaceData.value = data;
         })

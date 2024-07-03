@@ -4,6 +4,7 @@
   const bgClass = {
     'bg-iati-blue-dark': props.variant === 'default',
     'bg-success': props.variant === 'success',
+    'bg-advisory': props.variant === 'advisory',
     'bg-warning': props.variant === 'warning',
     'bg-error': props.variant === 'error',
     'bg-critical': props.variant === 'critical',
