@@ -23,7 +23,8 @@
   const parallelUpload = (files) => forkJoin(files.map((file) => uploadFile(file, props.workspaceID)));
 
   const uploadFiles = () => {
-    const handleError = () => {
+    const handleError = (error) => {
+      console.error(error);
       requestStatus.value = 'error';
     };
 

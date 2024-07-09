@@ -27,6 +27,12 @@ describe('The Ad Hoc Validate Check Data page', () => {
     cy.contains('IATI version');
     cy.contains('Type');
   });
+  it('displays an error message if it fails to upload a file', () => {
+    cy.get('input[type=file').selectFile('cypress/fixtures/incorrect-extension.txt', { force: true });
+    cy.contains('incorrect-extension.txt');
+    cy.contains('button', 'Upload').should('not.be.disabled').click();
+    cy.contains('File(s) uploading failed');
+  });
   it('allows you to upload from URL for validation and access the report', () => {
     cy.contains('URL to a remote file').click();
     cy.get('#url').type(

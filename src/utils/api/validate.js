@@ -12,9 +12,13 @@ export const uploadFile = async (file, tmpWorkspaceId) => {
   const uploadData = new FormData();
   uploadData.append('file', file, file.name);
 
-  const req = await window.fetch(url, { ...getDefaultServicesAPIOptions(), method: 'post', body: uploadData });
+  const response = await window.fetch(url, { ...getDefaultServicesAPIOptions(), method: 'post', body: uploadData });
 
-  return last(req);
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text);
+  }
+  return last(response);
 };
 
 export const fetchFileFromURL = async (fileUrl, workspaceID) => {
