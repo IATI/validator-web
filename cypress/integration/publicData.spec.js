@@ -57,7 +57,6 @@ describe("The Public Data Viewer (organisations) page", () => {
           if (datasets.length > 0) {
             cy.log(datasets);
             datasets.first().click();
-            cy.wait(2000);
             cy.url().then((url) => {
               if (url.includes("/report/")) {
                 cy.get("h1")

@@ -33,7 +33,6 @@ export default ts.config(
   {
     rules: {
       "@typescript-eslint/no-this-alias": "warn",
-      "cypress/no-unnecessary-waiting": "warn",
     },
   },
 );
