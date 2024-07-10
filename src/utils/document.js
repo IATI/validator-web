@@ -1,37 +1,37 @@
-import { stringify } from 'csv-stringify/browser/esm/sync';
-import { formatDate } from '.';
+import { stringify } from "csv-stringify/browser/esm/sync";
+import { formatDate } from ".";
 
-const validationStatusOrder = ['Critical', 'Error', 'Warning', 'Success', 'N/A'];
+const validationStatusOrder = ["Critical", "Error", "Warning", "Success (with Advisories)", "Success", "N/A"];
 export const getDocumentFileName = (document) =>
-  document.url ? window.decodeURI(document.url).replace(/\/$/, '').split('/').pop() : '';
+  document.url ? window.decodeURI(document.url).replace(/\/$/, "").split("/").pop() : "";
 export const compareDocumentSeverity = (docOne, docTwo) => getDocumentSeverity(docOne) - getDocumentSeverity(docTwo);
 
 export const hasProperLink = (document) =>
   document.validation_created === null ||
   document.download_error !== null ||
   document.downloaded === null ||
-  document.hash === '';
+  document.hash === "";
 
 export const getDocumentDownloadStatus = (document) => {
   if (document.validation_created === null && document.downloaded !== null) {
-    return 'Pending Validation';
+    return "Pending Validation";
   }
   const downloadErrorString = getDownloadErrorString(document);
   if (document.validation_created === null && document.downloaded === null) {
-    if (downloadErrorString === '0') {
-      return 'Failed Download (Connection Error)';
+    if (downloadErrorString === "0") {
+      return "Failed Download (Connection Error)";
     }
-    if (downloadErrorString === '1') {
-      return 'Failed Download (SSL Issue)';
+    if (downloadErrorString === "1") {
+      return "Failed Download (SSL Issue)";
     }
-    if (downloadErrorString === '2') {
-      return 'Failed Download (Character Encoding Issue)';
+    if (downloadErrorString === "2") {
+      return "Failed Download (Character Encoding Issue)";
     }
-    if (downloadErrorString === '3') {
-      return 'Failed Download (Invalid URL)';
+    if (downloadErrorString === "3") {
+      return "Failed Download (Invalid URL)";
     }
     if (
-      ['400', '401', '403', '404', '500', '501', '502', '503', '504', '505', '506', '507', '509', '510'].includes(
+      ["400", "401", "403", "404", "500", "501", "502", "503", "504", "505", "506", "507", "509", "510"].includes(
         downloadErrorString,
       )
     ) {
@@ -39,27 +39,27 @@ export const getDocumentDownloadStatus = (document) => {
     }
     if (
       ![
-        '0',
-        '1',
-        '2',
-        '3',
-        '400',
-        '401',
-        '403',
-        '404',
-        '500',
-        '501',
-        '502',
-        '503',
-        '504',
-        '505',
-        '506',
-        '507',
-        '509',
-        '510',
+        "0",
+        "1",
+        "2",
+        "3",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500",
+        "501",
+        "502",
+        "503",
+        "504",
+        "505",
+        "506",
+        "507",
+        "509",
+        "510",
       ].includes(downloadErrorString)
     ) {
-      return 'Pending Download';
+      return "Pending Download";
     }
   }
 };
@@ -67,25 +67,33 @@ export const getDocumentDownloadStatus = (document) => {
 export const getDocumentValidationStatus = (document) => {
   const { report } = document;
   const { valid } = report || { valid: null };
-  const { error, warning } = report ? report.summary : { error: -1, warning: -1 };
+  const { error, warning, advisory } = report ? report.summary : { error: -1, warning: -1, advisory: -1 };
 
   if (document.report === null) {
-    return { value: 'normal', caption: 'N/A' };
+    return { value: "normal", caption: "N/A" };
+  }
+  if (
+    valid === true &&
+    error === 0 &&
+    warning === 0 &&
+    (advisory === 0 || (report && !Object.prototype.hasOwnProperty.call(report.summary, "advisory")))
+  ) {
+    return { value: "success", caption: "Success" };
   }
   if (valid === true && error === 0 && warning === 0) {
-    return { value: 'success', caption: 'Success' };
+    return { value: "advisory", caption: "Success (with Advisories)" };
   }
   if (valid === true && error === 0) {
-    return { value: 'warning', caption: 'Warning' };
+    return { value: "warning", caption: "Warning" };
   }
   if (valid === true) {
-    return { value: 'error', caption: 'Error' };
+    return { value: "error", caption: "Error" };
   }
   if (valid === false) {
-    return { value: 'critical', caption: 'Critical' };
+    return { value: "critical", caption: "Critical" };
   }
 
-  return { value: 'normal', caption: 'N/A' };
+  return { value: "normal", caption: "N/A" };
 };
 
 export const getDocumentDatastoreAvailability = (document) => {
@@ -97,48 +105,50 @@ export const getDocumentDatastoreAvailability = (document) => {
   if (solrize_end) {
     const formatedDate = formatDate(solrize_end);
 
-    return `${fileStatus === 'critical' && clean_end && !file_schema_valid ? 'Partial' : 'Yes'} - ${formatedDate}`;
+    return `${fileStatus === "critical" && clean_end && !file_schema_valid ? "Partial" : "Yes"} - ${formatedDate}`;
   }
 
   if (last_solrize_end) {
-    return 'Old version';
+    return "Old version";
   }
 
   if (
-    fileStatus === 'critical' &&
-    ((report?.fileType === 'iati-activities' && !clean_start) ||
-      clean_error === 'No valid activities' ||
-      report?.fileType === '')
+    fileStatus === "critical" &&
+    ((report?.fileType === "iati-activities" && !clean_start) ||
+      clean_error === "No valid activities" ||
+      report?.fileType === "")
   ) {
-    return 'No';
+    return "No";
   }
 
   if (
-    (report?.fileType === 'iati-activities' && fileStatus !== 'critical') ||
-    (report?.fileType === 'iati-activities' &&
-      fileStatus === 'critical' &&
+    (report?.fileType === "iati-activities" && fileStatus !== "critical") ||
+    (report?.fileType === "iati-activities" &&
+      fileStatus === "critical" &&
       !clean_start &&
-      report?.iatiVersion !== '' &&
-      report?.iatiVersion !== '1*' &&
-      checkDocumentHasErrorVersions(['0.6.1', '0.2.1', '0.1.1'], report?.errors)) ||
-    (fileStatus === 'critical' && clean_end)
+      report?.iatiVersion !== "" &&
+      report?.iatiVersion !== "1*" &&
+      checkDocumentHasErrorVersions(["0.6.1", "0.2.1", "0.1.1"], report?.errors)) ||
+    (fileStatus === "critical" && clean_end)
   ) {
-    return 'Pending';
+    return "Pending";
   }
 
-  if (document.report?.fileType === 'iati-organisations') {
-    return 'N/A';
+  if (document.report?.fileType === "iati-organisations") {
+    return "N/A";
   }
 
-  return '';
+  return "";
 };
 
 const getDocumentSeverity = (document) => {
   const { validation, valid, report } = document;
-  const { error, warning } = report ? report.summary : { error: -1, warning: -1 };
+  const { error, warning, advisory } = report ? report.summary : { error: -1, warning: -1, advisory: -1 };
 
   if (!validation) {
     return 2;
+  } else if (valid === true && error === 0 && warning === 0 && advisory === 0) {
+    return 6;
   } else if (valid === true && error === 0 && warning === 0) {
     return 5;
   } else if (valid === true && error === 0) {
@@ -151,25 +161,25 @@ const getDocumentSeverity = (document) => {
   return 2;
 };
 
-const getDownloadErrorString = (document) => (document.download_error ? document.download_error.toString() : '');
+const getDownloadErrorString = (document) => (document.download_error ? document.download_error.toString() : "");
 
 const checkDocumentHasErrorVersions = (versions, errors) =>
   !!(errors && errors.find((error) => versions.includes(error.identifier))); // TODO: check with Nick if identifier == id
 
 const getCategoryLabel = (category) => {
   const categories = {
-    schema: 'Schema',
-    information: 'Basic activity information',
-    financial: 'Financial',
-    identifiers: 'Identification',
-    organisation: 'Basic organisation information',
-    participating: 'Participating organisations',
-    geo: 'Geopolitical information',
-    classifications: 'Classifications',
-    documents: 'Related documents',
-    performance: 'Performance',
-    iati: 'IATI file',
-    relations: 'Relations',
+    schema: "Schema",
+    information: "Basic activity information",
+    financial: "Financial",
+    identifiers: "Identification",
+    organisation: "Basic organisation information",
+    participating: "Participating organisations",
+    geo: "Geopolitical information",
+    classifications: "Classifications",
+    documents: "Related documents",
+    performance: "Performance",
+    iati: "IATI file",
+    relations: "Relations",
   };
   return categories[category];
 };
@@ -206,52 +216,64 @@ export const getDocumentReportCategories = (report) => {
 export const getSeverities = () => {
   return [
     {
-      id: 'critical',
-      slug: 'critical',
-      name: 'Critical',
-      description: 'Files with critical errors will not be processed by the datastore',
+      id: "critical",
+      slug: "critical",
+      name: "Critical",
+      description: "XML schema validation fails. This means that data will not update in the IATI Datastore",
       count: null,
       order: 1,
       show: true,
       types: [],
     },
     {
-      id: 'error',
-      slug: 'error',
-      name: 'Errors',
-      description: 'Errors make it hard or impossible to use the data.',
+      id: "error",
+      slug: "error",
+      name: "Errors",
+      description:
+        'XML schema validation passes, but not all IATI ruleset rules stating that a condition "must" be met.',
       count: null,
       order: 2,
       show: true,
       types: [],
     },
     {
-      id: 'warning',
-      slug: 'warning',
-      name: 'Warnings',
-      description: 'Warnings indicate where the data can be more valuable.',
+      id: "warning",
+      slug: "warning",
+      name: "Warnings",
+      description:
+        'XML Schema validation passes, but not all IATI ruleset rules stating that a condition "should" be met.',
       count: null,
       order: 3,
       show: true,
       types: [],
     },
     {
-      id: 'improvement',
-      slug: 'info',
-      name: 'Improvements',
-      description: 'Improvements can make the data more useful.',
+      id: "improvement",
+      slug: "info",
+      name: "Improvements",
+      description: "Improvements can make the data more useful.",
       count: null,
       order: 4,
       show: true,
       types: [],
     },
     {
-      id: 'notification',
-      slug: 'success',
-      name: 'Notifications',
-      description: 'Notifications are for your information.',
+      id: "advisory",
+      slug: "advisory",
+      name: "Advisories",
+      description: "No errors or warnings, but there are advisories relating to potential issues with the data.",
       count: null,
       order: 5,
+      show: true,
+      types: [],
+    },
+    {
+      id: "notification",
+      slug: "success",
+      name: "Notifications",
+      description: "Notifications are for your information.",
+      count: null,
+      order: 6,
       show: true,
       types: [],
     },
@@ -303,12 +325,12 @@ export const getDocumentReportSeverities = (report) => {
   return severities.filter((severity) => severity.types.length);
 };
 
-export const getReportErrorsByIdentifier = (report, identifier = 'file') => {
+export const getReportErrorsByIdentifier = (report, identifier = "file") => {
   if (!report) return [];
 
-  if (identifier === 'file') {
+  if (identifier === "file") {
     return report.errors.reduce((errors, actOrgFile) => {
-      if (actOrgFile.identifier === 'file') {
+      if (actOrgFile.identifier === "file") {
         return actOrgFile.errors;
       }
       return errors;
@@ -316,7 +338,7 @@ export const getReportErrorsByIdentifier = (report, identifier = 'file') => {
   }
 
   // none file errors are activity errors
-  return report.errors.filter((actOrgFile) => actOrgFile.identifier !== 'file');
+  return report.errors.filter((actOrgFile) => actOrgFile.identifier !== "file");
 };
 
 export const getFileErrorsMessageTypeCount = (errors, messageType) => {
@@ -333,18 +355,18 @@ export const getFileErrorsMessageTypeCount = (errors, messageType) => {
 
 export const getFeedbackCategoryLabel = (category) => {
   const categories = {
-    schema: 'Schema',
-    information: 'Basic activity information',
-    financial: 'Financial',
-    identifiers: 'Identification',
-    organisation: 'Basic organisation information',
-    participating: 'Participating organisations',
-    geo: 'Geopolitical information',
-    classifications: 'Classifications',
-    documents: 'Related documents',
-    performance: 'Performance',
-    iati: 'IATI file',
-    relations: 'Relations',
+    schema: "Schema",
+    information: "Basic activity information",
+    financial: "Financial",
+    identifiers: "Identification",
+    organisation: "Basic organisation information",
+    participating: "Participating organisations",
+    geo: "Geopolitical information",
+    classifications: "Classifications",
+    documents: "Related documents",
+    performance: "Performance",
+    iati: "IATI file",
+    relations: "Relations",
   };
   return categories[category];
 };
@@ -352,9 +374,9 @@ export const getFeedbackCategoryLabel = (category) => {
 const appendNAStatusDocuments = (documents, direction) => {
   const statusNADocs = [];
   const otherDocs = [];
-  if (direction !== 'Validation Status: N/A') {
+  if (direction !== "Validation Status: N/A") {
     documents.forEach((item) => {
-      getDocumentValidationStatus(item).caption === 'N/A' ? statusNADocs.push(item) : otherDocs.push(item);
+      getDocumentValidationStatus(item).caption === "N/A" ? statusNADocs.push(item) : otherDocs.push(item);
     });
     return otherDocs.concat(statusNADocs);
   }
@@ -363,32 +385,32 @@ const appendNAStatusDocuments = (documents, direction) => {
 
 export const sortDocuments = (documents, sortKey, sortDirection) => {
   if (documents.length) {
-    if (sortKey === 'fileName') {
+    if (sortKey === "fileName") {
       const fileNameSortedDocs = Array.from(documents);
       fileNameSortedDocs.sort(function (a, b) {
-        if (a['name'] > b['name']) {
-          return sortDirection === 'ascending' ? 1 : -1;
-        } else if (a['name'] < b['name']) {
-          return sortDirection === 'ascending' ? -1 : 1;
+        if (a["name"] > b["name"]) {
+          return sortDirection === "ascending" ? 1 : -1;
+        } else if (a["name"] < b["name"]) {
+          return sortDirection === "ascending" ? -1 : 1;
         }
         return 0;
       });
       return fileNameSortedDocs;
     }
-    if (sortKey === 'registryIdentity') {
+    if (sortKey === "registryIdentity") {
       const registryIdentitySortedDocs = Array.from(documents);
       registryIdentitySortedDocs.sort(function (a, b) {
-        if ((a['modified'] || a['first_seen']) > (b['modified'] || b['first_seen'])) {
-          return sortDirection === 'ascending' ? 1 : -1;
-        } else if ((a['modified'] || a['first_seen']) < (b['modified'] || b['first_seen'])) {
-          return sortDirection === 'ascending' ? -1 : 1;
+        if ((a["modified"] || a["first_seen"]) > (b["modified"] || b["first_seen"])) {
+          return sortDirection === "ascending" ? 1 : -1;
+        } else if ((a["modified"] || a["first_seen"]) < (b["modified"] || b["first_seen"])) {
+          return sortDirection === "ascending" ? -1 : 1;
         }
         return 0;
       });
       return registryIdentitySortedDocs;
     }
-    if (sortKey === 'validationDate') {
-      const nonValidatedDocs = documents.filter((doc) => !doc['validation_created']);
+    if (sortKey === "validationDate") {
+      const nonValidatedDocs = documents.filter((doc) => !doc["validation_created"]);
       const validationDateSortingList = documents.filter((doc) => {
         if (nonValidatedDocs.length) {
           if (!nonValidatedDocs.find((document) => doc.hash === document.hash)) {
@@ -399,16 +421,16 @@ export const sortDocuments = (documents, sortKey, sortDirection) => {
         }
       });
       validationDateSortingList.sort(function (a, b) {
-        if (a['validation_created'] > b['validation_created']) {
-          return sortDirection === 'ascending' ? 1 : -1;
-        } else if (a['validation_created'] < b['validation_created']) {
-          return sortDirection === 'ascending' ? -1 : 1;
+        if (a["validation_created"] > b["validation_created"]) {
+          return sortDirection === "ascending" ? 1 : -1;
+        } else if (a["validation_created"] < b["validation_created"]) {
+          return sortDirection === "ascending" ? -1 : 1;
         }
         return 0;
       });
       return validationDateSortingList.concat(nonValidatedDocs);
     }
-    if (sortKey === 'validationStatus') {
+    if (sortKey === "validationStatus") {
       const otherDocs = [];
       const statusOrderedDocs = [];
 
@@ -422,23 +444,23 @@ export const sortDocuments = (documents, sortKey, sortDirection) => {
 
       return statusOrderedDocs.concat(appendNAStatusDocuments(otherDocs, sortDirection));
     }
-    if (sortKey === 'dataStoreAvailability') {
+    if (sortKey === "dataStoreAvailability") {
       const availabilityDocs = Array.from(documents);
       const availabilitySortingDocs = [];
       const nonAvailabilityDocs = [];
       availabilityDocs.forEach((doc) => {
         const availabilityResult = getDocumentDatastoreAvailability(doc);
-        if (availabilityResult.includes('Yes')) {
+        if (availabilityResult.includes("Yes")) {
           availabilitySortingDocs.push(doc);
         } else {
           nonAvailabilityDocs.push(doc);
         }
       });
       availabilitySortingDocs.sort(function (a, b) {
-        if (a['solrize_end'] > b['solrize_end']) {
-          return sortDirection === 'ascending' ? 1 : -1;
-        } else if (a['solrize_end'] < b['solrize_end']) {
-          return sortDirection === 'ascending' ? -1 : 1;
+        if (a["solrize_end"] > b["solrize_end"]) {
+          return sortDirection === "ascending" ? 1 : -1;
+        } else if (a["solrize_end"] < b["solrize_end"]) {
+          return sortDirection === "ascending" ? -1 : 1;
         }
         return 0;
       });
@@ -449,21 +471,21 @@ export const sortDocuments = (documents, sortKey, sortDirection) => {
 };
 
 const partialSortOptions = [
-  { label: 'File Name: A - Z', direction: 'ascending', value: 'fileName' },
-  { label: 'File Name: Z - A', direction: 'descending', value: 'fileName' },
-  { label: 'Identified in Registry: Newest', direction: 'descending', value: 'registryIdentity' },
-  { label: 'Identified in Registry: Oldest', direction: 'ascending', value: 'registryIdentity' },
-  { label: 'Validated: Newest', direction: 'descending', value: 'validationDate' },
-  { label: 'Validated: Oldest', direction: 'ascending', value: 'validationDate' },
-  { label: 'Available in IATI Datastore: Newest', direction: 'descending', value: 'dataStoreAvailability' },
-  { label: 'Available in IATI Datastore: Oldest', direction: 'ascending', value: 'dataStoreAvailability' },
+  { label: "File Name: A - Z", direction: "ascending", value: "fileName" },
+  { label: "File Name: Z - A", direction: "descending", value: "fileName" },
+  { label: "Identified in Registry: Newest", direction: "descending", value: "registryIdentity" },
+  { label: "Identified in Registry: Oldest", direction: "ascending", value: "registryIdentity" },
+  { label: "Validated: Newest", direction: "descending", value: "validationDate" },
+  { label: "Validated: Oldest", direction: "ascending", value: "validationDate" },
+  { label: "Available in IATI Datastore: Newest", direction: "descending", value: "dataStoreAvailability" },
+  { label: "Available in IATI Datastore: Oldest", direction: "ascending", value: "dataStoreAvailability" },
 ];
 export const sortOptions = (documents) => partialSortOptions.concat(getValidationStatusOptions(documents));
 
 export const getSortDirection = (sortKey, options) =>
-  sortKey ? options.find((opt) => opt.label === sortKey)?.direction : '';
+  sortKey ? options.find((opt) => opt.label === sortKey)?.direction : "";
 
-export const getSortValue = (sortKey, options) => (sortKey ? options.find((opt) => opt.label === sortKey)?.value : '');
+export const getSortValue = (sortKey, options) => (sortKey ? options.find((opt) => opt.label === sortKey)?.value : "");
 
 export const getDocumentCount = (files, status) =>
   files.filter((file) => getDocumentValidationStatus(file).caption === status).length;
@@ -477,11 +499,11 @@ const getValidationStatusOptions = (documents) =>
   documentValidationStatus(documents).map((status) => ({
     label: `Validation Status: ${status}`,
     direction: status,
-    value: 'validationStatus',
+    value: "validationStatus",
   }));
 
 export const getStatusColor = (statusLabel) => {
-  if (statusLabel !== 'N/A') {
+  if (statusLabel !== "N/A") {
     return `text-${statusLabel.toLowerCase()}`;
   }
 };
@@ -489,16 +511,18 @@ export const getStatusColor = (statusLabel) => {
 export const getDefaultSortingCriteria = (docs) => {
   if (docs.length) {
     const availableValidationStatusList = documentValidationStatus(docs);
-    if (availableValidationStatusList.includes('Critical')) {
-      return 'Validation Status: Critical';
-    } else if (availableValidationStatusList.includes('Error')) {
-      return 'Validation Status: Error';
-    } else if (availableValidationStatusList.includes('Warning')) {
-      return 'Validation Status: Warning';
-    } else if (availableValidationStatusList.includes('Success')) {
-      return 'Validation Status: Success';
+    if (availableValidationStatusList.includes("Critical")) {
+      return "Validation Status: Critical";
+    } else if (availableValidationStatusList.includes("Error")) {
+      return "Validation Status: Error";
+    } else if (availableValidationStatusList.includes("Warning")) {
+      return "Validation Status: Warning";
+    } else if (availableValidationStatusList.includes("Success (with Advisories)")) {
+      return "Validation Status: Success (with Advisories)";
+    } else if (availableValidationStatusList.includes("Success")) {
+      return "Validation Status: Success";
     } else {
-      return 'Validation Status: N/A';
+      return "Validation Status: N/A";
     }
   }
 };
@@ -506,37 +530,37 @@ export const getDefaultSortingCriteria = (docs) => {
 export const constructCSV = (results) => {
   const tabularData = [
     [
-      'Registry file name',
-      'URL',
-      'Validation Status',
-      'File Valid',
-      'Activity Title',
-      'Activity Identifier',
-      'Category',
-      'Severity',
-      'ID',
-      'Message',
-      'Location where rule was broken',
+      "Registry file name",
+      "URL",
+      "Validation Status",
+      "File Valid",
+      "Activity Title",
+      "Activity Identifier",
+      "Category",
+      "Severity",
+      "ID",
+      "Message",
+      "Location where rule was broken",
     ],
   ];
   results.forEach((result) => {
     const registryName = result.registry_name;
     const documentUrl = result.document_url;
     const documentValid = result.valid;
-    let fileValid = '';
-    let validationStatus = 'Validated';
+    let fileValid = "";
+    let validationStatus = "Validated";
     if (documentValid === true) {
-      fileValid = 'True';
+      fileValid = "True";
     } else if (documentValid === false) {
-      fileValid = 'False';
+      fileValid = "False";
     } else {
-      fileValid = '';
-      validationStatus = 'Pending Validation';
+      fileValid = "";
+      validationStatus = "Pending Validation";
     }
     if (result.report && result.report.errors) {
       const activities = result.report.errors;
       if (activities.length === 0) {
-        const row = [registryName, documentUrl, validationStatus, fileValid, '', '', '', '', '', '', ''];
+        const row = [registryName, documentUrl, validationStatus, fileValid, "", "", "", "", "", "", ""];
         tabularData.push(row);
       }
       activities.forEach((activity) => {
@@ -551,11 +575,11 @@ export const constructCSV = (results) => {
             const errorSeverity = error.severity;
             const errorMessage = error.message;
             const errorContexts = error.context;
-            let contextText = '';
+            let contextText = "";
             errorContexts.forEach((context) => {
               if (context.text) {
                 contextText += context.text;
-                contextText += ' ';
+                contextText += " ";
               }
             });
             const row = [
@@ -576,7 +600,7 @@ export const constructCSV = (results) => {
         });
       });
     } else {
-      const row = [registryName, documentUrl, validationStatus, fileValid, '', '', '', '', '', '', ''];
+      const row = [registryName, documentUrl, validationStatus, fileValid, "", "", "", "", "", "", ""];
       tabularData.push(row);
     }
   });

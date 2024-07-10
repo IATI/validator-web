@@ -1,4 +1,4 @@
-import { SERVICES_URL, getDefaultServicesAPIOptions } from '.';
+import { SERVICES_URL, getDefaultServicesAPIOptions } from ".";
 
 export const getGuidanceLinksURL = (version) => `${SERVICES_URL}/pvt/guidance-links/${version}`;
 export const fetchGuidanceLinks = async (version) => {

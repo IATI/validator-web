@@ -1,5 +1,5 @@
 <script setup>
-  const props = defineProps({ icon: { type: String, default: '' } });
+  const props = defineProps({ icon: { type: String, default: "" } });
 </script>
 
 <template>

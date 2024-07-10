@@ -1,6 +1,7 @@
-import { last } from 'rxjs';
-import { v4 as uuidv4 } from 'uuid';
-import { getDefaultServicesAPIOptions, SERVICES_URL } from '.';
+import { last } from "rxjs";
+import { v4 as uuidv4 } from "uuid";
+import { getDefaultServicesAPIOptions, SERVICES_URL } from ".";
+import { getDocumentValidationStatus } from "../document";
 
 export const uploadFile = async (file, tmpWorkspaceId) => {
   if (!file) {
@@ -9,11 +10,15 @@ export const uploadFile = async (file, tmpWorkspaceId) => {
 
   const url = `${SERVICES_URL}/pvt/adhoc/upload?sessionId=${tmpWorkspaceId}&filename=${file.name}&guid=${uuidv4()}`;
   const uploadData = new FormData();
-  uploadData.append('file', file, file.name);
+  uploadData.append("file", file, file.name);
 
-  const req = await window.fetch(url, { ...getDefaultServicesAPIOptions(), method: 'post', body: uploadData });
+  const response = await window.fetch(url, { ...getDefaultServicesAPIOptions(), method: "post", body: uploadData });
 
-  return last(req);
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text);
+  }
+  return last(response);
 };
 
 export const fetchFileFromURL = async (fileUrl, workspaceID) => {
@@ -23,11 +28,11 @@ export const fetchFileFromURL = async (fileUrl, workspaceID) => {
 
   const req = await window.fetch(url, {
     ...getDefaultServicesAPIOptions(),
-    method: 'post',
+    method: "post",
     body: JSON.stringify({ url: fileUrl }),
   });
 
-  if (req.status === 200) return 'success';
+  if (req.status === 200) return "success";
   if (req.status === 422) {
     const error = await req.json();
 
@@ -49,38 +54,19 @@ export const fetchTempWorkspace = async (workspaceID) => {
   return null;
 };
 
-const getValidationReportStatus = (dataset) => {
-  const { error, warning, critical } = dataset.report.summary;
-
-  if (!dataset.valid || critical) return 'critical';
-  if (dataset.valid && error) return 'error';
-  if (dataset.valid && warning) return 'warning';
-
-  return 'success';
-};
-
 export const getFileStatusClass = (dataset) => {
   if (dataset.report) {
-    const status = getValidationReportStatus(dataset);
-    return {
-      'text-error': status === 'error',
-      'text-critical': status === 'critical',
-      'text-warning': status === 'warning',
-      'text-success': status === 'success',
-    };
+    const status = getDocumentValidationStatus(dataset);
+    return `text-${status.value}`;
   }
 
-  return { 'text-default': true };
+  return { "text-default": true };
 };
 
 export const getFileValidationStatus = (dataset) => {
   if (dataset.report) {
-    const status = getValidationReportStatus(dataset);
-
-    return status
-      .split('')
-      .map((c, index) => (index === 0 ? c.toUpperCase() : c))
-      .join('');
+    const status = getDocumentValidationStatus(dataset);
+    return status.caption;
   }
 
   return null;

@@ -1,27 +1,27 @@
 <script setup>
-  import { forkJoin } from 'rxjs';
-  import { ref, watch } from 'vue';
-  import CardiB from '../components/CardiB.vue';
-  import LinkButton from '../components/LinkButton.vue';
-  import { fetchFileFromURL } from '../utils';
-  import AppAlert from './AppAlert.vue';
-  import LoadingSpinner from './LoadingSpinner.vue';
-  import StyledButton from './StyledButton.vue';
+  import { forkJoin } from "rxjs";
+  import { ref, watch } from "vue";
+  import CardiB from "../components/CardiB.vue";
+  import LinkButton from "../components/LinkButton.vue";
+  import { fetchFileFromURL } from "../utils";
+  import AppAlert from "./AppAlert.vue";
+  import LoadingSpinner from "./LoadingSpinner.vue";
+  import StyledButton from "./StyledButton.vue";
 
-  const props = defineProps({ workspaceID: { type: String, default: '' } });
+  const props = defineProps({ workspaceID: { type: String, default: "" } });
   const activeStep = ref(1);
-  const requestStatus = ref(''); // 'pending' | 'draft' | 'success' | 'error' = 'draft'
-  const requestErrorMessage = ref('');
-  const urls = ref('');
+  const requestStatus = ref(""); // 'pending' | 'draft' | 'success' | 'error' = 'draft'
+  const requestErrorMessage = ref("");
+  const urls = ref("");
   const incorrectURLs = ref([]);
 
   watch(urls, () => {
     if (urls.value) {
       activeStep.value = 2;
-      requestStatus.value = 'draft';
+      requestStatus.value = "draft";
     } else if (activeStep.value !== 1) {
       activeStep.value = 1;
-      requestStatus.value = '';
+      requestStatus.value = "";
     }
 
     if (incorrectURLs.value.length) {
@@ -31,13 +31,13 @@
 
   const validateURL = (value) =>
     /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(
-      value
+      value,
     );
 
   const parallelUpload = (fileUrls) => forkJoin(fileUrls.map((url) => fetchFileFromURL(url, props.workspaceID)));
 
   const fetchFiles = () => {
-    const serializedURLs = urls.value.split('|').map((url) => url.trim());
+    const serializedURLs = urls.value.split("|").map((url) => url.trim());
     const correctURLs = [];
     serializedURLs.forEach((u) => {
       if (validateURL(u)) {
@@ -48,23 +48,23 @@
     });
     if (correctURLs.length && !incorrectURLs.value.length) {
       const handleError = (error) => {
-        requestStatus.value = 'error';
+        requestStatus.value = "error";
         if (error && error.message) {
           requestErrorMessage.value = error.message;
         } else {
-          console.log('Error: ', error);
+          console.log("Error: ", error);
         }
       };
 
-      requestStatus.value = 'pending';
+      requestStatus.value = "pending";
       parallelUpload(correctURLs).subscribe({
         next: (response) => {
           const responseText = Array.isArray(response) && response.length ? response[0] : response;
-          if (responseText === 'success') {
+          if (responseText === "success") {
             activeStep.value = 3;
-            requestStatus.value = 'success';
+            requestStatus.value = "success";
           } else {
-            requestStatus.value = 'error';
+            requestStatus.value = "error";
             requestErrorMessage.value = responseText;
           }
         },
@@ -87,7 +87,7 @@
         class="mt-2 border border-solid border-iati-green p-2 pl-4"
       />
       <p v-if="incorrectURLs.length" class="pt-2 text-sm text-warning">
-        You have one or more incorrect web addresses: "{{ incorrectURLs.join(', ') }}"
+        You have one or more incorrect web addresses: "{{ incorrectURLs.join(", ") }}"
       </p>
     </CardiB>
     <CardiB

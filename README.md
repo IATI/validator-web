@@ -56,6 +56,10 @@ To serve a production build locally for testing:
 
 `npm run cy:run`
 
+You can run an individual test specification with the following:
+
+`npx --no-install cypress run --config-file cypress.config.local.js --spec path/to/spec.js`
+
 ## Linting and Formatting
 
 ESLint and Prettier are employed for linting and formatting. Implemented following this guide:

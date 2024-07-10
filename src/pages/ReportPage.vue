@@ -1,18 +1,18 @@
 <script setup>
-  import useSWRV from 'swrv';
-  import { provide, ref, watch, watchEffect } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
-  import AppAlert from '../components/AppAlert.vue';
-  import BasicCard from '../components/BasicCard.vue';
-  import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
-  import FileStatusInfo from '../components/FileStatusInfo.vue';
-  import IconChevron from '../components/IconChevron.vue';
-  import ContentContainer from '../components/layout/ContentContainer.vue';
-  import DocumentInfo from '../components/report/DocumentInfo.vue';
-  import DocumentReport from '../components/report/DocumentReport.vue';
-  import ReportDocumentStatus from '../components/report/ReportDocumentStatus.vue';
-  import StyledLink from '../components/StyledLink.vue';
-  import { setPageTitle } from '../state';
+  import useSWRV from "swrv";
+  import { provide, ref, watch, watchEffect } from "vue";
+  import { useRoute, useRouter } from "vue-router";
+  import AppAlert from "../components/AppAlert.vue";
+  import BasicCard from "../components/BasicCard.vue";
+  import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
+  import FileStatusInfo from "../components/FileStatusInfo.vue";
+  import IconChevron from "../components/IconChevron.vue";
+  import ContentContainer from "../components/layout/ContentContainer.vue";
+  import DocumentInfo from "../components/report/DocumentInfo.vue";
+  import DocumentReport from "../components/report/DocumentReport.vue";
+  import ReportDocumentStatus from "../components/report/ReportDocumentStatus.vue";
+  import StyledLink from "../components/StyledLink.vue";
+  import { setPageTitle } from "../state";
   import {
     fetchDocument,
     fetchOrganisationByID,
@@ -22,11 +22,10 @@
     getOrganisationURL,
     validationReportURL,
     fetchTempWorkspace,
-    getFileStatusClass,
-    getFileValidationStatus,
-  } from '../utils';
+    getDocumentValidationStatus,
+  } from "../utils";
 
-  setPageTitle('File validation report');
+  setPageTitle("File validation report");
   const router = useRouter();
   const route = useRoute();
   const loading = ref(true);
@@ -38,40 +37,40 @@
 
   const { data: documentResponse, error: documentError } = useSWRV(
     !isTestFile ? getDocumentURL(route.params?.name) : null,
-    () => fetchDocument(route.params.name)
+    () => fetchDocument(route.params.name),
   );
-  const headerClassNames = 'hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block';
+  const headerClassNames = "hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
 
   const { data: organisation, error: organisationError } = useSWRV(
-    () => document.value && getOrganisationURL(document.value.publisher, 'id'),
-    () => fetchOrganisationByID(document.value.publisher)
+    () => document.value && getOrganisationURL(document.value.publisher, "id"),
+    () => fetchOrganisationByID(document.value.publisher),
   );
   const { data: datasetResponse, error: datasetError } = useSWRV(
     () =>
       !isTestFile
-        ? document.value && validationReportURL(route.params.name, 'name')
-        : validationReportURL(route.params.name, 'id'),
-    () => fetchValidationReport(route.params.name, isTestFile)
+        ? document.value && validationReportURL(route.params.name, "name")
+        : validationReportURL(route.params.name, "id"),
+    () => fetchValidationReport(route.params.name, isTestFile),
   );
-  provide('organisation', organisation);
+  provide("organisation", organisation);
 
   watch(documentResponse, () => {
     if (documentResponse.value) {
       const { data, status, lookupKey } = documentResponse.value;
       if (status === 200) {
         document.value = data;
-        if (lookupKey === 'id') {
+        if (lookupKey === "id") {
           router.push(`/report/${data.name}`);
         }
         loading.value = !dataset.value;
       }
       if (status === 404 && !isTestFile) {
         const message = `There is no report with name "${route.params.name}"`;
-        const sourceError = errors.value.find((error) => error.source === 'document');
+        const sourceError = errors.value.find((error) => error.source === "document");
         if (sourceError) {
           sourceError.value = message;
         } else {
-          errors.value = errors.value.concat({ source: 'document', message });
+          errors.value = errors.value.concat({ source: "document", message });
         }
         loading.value = false;
       }
@@ -83,28 +82,29 @@
       fetchTempWorkspace(dataset.value.session_id)
         .then((data) => {
           for (const element of data) {
-            element.class = getFileStatusClass(element);
-            element.status = getFileValidationStatus(element);
+            const datasetStatus = getDocumentValidationStatus(element);
+            element.class = `text-${datasetStatus.value}`;
+            element.status = datasetStatus.caption;
           }
           workSpaceData.value = data;
         })
-        .catch((error) => window.console.error('Failed to load iati data', error));
+        .catch((error) => window.console.error("Failed to load iati data", error));
     }
   });
 
   watchEffect(() => {
     if (documentError.value) {
       loading.value = !dataset.value;
-      console.log('Document Error: ', documentError.value);
+      console.log("Document Error: ", documentError.value);
     } else if (organisationError.value) {
       loading.value = !(dataset.value && document.value);
-      console.log('Organisation Error: ', organisationError.value);
+      console.log("Organisation Error: ", organisationError.value);
     } else if (document.value && organisation.value) {
       loading.value = !dataset.value;
     }
     if (datasetError.value) {
       loading.value = !document.value;
-      console.log('Data Set Error: ', datasetError.value);
+      console.log("Data Set Error: ", datasetError.value);
     }
   });
   watchEffect(() => {
@@ -115,12 +115,12 @@
         loading.value = false;
       }
       if (status === 404) {
-        const message = 'This file does not have a validation report';
-        const reportError = errors.value.find((error) => error.source === 'report');
+        const message = "This file does not have a validation report";
+        const reportError = errors.value.find((error) => error.source === "report");
         if (reportError) {
           reportError.value = message;
         } else {
-          errors.value = errors.value.concat({ source: 'report', message });
+          errors.value = errors.value.concat({ source: "report", message });
         }
         loading.value = false;
       }
@@ -174,7 +174,7 @@
     </div>
 
     <CaptionedLoadingSpinner v-if="loading && !errors.length" class="pb-3">
-      {{ !organisation ? 'Loading Document Info ...' : 'Loading Report ...' }}
+      {{ !organisation ? "Loading Document Info ..." : "Loading Report ..." }}
     </CaptionedLoadingSpinner>
 
     <AppAlert v-if="errors.length" variant="error" class="mt-1">

@@ -1,0 +1,245 @@
+[
+  {
+    "registry_hash": "55eb708035ffd2e27c174a9be956b3ef446484a9",
+    "registry_id": "f837ce27-8d39-42c0-b73b-4507019e7377",
+    "registry_name": "fifty_eight-et",
+    "document_url": "https://aidstream.s3.us-west-2.amazonaws.com/xml/fifty_eight-et.xml",
+    "valid": true,
+    "report": {
+      "valid": true,
+      "errors": [
+        {
+          "title": "Partnership Against Child Exploitation",
+          "errors": [
+            {
+              "errors": [
+                {
+                  "id": "1000.0.1",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/participating-org/@activity-id = GB-CHC-285908-211689EAPEC at line: 16, column: 5",
+                      "lineNumber": 16,
+                      "columnNumber": 5
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in participating-org/@activity-id should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 112, column: 7",
+                      "lineNumber": 112,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 119, column: 7",
+                      "lineNumber": 119,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 127, column: 7",
+                      "lineNumber": 127,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 135, column: 7",
+                      "lineNumber": 135,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 142, column: 7",
+                      "lineNumber": 142,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 149, column: 7",
+                      "lineNumber": 149,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 156, column: 7",
+                      "lineNumber": 156,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 163, column: 7",
+                      "lineNumber": 163,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 171, column: 7",
+                      "lineNumber": 171,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.4",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/provider-org/@provider-activity-id = GB-CHC-285908-211689EAPEC at line: 179, column: 7",
+                      "lineNumber": 179,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/provider-org/@provider-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.5",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/receiver-org/@receiver-activity-id = GB-CHC-285908-211689EAPEC at line: 120, column: 7",
+                      "lineNumber": 120,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/receiver-org/@receiver-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.5",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/receiver-org/@receiver-activity-id = GB-CHC-285908-211689EAPEC at line: 128, column: 7",
+                      "lineNumber": 128,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/receiver-org/@receiver-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.5",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/receiver-org/@receiver-activity-id = GB-CHC-285908-211689EAPEC at line: 164, column: 7",
+                      "lineNumber": 164,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/receiver-org/@receiver-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.5",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/receiver-org/@receiver-activity-id = GB-CHC-285908-211689EAPEC at line: 172, column: 7",
+                      "lineNumber": 172,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/receiver-org/@receiver-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                },
+                {
+                  "id": "1000.0.5",
+                  "context": [
+                    {
+                      "text": "For /iati-activities/iati-activity/transaction/receiver-org/@receiver-activity-id = GB-CHC-285908-211689EAPEC at line: 180, column: 7",
+                      "lineNumber": 180,
+                      "columnNumber": 7
+                    }
+                  ],
+                  "details": {},
+                  "message": "The linked activity ID in the transaction/receiver-org/@receiver-activity-id attribute should exist in the file being validated or in the IATI Datastore.",
+                  "severity": "advisory"
+                }
+              ],
+              "category": "identifiers"
+            }
+          ],
+          "identifier": "GB-COH-07291220-WV211689PACE"
+        }
+      ],
+      "summary": {
+        "error": 0,
+        "warning": 0,
+        "advisory": 16,
+        "critical": 0
+      },
+      "fileType": "iati-activities",
+      "apiVersion": "2.3.3",
+      "iatiVersion": "2.03",
+      "rulesetCommitSha": "2cd1a14f6c584000ae6d76e708c73ddcc12b6c40",
+      "codelistCommitSha": "cf571799b909eb894c071dc364cd2a4dfbcd5d7c",
+      "orgIdPrefixFileName": "org-id-99494ac717.json"
+    }
+  }
+]

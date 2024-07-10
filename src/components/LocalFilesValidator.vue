@@ -1,39 +1,40 @@
 <script setup>
-  import { forkJoin } from 'rxjs';
-  import { ref } from 'vue';
-  import CardiB from '../components/CardiB.vue';
-  import LinkButton from '../components/LinkButton.vue';
-  import { uploadFile } from '../utils';
-  import AppAlert from './AppAlert.vue';
-  import FileInputButton from './FileInputButton.vue';
-  import LoadingSpinner from './LoadingSpinner.vue';
-  import StyledButton from './StyledButton.vue';
+  import { forkJoin } from "rxjs";
+  import { ref } from "vue";
+  import CardiB from "../components/CardiB.vue";
+  import LinkButton from "../components/LinkButton.vue";
+  import { uploadFile } from "../utils";
+  import AppAlert from "./AppAlert.vue";
+  import FileInputButton from "./FileInputButton.vue";
+  import LoadingSpinner from "./LoadingSpinner.vue";
+  import StyledButton from "./StyledButton.vue";
 
-  const props = defineProps({ workspaceID: { type: String, default: '' } });
+  const props = defineProps({ workspaceID: { type: String, default: "" } });
   const activeStep = ref(1);
   const files = ref([]);
-  const requestStatus = ref(''); // 'pending' | 'draft' | 'success' | 'error' = 'draft'
+  const requestStatus = ref(""); // 'pending' | 'draft' | 'success' | 'error' = 'draft'
 
   const onAddFiles = (_files) => {
     files.value = _files;
-    requestStatus.value = 'draft';
+    requestStatus.value = "draft";
     activeStep.value = files.value.length ? 2 : 1;
   };
 
   const parallelUpload = (files) => forkJoin(files.map((file) => uploadFile(file, props.workspaceID)));
 
   const uploadFiles = () => {
-    const handleError = () => {
-      requestStatus.value = 'error';
+    const handleError = (error) => {
+      console.error(error);
+      requestStatus.value = "error";
     };
 
     if (files.value.length) {
-      requestStatus.value = 'pending';
+      requestStatus.value = "pending";
 
       parallelUpload(Array.from(files.value)).subscribe({
         next: () => {
           activeStep.value = 3;
-          requestStatus.value = 'success';
+          requestStatus.value = "success";
         },
         error: handleError,
       });

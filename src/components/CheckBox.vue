@@ -1,21 +1,21 @@
 <script setup>
-  import { ref, watch } from 'vue';
+  import { ref, watch } from "vue";
 
   const props = defineProps({
-    id: { type: String, default: '' },
-    label: { type: String, default: '' },
-    name: { type: String, default: '' },
+    id: { type: String, default: "" },
+    label: { type: String, default: "" },
+    name: { type: String, default: "" },
     checked: { type: Boolean, default: false },
-    labelClass: { type: String, default: '' },
-    size: { type: String, default: '' },
-    type: { type: String, default: 'checkbox' },
+    labelClass: { type: String, default: "" },
+    size: { type: String, default: "" },
+    type: { type: String, default: "checkbox" },
   });
-  const emit = defineEmits(['checked', 'unchecked']);
+  const emit = defineEmits(["checked", "unchecked"]);
   const checked = ref(props.checked);
 
   watch(checked, () => {
     if (checked.value !== props.checked) {
-      emit(checked.value ? 'checked' : 'unchecked');
+      emit(checked.value ? "checked" : "unchecked");
     }
   });
   watch(
@@ -24,7 +24,7 @@
       if (checked.value !== props.checked) {
         checked.value = props.checked;
       }
-    }
+    },
   );
 </script>
 <template>
@@ -34,7 +34,7 @@
   </div>
 </template>
 <style>
-  [class*='icheck-'] {
+  [class*="icheck-"] {
     min-height: 22px;
     margin-top: 6px !important;
     margin-bottom: 6px !important;
@@ -50,7 +50,7 @@
     margin-top: 6px;
   }
 
-  [class*='icheck-'] > label {
+  [class*="icheck-"] > label {
     padding-left: 29px !important;
     min-height: 22px;
     line-height: 22px;
@@ -62,19 +62,19 @@
     cursor: pointer;
   }
 
-  [class*='icheck-'] > input:first-child {
+  [class*="icheck-"] > input:first-child {
     position: absolute !important;
     opacity: 0;
     margin: 0;
   }
 
-  [class*='icheck-'] > input:first-child:disabled {
+  [class*="icheck-"] > input:first-child:disabled {
     cursor: default;
   }
 
-  [class*='icheck-'] > input:first-child + label::before,
-  [class*='icheck-'] > input:first-child + input[type='hidden'] + label::before {
-    content: '';
+  [class*="icheck-"] > input:first-child + label::before,
+  [class*="icheck-"] > input:first-child + input[type="hidden"] + label::before {
+    content: "";
     display: inline-block;
     position: absolute;
     width: 22px;
@@ -85,15 +85,15 @@
     background: #fff;
   }
 
-  [class*='icheck-'].small > input:first-child + label::before,
-  [class*='icheck-'].small > input:first-child + input[type='hidden'] + label::before {
+  [class*="icheck-"].small > input:first-child + label::before,
+  [class*="icheck-"].small > input:first-child + input[type="hidden"] + label::before {
     width: 16px;
     height: 16px;
   }
 
-  [class*='icheck-'] > input:first-child:checked + label::after,
-  [class*='icheck-'] > input:first-child:checked + input[type='hidden'] + label::after {
-    content: '';
+  [class*="icheck-"] > input:first-child:checked + label::after,
+  [class*="icheck-"] > input:first-child:checked + input[type="hidden"] + label::after {
+    content: "";
     display: inline-block;
     position: absolute;
     top: 0;
@@ -107,28 +107,28 @@
     -ms-transform: translate(7.75px, 4.5px) rotate(45deg);
   }
 
-  [class*='icheck-'].small > input:first-child:checked + label::after,
-  [class*='icheck-'].small > input:first-child:checked + input[type='hidden'] + label::after {
+  [class*="icheck-"].small > input:first-child:checked + label::after,
+  [class*="icheck-"].small > input:first-child:checked + input[type="hidden"] + label::after {
     width: 6px;
     height: 10px;
     left: -3px;
     top: -3px;
   }
 
-  [class*='icheck-'] > input[type='radio']:first-child + label::before,
-  [class*='icheck-'] > input[type='radio']:first-child + input[type='hidden'] + label::before {
+  [class*="icheck-"] > input[type="radio"]:first-child + label::before,
+  [class*="icheck-"] > input[type="radio"]:first-child + input[type="hidden"] + label::before {
     border-radius: 50%;
   }
 
-  [class*='icheck-'] > input:first-child:not(:checked):not(:disabled):hover + label::before,
-  [class*='icheck-'] > input:first-child:not(:checked):not(:disabled):hover + input[type='hidden'] + label::before {
+  [class*="icheck-"] > input:first-child:not(:checked):not(:disabled):hover + label::before,
+  [class*="icheck-"] > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
     border-width: 2px;
   }
 
-  [class*='icheck-'] > input:first-child:disabled + label,
-  [class*='icheck-'] > input:first-child:disabled + input[type='hidden'] + label,
-  [class*='icheck-'] > input:first-child:disabled + label::before,
-  [class*='icheck-'] > input:first-child:disabled + input[type='hidden'] + label::before {
+  [class*="icheck-"] > input:first-child:disabled + label,
+  [class*="icheck-"] > input:first-child:disabled + input[type="hidden"] + label,
+  [class*="icheck-"] > input:first-child:disabled + label::before,
+  [class*="icheck-"] > input:first-child:disabled + input[type="hidden"] + label::before {
     pointer-events: none;
     cursor: default;
     filter: alpha(opacity=65);
@@ -138,29 +138,29 @@
   }
 
   .icheck-default > input:first-child:not(:checked):not(:disabled):hover + label::before,
-  .icheck-default > input:first-child:not(:checked):not(:disabled):hover + input[type='hidden'] + label::before {
+  .icheck-default > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
     border-color: #adadad;
   }
 
   .icheck-default > input:first-child:checked + label::before,
-  .icheck-default > input:first-child:checked + input[type='hidden'] + label::before {
+  .icheck-default > input:first-child:checked + input[type="hidden"] + label::before {
     background-color: #e6e6e6;
     border-color: #adadad;
   }
 
   .icheck-default > input:first-child:checked + label::after,
-  .icheck-default > input:first-child:checked + input[type='hidden'] + label::after {
+  .icheck-default > input:first-child:checked + input[type="hidden"] + label::after {
     border-bottom-color: #333;
     border-right-color: #333;
   }
 
   .icheck-green > input:first-child:not(:checked):not(:disabled):hover + label::before,
-  .icheck-green > input:first-child:not(:checked):not(:disabled):hover + input[type='hidden'] + label::before {
+  .icheck-green > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
     border-color: #155336;
   }
 
   .icheck-green > input:first-child:checked + label::before,
-  .icheck-green > input:first-child:checked + input[type='hidden'] + label::before {
+  .icheck-green > input:first-child:checked + input[type="hidden"] + label::before {
     background-color: #155336;
     border-color: #155336;
   }

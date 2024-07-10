@@ -1,23 +1,23 @@
 <script setup>
-  import { computed, reactive, ref, watch } from 'vue';
-  import { ENVIRONMENT, getDefaultServicesAPIOptions, buildServicesEndpoint } from '../../utils';
-  import { version } from '../../../package.json';
+  import { computed, reactive, ref, watch } from "vue";
+  import { ENVIRONMENT, getDefaultServicesAPIOptions, buildServicesEndpoint } from "../../utils";
+  import { version } from "../../../package.json";
 
   const releases = reactive({ services: {}, web: { version }, api: {} });
   const year = computed(() => new Date().getFullYear());
   const showVersions = ref(false);
 
-  const gitHubURL = 'https://github.com/IATI';
+  const gitHubURL = "https://github.com/IATI";
   const getReleaseURL = (path, version) => {
-    return ENVIRONMENT === 'production' ? `${gitHubURL}${path}/releases/tag/v${version}` : `${gitHubURL}${path}`;
+    return ENVIRONMENT === "production" ? `${gitHubURL}${path}/releases/tag/v${version}` : `${gitHubURL}${path}`;
   };
 
   watch(releases, () => {
     showVersions.value = releases.services.version && releases.web.version && releases.api.version;
     if (showVersions.value) {
-      releases.services.url = getReleaseURL('/validator-services', releases.services.version);
-      releases.web.url = getReleaseURL('/validator-web', releases.web.version);
-      releases.api.url = getReleaseURL('/js-validator-api', releases.api.version);
+      releases.services.url = getReleaseURL("/validator-services", releases.services.version);
+      releases.web.url = getReleaseURL("/validator-web", releases.web.version);
+      releases.api.url = getReleaseURL("/js-validator-api", releases.api.version);
     }
   });
 
@@ -29,8 +29,8 @@
   };
 
   const fetchReleases = async () => {
-    releases.services.version = await fetchRelease(buildServicesEndpoint('/pub/version'));
-    releases.api.version = await fetchRelease(buildServicesEndpoint('/pub/validator-version'));
+    releases.services.version = await fetchRelease(buildServicesEndpoint("/pub/version"));
+    releases.api.version = await fetchRelease(buildServicesEndpoint("/pub/validator-version"));
   };
 
   fetchReleases();

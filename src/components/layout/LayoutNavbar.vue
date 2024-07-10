@@ -1,16 +1,16 @@
 <script setup>
-  import { ref, watch } from 'vue';
-  import { useRoute } from 'vue-router';
-  import Logo from '../AppLogo.vue';
-  import NavbarItem from './NavbarItem.vue';
-  import NavbarTogo from './NavbarTogo.vue';
+  import { ref, watch } from "vue";
+  import { useRoute } from "vue-router";
+  import Logo from "../AppLogo.vue";
+  import NavbarItem from "./NavbarItem.vue";
+  import NavbarTogo from "./NavbarTogo.vue";
 
   const route = useRoute();
   const path = ref(route.path);
   const showMobileNav = ref(false);
   watch(
     () => route.path,
-    async (_path) => (path.value = _path)
+    async (_path) => (path.value = _path),
   );
 </script>
 
@@ -28,7 +28,6 @@
     >
       <div class="mt-6 flex cursor-pointer flex-col lg:flex-row lg:justify-end">
         <NavbarItem link="/" classes="ml-0" :active="path === '/'">Home</NavbarItem>
-        <NavbarItem link="/about" classes="ml-5" :active="path === '/about'">About Validator</NavbarItem>
         <NavbarItem link="/validate" classes="ml-5" :active="path === '/validate'">Check data</NavbarItem>
         <NavbarItem link="/organisations" classes="ml-5" :active="path === '/organisations'">
           Public data viewer
@@ -40,6 +39,9 @@
         >
           Public API
         </NavbarItem>
+        <NavbarItem link="https://docs.validator.iatistandard.org" classes="ml-5" :external="true"
+          >About Validator</NavbarItem
+        >
       </div>
     </div>
   </nav>
