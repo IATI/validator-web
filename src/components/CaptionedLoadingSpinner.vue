@@ -1,5 +1,5 @@
 <script setup>
-  import CenteredLoadingSpinner from './CenteredLoadingSpinner.vue';
+  import CenteredLoadingSpinner from "./CenteredLoadingSpinner.vue";
 </script>
 
 <template>

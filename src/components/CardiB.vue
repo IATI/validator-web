@@ -1,5 +1,5 @@
 <script setup>
-  const props = defineProps({ heading: { type: String, default: '' } });
+  const props = defineProps({ heading: { type: String, default: "" } });
 </script>
 
 <template>

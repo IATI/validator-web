@@ -13,7 +13,7 @@ export const getDefaultServicesAPIOptions = () => {
   return { headers: { [API_KEY_NAME]: API_KEY_VALUE } };
 };
 
-export * from './data-quality';
-export * from './documents';
-export * from './validate';
-export * from './organisations';
+export * from "./data-quality";
+export * from "./documents";
+export * from "./validate";
+export * from "./organisations";

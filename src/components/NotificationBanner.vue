@@ -1,5 +1,5 @@
 <script setup>
-  import StyledLink from '../components/StyledLink.vue';
+  import StyledLink from "../components/StyledLink.vue";
 </script>
 
 <template>
@@ -18,10 +18,10 @@
 
 <script>
   export default {
-    name: 'NotificationBanner',
+    name: "NotificationBanner",
     computed: {
       showBanner() {
-        return import.meta.env.VUE_ENV_SHOW_MAINTENANCE_BANNER === 'true';
+        return import.meta.env.VUE_ENV_SHOW_MAINTENANCE_BANNER === "true";
       },
     },
   };

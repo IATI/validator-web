@@ -1,9 +1,9 @@
 <script setup>
-  import { computed, ref } from 'vue';
-  import StyledLink from '../StyledLink.vue';
-  import CaptionedLoadingSpinner from '../CaptionedLoadingSpinner.vue';
-  import OrganisationSearchFilter from './OrganisationSearchFilter.vue';
-  import OrganisationAlphabetNavigator from './OrganisationAlphabetNavigator.vue';
+  import { computed, ref } from "vue";
+  import StyledLink from "../StyledLink.vue";
+  import CaptionedLoadingSpinner from "../CaptionedLoadingSpinner.vue";
+  import OrganisationSearchFilter from "./OrganisationSearchFilter.vue";
+  import OrganisationAlphabetNavigator from "./OrganisationAlphabetNavigator.vue";
 
   const props = defineProps({
     isFetching: { type: Boolean, default: false },
@@ -13,11 +13,11 @@
   const organisations = ref(props.organisations || []);
   const anchors = computed(() =>
     organisations.value.reduce((items, curr) => {
-      const firstChar = curr.title.split('')[0].toLowerCase();
+      const firstChar = curr.title.split("")[0].toLowerCase();
       return isNaN(Number(firstChar)) && !items.map((item) => item.anchor).includes(firstChar)
         ? items.concat({ anchor: firstChar, name: curr.name })
         : items;
-    }, [])
+    }, []),
   );
 
   const getAnchor = (id) => anchors.value.find((item) => item.name === id);

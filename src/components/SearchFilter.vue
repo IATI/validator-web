@@ -1,15 +1,15 @@
 <script setup>
-  import { ref, watch } from 'vue';
-  import { debounce } from '../utils';
+  import { ref, watch } from "vue";
+  import { debounce } from "../utils";
 
   const props = defineProps({
-    buttonCaption: { type: String, default: 'Search' },
-    placeholder: { type: String, default: '' },
-    searchText: { type: String, default: '' },
+    buttonCaption: { type: String, default: "Search" },
+    placeholder: { type: String, default: "" },
+    searchText: { type: String, default: "" },
     showButton: { type: Boolean, default: true },
-    inputClasses: { type: String, default: '' },
+    inputClasses: { type: String, default: "" },
   });
-  const emit = defineEmits(['onSearch']);
+  const emit = defineEmits(["onSearch"]);
   const search = ref(props.searchText);
 
   watch(
@@ -18,13 +18,13 @@
       if (search.value !== props.searchText) {
         search.value = props.searchText;
       }
-    }
+    },
   );
 
   watch(search, () => {
-    debounce(() => emit('onSearch', search.value.trim()), 250)();
+    debounce(() => emit("onSearch", search.value.trim()), 250)();
   });
-  const onSearch = () => emit('onSearch', search.value.trim());
+  const onSearch = () => emit("onSearch", search.value.trim());
 </script>
 
 <template>

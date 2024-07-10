@@ -1,34 +1,34 @@
 [
-    {
-        "id": "f837ce27-8d39-42c0-b73b-4507019e7377",
-        "hash": "55eb708035ffd2e27c174a9be956b3ef446484a9",
-        "url": "https://aidstream.s3.us-west-2.amazonaws.com/xml/fifty_eight-et.xml",
-        "name": "fifty_eight-et",
-        "first_seen": "2024-03-28T11:44:21.669Z",
-        "downloaded": "2024-03-28T11:44:52.152Z",
-        "download_error": null,
-        "file_schema_valid": true,
-        "validation": 411,
-        "regenerate_validation_report": false,
-        "publisher": "8c858655-cb84-4527-befa-b77d4de07e22",
-        "modified": null,
-        "solrize_end": null,
-        "last_solrize_end": null,
-        "clean_start": null,
-        "clean_end": null,
-        "clean_error": null,
-        "validation_created": "2024-03-28T11:51:19.694Z",
-        "valid": true,
-        "report": {
-            "valid": true,
-            "summary": {
-                "error": 0,
-                "warning": 0,
-                "advisory": 16,
-                "critical": 0
-            },
-            "fileType": "iati-activities",
-            "iatiVersion": "2.03"
-        }
+  {
+    "id": "f837ce27-8d39-42c0-b73b-4507019e7377",
+    "hash": "55eb708035ffd2e27c174a9be956b3ef446484a9",
+    "url": "https://aidstream.s3.us-west-2.amazonaws.com/xml/fifty_eight-et.xml",
+    "name": "fifty_eight-et",
+    "first_seen": "2024-03-28T11:44:21.669Z",
+    "downloaded": "2024-03-28T11:44:52.152Z",
+    "download_error": null,
+    "file_schema_valid": true,
+    "validation": 411,
+    "regenerate_validation_report": false,
+    "publisher": "8c858655-cb84-4527-befa-b77d4de07e22",
+    "modified": null,
+    "solrize_end": null,
+    "last_solrize_end": null,
+    "clean_start": null,
+    "clean_end": null,
+    "clean_error": null,
+    "validation_created": "2024-03-28T11:51:19.694Z",
+    "valid": true,
+    "report": {
+      "valid": true,
+      "summary": {
+        "error": 0,
+        "warning": 0,
+        "advisory": 16,
+        "critical": 0
+      },
+      "fileType": "iati-activities",
+      "iatiVersion": "2.03"
     }
+  }
 ]
