@@ -38,7 +38,7 @@ describe("The Ad Hoc Validate Check Data page", () => {
       "https://raw.githubusercontent.com/IATI/IATI-Extra-Documentation/version-2.03/en/activity-standard/activity-standard-example-annotated.xml",
     );
     cy.contains("button", "Fetch").should("not.be.disabled").click();
-    cy.contains("File(s) have been uploaded successfully");
+    cy.contains("File(s) have been uploaded successfully", { timeout: 20000 });
     cy.contains("a", "View Progress and Reports").parent().should("not.have.class", "pointer-events-none");
     cy.contains("a", "View Progress and Reports").click();
     cy.url().should("includes", "/validate/");
