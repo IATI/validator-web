@@ -1,11 +1,11 @@
 <script setup>
-  const props = defineProps({ direction: { type: String, default: 'left' } }); // values: left, right, up, down
+  const props = defineProps({ direction: { type: String, default: "left" } }); // values: left, right, up, down
 
   const classes = {
-    'rotate-90': props.direction === 'left',
-    '-rotate-90': props.direction === 'right',
-    'rotate-180': props.direction === 'up',
-    'rotate-0': props.direction === 'down',
+    "rotate-90": props.direction === "left",
+    "-rotate-90": props.direction === "right",
+    "rotate-180": props.direction === "up",
+    "rotate-0": props.direction === "down",
   };
 </script>
 <template>

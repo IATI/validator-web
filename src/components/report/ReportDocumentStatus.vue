@@ -1,13 +1,13 @@
 <script setup>
-  import { computed } from 'vue';
+  import { computed } from "vue";
   import {
     getDocumentDatastoreAvailability,
     getDocumentDownloadStatus,
     getDocumentFileName,
     getDocumentValidationStatus,
     hasProperLink,
-  } from '../../utils/document';
-  import { formatDate } from '../../utils';
+  } from "../../utils/document";
+  import { formatDate } from "../../utils";
 
   const props = defineProps({
     document: { type: Object, default: () => {} },
@@ -15,17 +15,17 @@
     workspacedata: { type: Array, default: () => [] },
   });
 
-  const fileName = computed(() => getDocumentFileName(props.document) || 'No filename available');
+  const fileName = computed(() => getDocumentFileName(props.document) || "No filename available");
   const validationDate = computed(() => formatDate(props.document.validation_created));
   const validationStatus = computed(() =>
-    getDocumentValidationStatus({ ...props.document, report: props.dataset.report })
+    getDocumentValidationStatus({ ...props.document, report: props.dataset.report }),
   );
   const validationStatusClass = computed(() => {
     const status = validationStatus.value.value;
-    return status !== 'normal' ? `text-${status} font-bold` : 'font-bold';
+    return status !== "normal" ? `text-${status} font-bold` : "font-bold";
   });
   const datastoreAvailability = computed(() =>
-    getDocumentDatastoreAvailability({ ...props.document, report: props.dataset.report })
+    getDocumentDatastoreAvailability({ ...props.document, report: props.dataset.report }),
   );
   const testFileData = computed(() => {
     if (props.workspacedata) {
@@ -35,7 +35,7 @@
   });
 
   const textClasses =
-    'overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny';
+    "overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny";
 </script>
 
 <template>

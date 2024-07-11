@@ -1,6 +1,6 @@
 <script setup>
-  import IconChevron from './IconChevron.vue';
-  const emits = defineEmits(['next', 'previous']);
+  import IconChevron from "./IconChevron.vue";
+  const emits = defineEmits(["next", "previous"]);
 </script>
 
 <template>

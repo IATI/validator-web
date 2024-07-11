@@ -1,12 +1,12 @@
 <script setup>
-  import useSWRV from 'swrv';
-  import { ref, watchEffect } from 'vue';
-  import { setPageTitle } from '../state';
-  import ContentContainer from '../components/layout/ContentContainer.vue';
-  import { fetchOrganisations, getOrganisationsURL } from '../utils';
-  import OrganisationsList from '../components/organisation/OrganisationsList.vue';
+  import useSWRV from "swrv";
+  import { ref, watchEffect } from "vue";
+  import { setPageTitle } from "../state";
+  import ContentContainer from "../components/layout/ContentContainer.vue";
+  import { fetchOrganisations, getOrganisationsURL } from "../utils";
+  import OrganisationsList from "../components/organisation/OrganisationsList.vue";
 
-  setPageTitle('Public data viewer');
+  setPageTitle("Public data viewer");
   const isFetching = ref(true);
 
   const { data: organisations, error } = useSWRV(getOrganisationsURL(), () => fetchOrganisations());

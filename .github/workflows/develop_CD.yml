@@ -3,12 +3,12 @@ name: Deploy_To_Azure_Blobs_Dev
 on:
   push:
     paths-ignore: # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
-      - '**/README.md' # don't run on README.md file updates anywhere in repo
-      - '**/dependabot.yml'
+      - "**/README.md" # don't run on README.md file updates anywhere in repo
+      - "**/dependabot.yml"
     branches:
       - develop
   schedule:
-    - cron: '27 04 * * *' # 0424am daily
+    - cron: "27 04 * * *" # 0424am daily
 
 env:
   STORAGE_ACCOUNT_NAME: savalidatorwebvuedev # storage account name
@@ -26,10 +26,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
 
       - name: Install dependencies
         run: |
@@ -45,7 +45,7 @@ jobs:
           npm run build:production
 
       - name: Upload to blob storage
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
           azcliversion: 2.34.0
           inlineScript: |
@@ -65,7 +65,7 @@ jobs:
       - name: Cypress CI Run
         uses: cypress-io/github-action@v6
         with:
-          wait-on: 'https://dev-validator.iatistandard.org'
+          wait-on: "https://dev-validator.iatistandard.org"
           config-file: cypress.config.dev.js
 
   # Mark status checks success/fail on dependabot commits for scheduled deploys

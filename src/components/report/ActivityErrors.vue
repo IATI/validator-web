@@ -1,20 +1,20 @@
 <script setup>
-  import { computed, inject, ref, watch } from 'vue';
-  import { getReportErrorsByIdentifier } from '../../utils';
-  import AppAccordion from '../AppAccordion.vue';
-  import AppPagination from '../AppPagination.vue';
-  import FeedbackGroup from './FeedbackGroup.vue';
+  import { computed, inject, ref, watch } from "vue";
+  import { getReportErrorsByIdentifier } from "../../utils";
+  import AppAccordion from "../AppAccordion.vue";
+  import AppPagination from "../AppPagination.vue";
+  import FeedbackGroup from "./FeedbackGroup.vue";
 
   const props = defineProps({
-    title: { type: String, default: '' },
-    fileType: { type: String, default: 'activity' }, // options are activity and organisation
-    filterText: { type: String, default: '' },
+    title: { type: String, default: "" },
+    fileType: { type: String, default: "activity" }, // options are activity and organisation
+    filterText: { type: String, default: "" },
   });
-  const report = inject('report');
+  const report = inject("report");
   const data = computed(() =>
-    getReportErrorsByIdentifier(report.value, 'activity').filter(
-      (item) => item.errors.length && item.errors.some((i) => i.errors.length) // only include items with feedback to show
-    )
+    getReportErrorsByIdentifier(report.value, "activity").filter(
+      (item) => item.errors.length && item.errors.some((i) => i.errors.length), // only include items with feedback to show
+    ),
   );
   const page = ref(1);
   const PAGE_LIMIT = 10;
@@ -22,7 +22,7 @@
     const min = (page.value - 1) * PAGE_LIMIT;
     const max = min + PAGE_LIMIT;
     return data.value.filter(
-      (item, index) => index < max && index >= min && filterByNameOrId(props.filterText, item.title, item.identifier)
+      (item, index) => index < max && index >= min && filterByNameOrId(props.filterText, item.title, item.identifier),
     );
   });
 

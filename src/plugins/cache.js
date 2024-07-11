@@ -1,6 +1,6 @@
-import * as localForage from 'localforage';
-import addMinutes from 'date-fns/addMinutes';
-import isAfter from 'date-fns/isAfter';
+import * as localForage from "localforage";
+import addMinutes from "date-fns/addMinutes";
+import isAfter from "date-fns/isAfter";
 
 // expires is the number of minutes the cache should expire
 const setCache = (name, value, expires = 5) => {
@@ -32,11 +32,11 @@ export default {
   install: (app, options) => {
     localForage.config({
       driver: localForage.LOCALSTORAGE,
-      name: 'validator-cache',
-      storeName: 'validator-store',
+      name: "validator-cache",
+      storeName: "validator-store",
     });
 
-    app.provide('cache', {
+    app.provide("cache", {
       get: getCache,
       set: (name, value) => setCache(name, value, options.expires),
       clear: localForage.clear,

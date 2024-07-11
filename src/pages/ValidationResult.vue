@@ -1,20 +1,20 @@
 <script setup>
-  import copy from 'copy-to-clipboard';
-  import Cookies from 'js-cookie';
-  import { timer } from 'rxjs';
-  import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
-  import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
-  import FileStatusInfo from '../components/FileStatusInfo.vue';
-  import ContentContainer from '../components/layout/ContentContainer.vue';
-  import LoadingSpinner from '../components/LoadingSpinner.vue';
-  import StyledButton from '../components/StyledButton.vue';
-  import StyledLink from '../components/StyledLink.vue';
-  import AppAlert from '../components/AppAlert.vue';
-  import { setPageTitle } from '../state';
-  import { fetchTempWorkspace, formatDate, getDocumentValidationStatus } from '../utils';
+  import copy from "copy-to-clipboard";
+  import Cookies from "js-cookie";
+  import { timer } from "rxjs";
+  import { onBeforeUnmount, onMounted, ref, watch } from "vue";
+  import { useRoute, useRouter } from "vue-router";
+  import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
+  import FileStatusInfo from "../components/FileStatusInfo.vue";
+  import ContentContainer from "../components/layout/ContentContainer.vue";
+  import LoadingSpinner from "../components/LoadingSpinner.vue";
+  import StyledButton from "../components/StyledButton.vue";
+  import StyledLink from "../components/StyledLink.vue";
+  import AppAlert from "../components/AppAlert.vue";
+  import { setPageTitle } from "../state";
+  import { fetchTempWorkspace, formatDate, getDocumentValidationStatus } from "../utils";
 
-  setPageTitle('Validation results');
+  setPageTitle("Validation results");
   const route = useRoute();
   const router = useRouter();
   const workspaceID = route.params.tempWorkspaceID;
@@ -23,7 +23,7 @@
   const subscribeTimer = ref();
   const addressCopied = ref(false);
   const loading = ref(true);
-  const workSpaceDataError = ref('');
+  const workSpaceDataError = ref("");
 
   onMounted(() => {
     subscribeTimer.value = timer(100, 2500).subscribe(() => loadData());
@@ -52,7 +52,7 @@
     fetchTempWorkspace(workspaceID)
       .then((data) => {
         for (const element of data) {
-          const datasetStatus = getDocumentValidationStatus(element);          
+          const datasetStatus = getDocumentValidationStatus(element);
           element.class = `text-${datasetStatus.value}`;
           element.status = datasetStatus.caption;
         }
@@ -60,8 +60,8 @@
         workspaceData.value = data;
       })
       .catch((error) => {
-        window.console.error('Failed to load iati data', error);
-        workSpaceDataError.value = 'Failed to load iati data please try again later';
+        window.console.error("Failed to load iati data", error);
+        workSpaceDataError.value = "Failed to load iati data please try again later";
       });
   };
 
@@ -72,18 +72,18 @@
   };
 
   const onAddMoreFiles = () => {
-    router.push({ path: '/validate/', query: { tempWorkspaceID: workspaceID } });
+    router.push({ path: "/validate/", query: { tempWorkspaceID: workspaceID } });
   };
 
   const onClearWorkspace = () => {
     if (
-      !window.confirm('Are you sure you want to clear all files from your workspace and return to the upload page?')
+      !window.confirm("Are you sure you want to clear all files from your workspace and return to the upload page?")
     ) {
       return;
     }
 
-    Cookies.remove('adhocsession');
-    router.push('/validate');
+    Cookies.remove("adhocsession");
+    router.push("/validate");
   };
 
   const onClickRow = (dataset) => {
@@ -92,9 +92,9 @@
     }
   };
 
-  const headerClassNames = 'hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block';
+  const headerClassNames = "hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
   const textClasses =
-    'overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny';
+    "overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny";
 </script>
 
 <template>
@@ -104,7 +104,7 @@
         Your personal workspace is
         <StyledLink :to="route.path" class="mr-2">{{ `${baseURL}${route.fullPath}` }}</StyledLink>
         <StyledButton class="text-sm" :outline="true" @click="copyToClipboard(`${baseURL}${route.fullPath}`)">
-          {{ addressCopied ? 'Copied to clipboard' : 'Copy the address' }}
+          {{ addressCopied ? "Copied to clipboard" : "Copy the address" }}
         </StyledButton>
       </p>
     </div>

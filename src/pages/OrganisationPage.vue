@@ -1,19 +1,19 @@
 <script setup>
-  import useSWRV from 'swrv';
-  import { ref, watchEffect } from 'vue';
-  import { useRoute } from 'vue-router';
-  import placeholderImage from '../assets/images/placeholder-organization.png';
-  import AppAlert from '../components/AppAlert.vue';
-  import BasicAlert from '../components/BasicAlert.vue';
-  import BasicCard from '../components/BasicCard.vue';
-  import CaptionedLoadingSpinner from '../components/CaptionedLoadingSpinner.vue';
-  import CardHeader from '../components/CardHeader.vue';
-  import FileStatusInfo from '../components/FileStatusInfo.vue';
-  import ContentContainer from '../components/layout/ContentContainer.vue';
-  import DocumentList from '../components/organisation/DocumentList.vue';
-  import SelectInput from '../components/SelectInput.vue';
-  import StyledLink from '../components/StyledLink.vue';
-  import { setPageTitle } from '../state';
+  import useSWRV from "swrv";
+  import { ref, watchEffect } from "vue";
+  import { useRoute } from "vue-router";
+  import placeholderImage from "../assets/images/placeholder-organization.png";
+  import AppAlert from "../components/AppAlert.vue";
+  import BasicAlert from "../components/BasicAlert.vue";
+  import BasicCard from "../components/BasicCard.vue";
+  import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
+  import CardHeader from "../components/CardHeader.vue";
+  import FileStatusInfo from "../components/FileStatusInfo.vue";
+  import ContentContainer from "../components/layout/ContentContainer.vue";
+  import DocumentList from "../components/organisation/DocumentList.vue";
+  import SelectInput from "../components/SelectInput.vue";
+  import StyledLink from "../components/StyledLink.vue";
+  import { setPageTitle } from "../state";
   import {
     documentValidationStatus,
     fetchOrganisationByName,
@@ -26,28 +26,28 @@
     getOrganisationURL,
     getStatusColor,
     sortOptions,
-  } from '../utils';
-  import { constructCSV } from '../utils/document';
+  } from "../utils";
+  import { constructCSV } from "../utils/document";
 
-  const layout = setPageTitle('Loading...');
+  const layout = setPageTitle("Loading...");
   const route = useRoute();
   const loading = ref(true);
   const reportsLoading = ref(true);
-  const selected = ref('');
+  const selected = ref("");
   const organisation = ref(null);
   const errorMessage = ref(null);
   const downloadCSV = ref(null);
 
   const { data: organisationResponse, error: organisationError } = useSWRV(getOrganisationURL(route.params.name), () =>
-    fetchOrganisationByName(route.params.name)
+    fetchOrganisationByName(route.params.name),
   );
   const { data: documents, error: documentsError } = useSWRV(
     () => (organisation.value && organisation.value ? getOrganisationDocumentsURL(organisation.value.org_id) : null),
-    () => fetchOrganisationDocuments(organisation.value.org_id)
+    () => fetchOrganisationDocuments(organisation.value.org_id),
   );
   const { data: reports, error: reportsError } = useSWRV(
     () => (organisation.value && organisation.value ? getOrganisationReportsURL(organisation.value.org_id) : null),
-    () => fetchOrganisationReports(organisation.value.org_id)
+    () => fetchOrganisationReports(organisation.value.org_id),
   );
 
   watchEffect(() => {
@@ -58,7 +58,7 @@
       }
       if (status === 404) {
         errorMessage.value = `No organisation found with name "${route.params.name}"`;
-        layout.title = 'Organisation Not Found';
+        layout.title = "Organisation Not Found";
       }
     }
   });
@@ -95,10 +95,10 @@
       downloadCSV.value = () => {
         const text = encodeURIComponent(constructCSV(reports.value));
         const filename = `${organisation.value.name}.csv`;
-        const element = document.createElement('a');
-        element.setAttribute('href', `data:text/csv;charset=utf-8,${text}`);
-        element.setAttribute('download', filename);
-        element.style.display = 'none';
+        const element = document.createElement("a");
+        element.setAttribute("href", `data:text/csv;charset=utf-8,${text}`);
+        element.setAttribute("download", filename);
+        element.style.display = "none";
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
@@ -127,7 +127,7 @@
     </div>
 
     <CaptionedLoadingSpinner v-if="loading && !errorMessage" class="pb-3">
-      {{ !organisation ? 'Loading Info ...' : 'Loading Reports...' }}
+      {{ !organisation ? "Loading Info ..." : "Loading Reports..." }}
     </CaptionedLoadingSpinner>
 
     <div v-if="!loading && !errorMessage" class="-mx-3.5 flex flex-wrap">
@@ -142,7 +142,7 @@
         <div class="-mx-3.5 -mb-3.5">
           <div class="flex flex-col p-3 sm:flex-row sm:justify-between">
             <div v-if="documents && documents.length" class="py-2">
-              <span>{{ documents.length }} {{ documents.length === 1 ? 'file' : 'files' }}</span>
+              <span>{{ documents.length }} {{ documents.length === 1 ? "file" : "files" }}</span>
               <span v-for="status in documentValidationStatus(documents)" :key="status">
                 | <label :class="getStatusColor(status)">{{ status }}</label
                 >: {{ getDocumentCount(documents, status) }}

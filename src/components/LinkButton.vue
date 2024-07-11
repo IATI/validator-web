@@ -1,8 +1,8 @@
 <script setup>
-  import StyledLink from './StyledLink.vue';
+  import StyledLink from "./StyledLink.vue";
 
   const props = defineProps({
-    to: { type: String, default: '#' },
+    to: { type: String, default: "#" },
     external: { type: Boolean, default: false },
   });
 </script>

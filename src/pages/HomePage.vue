@@ -1,7 +1,7 @@
 <script setup>
-  import CardiB from '../components/CardiB.vue';
-  import ContentContainer from '../components/layout/ContentContainer.vue';
-  import LinkButton from '../components/LinkButton.vue';
+  import CardiB from "../components/CardiB.vue";
+  import ContentContainer from "../components/layout/ContentContainer.vue";
+  import LinkButton from "../components/LinkButton.vue";
 </script>
 
 <template>
@@ -54,7 +54,7 @@
     props: {
       msg: {
         type: String,
-        default: '',
+        default: "",
       },
     },
     setup(props) {

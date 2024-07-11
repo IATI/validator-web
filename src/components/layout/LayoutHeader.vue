@@ -1,8 +1,8 @@
 <script setup>
-  import { inject } from 'vue';
-  import LayoutNavbar from './LayoutNavbar.vue';
+  import { inject } from "vue";
+  import LayoutNavbar from "./LayoutNavbar.vue";
 
-  const layout = inject('layout');
+  const layout = inject("layout");
 </script>
 
 <template>

@@ -1,16 +1,16 @@
 <script setup>
-  import { ref, watch } from 'vue';
-  import { useRoute } from 'vue-router';
-  import Logo from '../AppLogo.vue';
-  import NavbarItem from './NavbarItem.vue';
-  import NavbarTogo from './NavbarTogo.vue';
+  import { ref, watch } from "vue";
+  import { useRoute } from "vue-router";
+  import Logo from "../AppLogo.vue";
+  import NavbarItem from "./NavbarItem.vue";
+  import NavbarTogo from "./NavbarTogo.vue";
 
   const route = useRoute();
   const path = ref(route.path);
   const showMobileNav = ref(false);
   watch(
     () => route.path,
-    async (_path) => (path.value = _path)
+    async (_path) => (path.value = _path),
   );
 </script>
 
@@ -39,7 +39,9 @@
         >
           Public API
         </NavbarItem>
-        <NavbarItem link="https://docs.validator.iatistandard.org" classes="ml-5" :external="true">About Validator</NavbarItem>
+        <NavbarItem link="https://docs.validator.iatistandard.org" classes="ml-5" :external="true"
+          >About Validator</NavbarItem
+        >
       </div>
     </div>
   </nav>
