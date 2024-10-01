@@ -10,25 +10,6 @@
     fileType: { type: String, default: "activity" }, // options are activity and organisation
     filterText: { type: String, default: "" },
   });
-  const report = inject("report");
-  const data = computed(() =>
-    getReportErrorsByIdentifier(report.value, "activity").filter(
-      (item) => item.errors.length && item.errors.some((i) => i.errors.length), // only include items with feedback to show
-    ),
-  );
-  const page = ref(1);
-  const PAGE_LIMIT = 10;
-  const pageData = computed(() => {
-    const min = (page.value - 1) * PAGE_LIMIT;
-    const max = min + PAGE_LIMIT;
-    return data.value.filter(
-      (item, index) => index < max && index >= min && filterByNameOrId(props.filterText, item.title, item.identifier),
-    );
-  });
-
-  watch(report, () => {
-    page.value = 1;
-  });
 
   const filterByNameOrId = (filterText, title, identifier) => {
     if (filterText && filterText.length && title.length && identifier.length) {
@@ -40,6 +21,33 @@
       return !filterText;
     }
   };
+
+  const report = inject("report");
+  const data = computed(() =>
+    getReportErrorsByIdentifier(report.value, "activity").filter(
+      (item) => item.errors.length && item.errors.some((i) => i.errors.length), // only include items with feedback to show
+    ),
+  );
+
+  const filteredData = computed(() =>
+    data.value.filter((item) => filterByNameOrId(props.filterText, item.title, item.identifier)),
+  );
+
+  const page = ref(1);
+  const PAGE_LIMIT = 10;
+  const pageData = computed(() => {
+    const min = (page.value - 1) * PAGE_LIMIT;
+    const max = min + PAGE_LIMIT;
+    return filteredData.value.filter((item, index) => index < max && index >= min);
+  });
+
+  watch(report, () => {
+    page.value = 1;
+  });
+
+  watch(filteredData, () => {
+    page.value = 1;
+  });
 
   const onNext = () => {
     const nextPage = page.value + 1;
@@ -62,8 +70,8 @@
     <template #content>
       <div class="border border-gray-200 p-4">
         <FeedbackGroup v-for="activity in pageData" :key="activity.identifier" :activity="activity" />
-        <AppPagination v-if="!filterText && data.length > 10" @next="onNext" @previous="onPrevious">
-          <span class="text-sm">Page {{ page }} of {{ Math.ceil(data.length / PAGE_LIMIT) }}</span>
+        <AppPagination v-if="filteredData.length > 10" @next="onNext" @previous="onPrevious">
+          <span class="text-sm">Page {{ page }} of {{ Math.ceil(filteredData.length / PAGE_LIMIT) }}</span>
         </AppPagination>
         <span v-if="!pageData.length && !filterText">There is no feedback to display</span>
         <span v-if="!pageData.length && filterText">No matching activities found</span>
