@@ -1,0 +1,4562 @@
+{
+  "registry_hash": "831891bbfbd82959934d9fa62f5daf44800178d0",
+  "registry_id": "9f012153-4355-4718-a39f-568815c3cf3a",
+  "registry_name": "test-validation-report-02",
+  "document_url": "",
+  "valid": true,
+  "report": {
+    "valid": true,
+    "errors": [
+      {
+        "title": "Test Validation Report 02",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"AFR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"ANP\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"LAC\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"WEA\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Climate Change\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 488"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 5597"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 5758"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 5900"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 6059"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 6219"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 6377"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 6535"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 6694"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 6863"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7033"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7179"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7325"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7489"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7661"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7828"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 7987"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 8154"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 8331"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 8504"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 8675"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 8848"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 9025"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 9187"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 9360"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 9535"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 9716"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 9890"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 10062"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 10239"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 10406"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 10578"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 10754"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 10950"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 11105"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 11259"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 11551"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 11692"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 11836"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 12634"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 12775"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 12911"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 13390"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 13538"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 13694"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 13853"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 14000"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 14142"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 14285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text'Ivoire' at line: 2, column: 14427"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 14577"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 14719"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 14864"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15019"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15163"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15307"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15450"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15601"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15755"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 15900"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16046"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16209"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16378"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16525"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16703"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16844"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 16989"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 17136"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 17282"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 17429"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 17573"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 17715"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 17860"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18005"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18149"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18306"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18452"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18597"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18761"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 18904"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19053"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19196"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19380"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19521"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19676"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19842"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 19990"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 2, column: 20580"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-12-31T00:00:00.000Z' at line: 2, column: 20159 is more than a year later than period-start/@iso-date = '2013-01-01T00:00:00.000Z' at line: 2, column: 20112"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01626"
+      },
+      {
+        "title": "Seed Capital Assistance Facility",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"AFR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"ANP\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Climate Change\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 426"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 593"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 753"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 933"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 1079"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 1287"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 1442"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 1596"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 1916"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 2057"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 2198"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 2848"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 2989"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 3124"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 3513"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 3654"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 3796"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 4275"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 4420"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 4561"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 4705"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 4848"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 5043"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 5195"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 5361"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 5503"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 3, column: 6093"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2021-12-31T00:00:00.000Z' at line: 3, column: 5672 is more than a year later than period-start/@iso-date = '2014-01-01T00:00:00.000Z' at line: 3, column: 5625"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01657"
+      },
+      {
+        "title": "Strengthening Institutional Capacity of Countries in Environmental Law",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"AFR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"ANP\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"EUR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"LAC\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"WEA\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Ecosystem Mngment\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Environmental Gov\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "2.1.1",
+                "context": [
+                  {
+                    "text": "For /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Ecosystem Mngment        ' at line: 4, column: 10570 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Environmental Gov        ' at line: 4, column: 10688"
+                  }
+                ],
+                "message": "When multiple sectors, within a vocabulary (e.g. 1 - OECD DAC) are declared, each must have a percentage.",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 552"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 2314"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 2456"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 2614"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 2773"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 2932"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 3085"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 3265"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 3438"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 3613"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 3787"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 3954"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 4129"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 4307"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 4474"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 4639"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 4817"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 5014"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 5169"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 5323"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 5615"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 5756"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 5896"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 7082"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 7223"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 7359"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 7749"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 7890"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 8035"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 8519"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 8671"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 8826"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9005"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9161"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9315"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9470"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9665"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9817"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 9983"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 10135"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 10287"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 10464"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 10615"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 10733"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 4, column: 11323"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-12-31T00:00:00.000Z' at line: 4, column: 10905 is more than a year later than period-start/@iso-date = '2014-01-15T00:00:00.000Z' at line: 4, column: 10858"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01680"
+      },
+      {
+        "title": "Operationalizing Green Economy Transition in Africa",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"AFR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Climate Change\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Resource Efficiency\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "2.1.1",
+                "context": [
+                  {
+                    "text": "For /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Climate Change        ' at line: 5, column: 8025 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Resource Efficiency        ' at line: 5, column: 8137"
+                  }
+                ],
+                "message": "When multiple sectors, within a vocabulary (e.g. 1 - OECD DAC) are declared, each must have a percentage.",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 445"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 2998"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 3159"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 3340"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 3517"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 3690"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 3867"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 4041"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 4218"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 4390"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 4557"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 4761"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 4916"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 5070"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 5362"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 5503"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 5637"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 6413"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 6554"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 6691"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 7170"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 7314"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 7455"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 7596"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 7742"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 7925"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 8067"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 8184"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 5, column: 8773"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-03-30T00:00:00.000Z' at line: 5, column: 8358 is more than a year later than period-start/@iso-date = '2014-04-01T00:00:00.000Z' at line: 5, column: 8311"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01721"
+      },
+      {
+        "title": "                Institutional arrangements for the governance of shared natural resources and transboundary environmental issues:  Transboundary Institutional Mechanisms (TIM)            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"AFR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"ANP\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"EUR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"LAC\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"NAM\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"WEA\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Disasters Conflicts\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Ecosystem Mngment\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Environmental Gov\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Harmful Substances\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Resource Efficiency\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "2.1.1",
+                "context": [
+                  {
+                    "text": "For /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Disasters Conflicts        ' at line: 6, column: 16779 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Ecosystem Mngment        ' at line: 6, column: 16901 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Environmental Gov        ' at line: 6, column: 17019 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Harmful Substances        ' at line: 6, column: 17137 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Resource Efficiency        ' at line: 6, column: 17257"
+                  }
+                ],
+                "message": "When multiple sectors, within a vocabulary (e.g. 1 - OECD DAC) are declared, each must have a percentage.",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 553"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 2479"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 2621"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 2801"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 2973"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 3150"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 3327"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 3511"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 3666"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 3820"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 4112"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 4253"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 4391"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 5903"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 6044"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 6179"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 6695"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 6849"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7003"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7160"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7329"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7493"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7646"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7799"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 7953"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 8106"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 8261"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 8412"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 8565"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 8719"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 8884"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9038"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9192"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9352"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9505"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9659"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9811"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 9965"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 10119"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 10270"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 10443"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 10597"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 10750"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 10907"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 11086"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 11246"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 11402"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 11558"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 11715"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 11868"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12021"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12187"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12344"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12532"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12687"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12839"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 12994"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 13147"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 13302"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 13459"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 13612"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 13764"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 13919"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 14072"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 14227"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 14381"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 14534"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 14699"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 14852"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 15007"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 15162"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 15329"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 15482"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 15656"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 15867"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16019"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16185"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16337"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16514"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16673"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16826"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 16946"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 17064"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 17183"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 17304"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 6, column: 17896"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2017-12-31T00:00:00.000Z' at line: 6, column: 17478 is more than a year later than period-start/@iso-date = '2014-06-01T00:00:00.000Z' at line: 6, column: 17431"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01724"
+      },
+      {
+        "title": "Services and Functions for the 10YFP Implementation",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"AFR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"ANP\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"EUR\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"LAC\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"WEA\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Resource Efficiency\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 458"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 1991"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 2133"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 2293"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 2453"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 2612"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 2770"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 2929"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 3088"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 3267"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 3422"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 3569"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 3724"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 3901"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 4076"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 4250"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 4427"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 4602"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 4754"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 4924"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 5077"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 5253"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 5408"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 5583"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 5755"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 5931"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 6103"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 6250"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 6427"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 6596"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 6774"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 6945"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 7115"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 7278"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 7451"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 7622"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 7773"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 7929"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 8082"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 8258"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 8429"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 8614"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 8769"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 8923"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 9243"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 9384"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 9518"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 9906"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 10047"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 10191"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 11437"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 11578"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 11715"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 12233"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 12385"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 12537"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 12692"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 12847"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 12998"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 13153"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 13305"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 13484"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 13638"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 13789"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 13947"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 14102"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 14256"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 14415"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 14608"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 14760"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 14926"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 15078"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 15230"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 15407"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 15560"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 7, column: 16154"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-12-31T00:00:00.000Z' at line: 7, column: 15734 is more than a year later than period-start/@iso-date = '2014-07-01T00:00:00.000Z' at line: 7, column: 15687"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01730"
+      },
+      {
+        "title": "                Global and Regional Integrated Environmental Assessments             ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Evrment Under Review\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 451"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 2298"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 2445"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 2634"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 2789"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 2943"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 3263"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 3404"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 3542"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 5878"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 6019"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 6153"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 6638"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 6786"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 8, column: 7380"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2019-12-31T00:00:00.000Z' at line: 8, column: 6961 is more than a year later than period-start/@iso-date = '2014-06-01T00:00:00.000Z' at line: 8, column: 6914"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01751"
+      },
+      {
+        "title": "                Promoting the Progressive Development of International Environmental Law            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              },
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"LAC\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Environmental Gov\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 466"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 2605"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 2752"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 2941"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 3096"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 3250"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 3542"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 3683"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 3824"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 5443"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 5584"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 5720"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 6110"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 6251"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 6396"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 6849"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 6990"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 7160"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 9, column: 7750"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-12-31T00:00:00.000Z' at line: 9, column: 7332 is more than a year later than period-start/@iso-date = '2015-02-01T00:00:00.000Z' at line: 9, column: 7285"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01855"
+      },
+      {
+        "title": "                Institutional Measures and Technical Assistance to Address Air Pollution in Asia Pacific            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"ANP\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Environmental Gov\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 482"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 2283"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 2446"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 2610"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 2777"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 2952"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 3124"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 3325"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 3480"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 3634"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 3954"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 4095"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 4231"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 4848"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 4989"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 5124"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 5610"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 5769"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 10, column: 6359"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2019-07-31T00:00:00.000Z' at line: 10, column: 5941 is more than a year later than period-start/@iso-date = '2015-01-01T00:00:00.000Z' at line: 10, column: 5894"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01857"
+      },
+      {
+        "title": "                Global Waste Management Outlook            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Harmful Substances\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 425"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 2820"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 2962"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 3141"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 3285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 3440"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 3614"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 3781"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 3942"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 4094"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 4269"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 4472"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 4627"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 4781"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 5129"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 5270"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 5412"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 6276"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 6417"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 6554"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 7070"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 7216"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 11, column: 7808"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-12-31T00:00:00.000Z' at line: 11, column: 7389 is more than a year later than period-start/@iso-date = '2015-03-02T00:00:00.000Z' at line: 11, column: 7342"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01875"
+      },
+      {
+        "title": "                Delivering integrated waste solutions at  the national and local level            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Disasters Conflicts\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Harmful Substances\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "2.1.1",
+                "context": [
+                  {
+                    "text": "For /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Disasters Conflicts        ' at line: 12, column: 7668 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Harmful Substances        ' at line: 12, column: 7790"
+                  }
+                ],
+                "message": "When multiple sectors, within a vocabulary (e.g. 1 - OECD DAC) are declared, each must have a percentage.",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 464"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 3391"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 3533"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 3693"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 3851"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 4010"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 4196"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 4368"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 4542"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 4709"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 4887"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 5062"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 5235"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 5413"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 5587"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 5759"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 5963"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 6118"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 6272"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 6592"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 6733"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 6871"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 7568"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 7715"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 7836"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 12, column: 8427"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2019-03-31T00:00:00.000Z' at line: 12, column: 8009 is more than a year later than period-start/@iso-date = '2015-04-01T00:00:00.000Z' at line: 12, column: 7962"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-A-PROJECT-01884"
+      },
+      {
+        "title": "                513.1 Provision of Information on Endocrine Disrupting Chemicals (EDCs)            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Harmful Substances\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 465"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 632"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 774"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 955"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 1129"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 1306"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 1475"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 1652"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 1855"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 2010"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 2164"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 2484"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 2625"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 2767"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 3339"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 3480"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 3618"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 4135"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 4281"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 13, column: 4872"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-01-31T00:00:00.000Z' at line: 13, column: 4454 is more than a year later than period-start/@iso-date = '2015-08-01T00:00:00.000Z' at line: 13, column: 4407"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-B-PROJECT-01919"
+      },
+      {
+        "title": "                Secretariat Support to the Global Partnership on Waste Management            ",
+        "errors": [
+          {
+            "errors": [
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Funding\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              },
+              {
+                "id": "9.41.1",
+                "context": [
+                  {
+                    "text": "\"Implementing\" is not a valid value for attribute @role, in element <participating-org>"
+                  }
+                ],
+                "message": "The organisation role is invalid.",
+                "codelist": "OrganisationRole",
+                "severity": "error"
+              }
+            ],
+            "category": "participating"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.51.1",
+                "context": [
+                  {
+                    "text": "\"GLO\" is not a valid value for attribute @code, in element <recipient-region> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The recipient region code is invalid.",
+                "codelist": "Region",
+                "severity": "error"
+              }
+            ],
+            "category": "geo"
+          },
+          {
+            "errors": [
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Climate Change\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "9.76.1",
+                "context": [
+                  {
+                    "text": "\"Harmful Substances\" is not a valid value for attribute @code, in element <sector> and linked @vocabulary = 1"
+                  }
+                ],
+                "message": "The OECD DAC sector is invalid.",
+                "codelist": "Sector",
+                "severity": "error"
+              },
+              {
+                "id": "2.1.1",
+                "context": [
+                  {
+                    "text": "For /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Climate Change        ' at line: 14, column: 6327 and /iati-activities/iati-activity/sector[@vocabulary='' or @vocabulary='1' or not(@vocabulary)] = '            Harmful Substances        ' at line: 14, column: 6439"
+                  }
+                ],
+                "message": "When multiple sectors, within a vocabulary (e.g. 1 - OECD DAC) are declared, each must have a percentage.",
+                "severity": "error"
+              }
+            ],
+            "category": "classifications"
+          },
+          {
+            "errors": [
+              {
+                "id": "4.1.1",
+                "context": [
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 197"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 285"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 459"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 2992"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 3134"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 3313"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 3480"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 3641"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 3845"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 4000"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 4154"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 4446"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 4587"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 4725"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 5405"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 5546"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 5683"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 6227"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 6369"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 6485"
+                  },
+                  {
+                    "text": "For <narrative> 'test text' at line: 14, column: 7076"
+                  }
+                ],
+                "message": "The activity should specify a default language OR the language must be specified for each narrative element.",
+                "severity": "error"
+              }
+            ],
+            "category": "information"
+          },
+          {
+            "errors": [
+              {
+                "id": "7.5.3",
+                "context": [
+                  {
+                    "text": "period-end/@iso-date = '2018-12-31T00:00:00.000Z' at line: 14, column: 6658 is more than a year later than period-start/@iso-date = '2015-09-01T00:00:00.000Z' at line: 14, column: 6611"
+                  }
+                ],
+                "message": "Budget Period must not be longer than one year.",
+                "severity": "error"
+              }
+            ],
+            "category": "financial"
+          }
+        ],
+        "identifier": "XM-TEST-VALIDATION-01-B-PROJECT-01926"
+      }
+    ],
+    "summary": {
+      "error": 241,
+      "warning": 0,
+      "advisory": 0,
+      "critical": 0
+    },
+    "fileType": "iati-activities",
+    "apiVersion": "2.4.0",
+    "iatiVersion": "2.02",
+    "rulesetCommitSha": "43153d80a5e6074aaf7da2ecf8039a51c1659dbf",
+    "codelistCommitSha": "c98fe642a00f2a3c81977ba83e7e6884f1402ea8",
+    "orgIdPrefixFileName": "org-id-aa2f415794.json"
+  }
+}
