@@ -14,7 +14,7 @@ describe("The Ad Hoc Validate Check Data page", () => {
     cy.get("input[type=file").selectFile("cypress/fixtures/iati-act-no-errors.xml", { force: true });
     cy.contains("iati-act-no-errors.xml");
     cy.contains("button", "Upload").should("not.be.disabled").click();
-    cy.contains("File(s) have been uploaded successfully");
+    cy.contains("File(s) have been uploaded successfully", { timeout: 20000 });
     cy.contains("a", "View Progress and Reports").parent().should("not.have.class", "pointer-events-none");
     cy.contains("a", "View Progress and Reports").click();
     cy.url().should("includes", "/validate/");
