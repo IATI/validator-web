@@ -376,7 +376,11 @@ const appendNAStatusDocuments = (documents, direction) => {
   const otherDocs = [];
   if (direction !== "Validation Status: N/A") {
     documents.forEach((item) => {
-      getDocumentValidationStatus(item).caption === "N/A" ? statusNADocs.push(item) : otherDocs.push(item);
+      if (getDocumentValidationStatus(item).caption === "N/A") {
+        statusNADocs.push(item);
+      } else {
+        otherDocs.push(item);
+      }
     });
     return otherDocs.concat(statusNADocs);
   }
