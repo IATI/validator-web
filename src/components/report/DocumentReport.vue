@@ -130,6 +130,9 @@
   const onFilter = (item) => {
     searchText.value = item;
   };
+  const onSearchLoseFocus = () => {
+    router.push({ query: { id: searchText.value } });
+  };
   const onClearFilters = () => {
     activeCategory.value = null;
     activeSeverity.value = null;
@@ -166,6 +169,7 @@
               input-classes="!py-2 border-iati-blue text-base w-full"
               :show-button="false"
               @on-search="onFilter"
+              @on-lose-focus="onSearchLoseFocus"
             />
             <h4 class="text-base font-bold">View by message type</h4>
             <div class="text-sm text-slate-700">Click to show or hide individual message types</div>

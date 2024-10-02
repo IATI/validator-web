@@ -9,8 +9,12 @@
     showButton: { type: Boolean, default: true },
     inputClasses: { type: String, default: "" },
   });
-  const emit = defineEmits(["onSearch"]);
+  const emit = defineEmits(["onSearch", "onLoseFocus"]);
   const search = ref(props.searchText);
+
+  const onLoseFocus = () => {
+    emit("onLoseFocus");
+  };
 
   watch(
     () => props.searchText,
@@ -36,6 +40,7 @@
       :class="props.inputClasses"
       :placeholder="props.placeholder"
       autofocus
+      @blur="onLoseFocus"
     />
     <button
       v-if="props.showButton"
