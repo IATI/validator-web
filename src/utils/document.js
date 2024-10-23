@@ -67,7 +67,8 @@ export const getDocumentDownloadStatus = (document) => {
 export const getDocumentValidationStatus = (document) => {
   const { report } = document;
   const { valid } = report || { valid: null };
-  const { error, warning, advisory } = report ? report.summary : { error: -1, warning: -1, advisory: -1 };
+  const { error, warning, advisory } =
+    report && report.summary ? report.summary : { error: -1, warning: -1, advisory: -1 };
 
   if (document.report === null) {
     return { value: "normal", caption: "N/A" };
