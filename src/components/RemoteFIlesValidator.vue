@@ -11,6 +11,7 @@
   const props = defineProps({ workspaceID: { type: String, default: "" } });
   const activeStep = ref(1);
   const requestStatus = ref(""); // 'pending' | 'draft' | 'success' | 'error' = 'draft'
+  const includeGenericErrorMessage = ref(true);
   const requestErrorMessage = ref("");
   const urls = ref("");
   const incorrectURLs = ref([]);
@@ -51,22 +52,19 @@
         requestStatus.value = "error";
         if (error && error.message) {
           requestErrorMessage.value = error.message;
+          if (error.cause.status === 503) {
+            includeGenericErrorMessage.value = false;
+          }
         } else {
-          console.log("Error: ", error);
+          console.log(`Error received from IATI Validator Services: ${error}`);
         }
       };
 
       requestStatus.value = "pending";
       parallelUpload(correctURLs).subscribe({
-        next: (response) => {
-          const responseText = Array.isArray(response) && response.length ? response[0] : response;
-          if (responseText === "success") {
-            activeStep.value = 3;
-            requestStatus.value = "success";
-          } else {
-            requestStatus.value = "error";
-            requestErrorMessage.value = responseText;
-          }
+        next: () => {
+          activeStep.value = 3;
+          requestStatus.value = "success";
         },
         error: handleError,
       });
@@ -98,7 +96,10 @@
       <p class="mb-4 text-center">Fetch the files from the web.</p>
       <div v-if="requestStatus && requestStatus !== 'draft'" class="mb-3 text-sm">
         <AppAlert v-if="requestStatus === 'error'" variant="error">
-          File(s) uploading failed. Check your files and try again.<br />{{ requestErrorMessage }}
+          <template v-if="includeGenericErrorMessage">
+            File(s) uploading failed. Check your files and try again.<br />
+          </template>
+          {{ requestErrorMessage }}
         </AppAlert>
         <AppAlert v-else-if="requestStatus === 'success'" variant="success">
           File(s) have been uploaded successfully

@@ -33,11 +33,18 @@ export const fetchFileFromURL = async (fileUrl, workspaceID) => {
   });
 
   if (req.status === 200) return "success";
+
+  let errorMessage = "";
   if (req.status === 422) {
     const error = await req.json();
-
-    return error.message.includes(fileUrl) ? error.message : `${error.url} - ${error.message}`;
+    errorMessage = error.message.includes(fileUrl) ? error.message : `${error.url} - ${error.message}`;
+  } else if (req.status === 503) {
+    const error = await req.json();
+    errorMessage = error.message;
+  } else {
+    errorMessage = req.text;
   }
+  throw new Error(errorMessage, { cause: { status: req.status } });
 };
 
 export const getTempWorkspaceURL = (workspaceID) => `${SERVICES_URL}/pvt/adhoc/session/?sessionId=${workspaceID}`;
