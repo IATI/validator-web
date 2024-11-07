@@ -73,4 +73,28 @@ describe("The Ad Hoc Validate Check Data page", () => {
     cy.contains("a", "View Progress and Reports").click();
     cy.contains("Failed to load iati data please try again later");
   });
+  it("displays error message uploading a file when validator-services is in maintenance mode", () => {
+    cy.intercept("POST", "https://*api.iatistandard.org/vs/pvt/adhoc/upload?*", {
+      statusCode: 503,
+      body: { message: "Validator services is in read-only mode for maintenance" },
+    });
+    cy.get("input[type=file").selectFile("cypress/fixtures/iati-act-no-errors.xml", { force: true });
+    cy.contains("iati-act-no-errors.xml");
+    cy.contains("button", "Upload").should("not.be.disabled").click();
+    cy.contains("Validator services is in read-only mode for maintenance", { timeout: 20000 });
+    cy.contains("a", "View Progress and Reports").parent().should("have.class", "pointer-events-none");
+  });
+  it("displays error message fetching a url when validator-services is in maintenance mode", () => {
+    cy.intercept("POST", "https://*api.iatistandard.org/vs/pvt/adhoc/url?**/**", {
+      statusCode: 503,
+      body: { message: "Validator services is in read-only mode for maintenance" },
+    });
+    cy.contains("URL to a remote file").click();
+    cy.get("#url").type(
+      "https://raw.githubusercontent.com/IATI/IATI-Extra-Documentation/version-2.03/en/activity-standard/activity-standard.xml",
+    );
+    cy.contains("button", "Fetch").should("not.be.disabled").click();
+    cy.contains("Validator services is in read-only mode for maintenance", { timeout: 20000 });
+    cy.contains("a", "View Progress and Reports").parent().should("have.class", "pointer-events-none");
+  });
 });
