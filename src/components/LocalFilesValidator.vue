@@ -13,6 +13,7 @@
   const activeStep = ref(1);
   const files = ref([]);
   const requestStatus = ref(""); // 'pending' | 'draft' | 'success' | 'error' = 'draft'
+  const uploadErrorMessage = ref("");
 
   const onAddFiles = (_files) => {
     files.value = _files;
@@ -24,7 +25,14 @@
 
   const uploadFiles = () => {
     const handleError = (error) => {
-      console.error(error);
+      if (typeof error === "object" && typeof error.message === "string") {
+        try {
+          const errorResponse = JSON.parse(error.message);
+          uploadErrorMessage.value = errorResponse.message;
+        } catch (err) {
+          console.error(err);
+        }
+      }
       requestStatus.value = "error";
     };
 
@@ -62,7 +70,12 @@
       <p class="mb-4 text-center">Upload your IATI files and start validation.</p>
       <div v-if="requestStatus && requestStatus !== 'draft'" class="mb-3 text-sm">
         <AppAlert v-if="requestStatus === 'error'" variant="error">
-          File(s) uploading failed. Check your files and try again.
+          <template v-if="uploadErrorMessage === ''">
+            File(s) uploading failed. Check your files and try again.
+          </template>
+          <template v-else>
+            {{ uploadErrorMessage }}
+          </template>
         </AppAlert>
         <AppAlert v-else-if="requestStatus === 'success'" variant="success">
           File(s) have been uploaded successfully
