@@ -186,7 +186,7 @@
           </a>
         </li>
         <li>
-          <StyledLink to="/">Go to home the page</StyledLink>
+          <StyledLink to="/">Go to homepage</StyledLink>
         </li>
       </ul>
     </AppAlert>
