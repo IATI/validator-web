@@ -11,10 +11,8 @@
   import StyledButton from "../components/StyledButton.vue";
   import StyledLink from "../components/StyledLink.vue";
   import AppAlert from "../components/AppAlert.vue";
-  import { setPageTitle } from "../state";
   import { fetchTempWorkspace, formatDate, getDocumentValidationStatus } from "../utils";
 
-  setPageTitle("Validation results");
   const route = useRoute();
   const router = useRouter();
   const workspaceID = route.params.tempWorkspaceID;
@@ -99,6 +97,7 @@
 
 <template>
   <ContentContainer class="pb-8">
+    <h1>Validation Results</h1>
     <div class="mb-4 inline-flex">
       <p class="mr-1">
         Your personal workspace is
