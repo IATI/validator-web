@@ -45,7 +45,7 @@
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.13.0",
     "postcss": "^8.4.49",
-    "prettier": "3.4.1",
+    "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "sass": "^1.81.1",
     "serve": "^14.2.4",
