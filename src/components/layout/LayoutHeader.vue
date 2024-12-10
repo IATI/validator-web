@@ -1,20 +1,80 @@
 <script setup>
-  import { inject } from "vue";
-  import LayoutNavbar from "./LayoutNavbar.vue";
+  import Logo from "../AppLogo.vue";
+  import LanguageSwitcher from "../LanguageSwitcher.vue";
+  import GeneralNav from "./GeneralNav.vue";
+  import MobileNav from "./MobileNav.vue";
+  import ToolNav from "./ToolNav.vue";
 
-  const layout = inject("layout");
+  const generalNavItems = [
+    {
+      text: "About IATI",
+      link: "https://iatistandard.org/en/about/",
+      external: true,
+    },
+    {
+      text: "Use Data",
+      link: "https://iatistandard.org/en/using-data/",
+      external: true,
+    },
+    {
+      text: "Publish Data",
+      link: "https://iatistandard.org/en/guidance/publishing-data/",
+      external: true,
+    },
+    {
+      text: "Contact",
+      link: "https://iatistandard.org/guidance/get-support/",
+      external: true,
+    },
+  ];
+  const toolNavItems = [
+    {
+      text: "Home",
+      link: "/",
+    },
+    {
+      text: "Check Data",
+      link: "/validate",
+    },
+    {
+      text: "Public Data Viewer",
+      link: "/organisations",
+    },
+    {
+      text: "Public API",
+      link: "https://developer.iatistandard.org/api-details#api=iati-validator-v2",
+      external: true,
+    },
+  ];
 </script>
 
 <template>
-  <div
-    class="relative mb-4 -mt-48 bg-gradient-iati pb-8 pt-36 after:absolute after:top-0 after:right-0 after:block after:h-full after:w-full after:bg-header-image after:bg-90% after:bg-right-top after:bg-no-repeat after:opacity-25 lg:after:bg-50%"
-  >
-    <LayoutNavbar />
-    <div class="mx-auto max-w-[1200px] pl-3.5 lg:pl-0">
-      <div class="border-l-4 border-solid border-iati-blue pl-4">
-        <h1 class="text-left text-4xl text-white"><b>IATI Validator</b></h1>
-        <h2 v-if="layout.title" class="mt-4 text-left text-2xl text-white">{{ layout.title }}</h2>
+  <MobileNav :general-nav-items="generalNavItems" :tool-nav-items="toolNavItems" />
+  <header class="iati-header">
+    <div class="iati-header__section iati-header__section--first">
+      <div class="iati-header__container">
+        <Logo />
+        <GeneralNav :items="generalNavItems" />
       </div>
     </div>
-  </div>
+    <div class="iati-header__section iati-header__section--last iati-brand-background">
+      <div class="iati-header__container iati-brand-background__content">
+        <div class="iati-header__actions">
+          <LanguageSwitcher />
+          <a href="https://docs.validator.iatistandard.org" class="iati-button iati-button--light hide--mobile-nav">
+            <span>Help Docs</span>
+            <img class="iati-button__icon" alt="" src="../../assets/icons/info.svg" />
+          </a>
+          <button class="iati-menu-toggle iati-menu-toggle--open js-iati-menu-toggle-open">
+            <span class="iati-menu-toggle__label">Menu</span>
+          </button>
+        </div>
+        <div class="iati-header-title">
+          <p class="iati-header-title__eyebrow">IATI Tools</p>
+          <p class="iati-header-title__heading">IATI Validator</p>
+        </div>
+        <ToolNav :items="toolNavItems" />
+      </div>
+    </div>
+  </header>
 </template>
