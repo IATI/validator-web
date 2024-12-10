@@ -2,6 +2,7 @@
   import { computed, reactive, ref, watch } from "vue";
   import { ENVIRONMENT, getDefaultServicesAPIOptions, buildServicesEndpoint } from "../../utils";
   import { version } from "../../../package.json";
+  import LanguageSwitcher from "../LanguageSwitcher.vue";
 
   const releases = reactive({ services: {}, web: { version }, api: {} });
   const year = computed(() => new Date().getFullYear());
@@ -37,62 +38,60 @@
 </script>
 
 <template>
-  <footer class="block bg-iati-green">
-    <div class="flex w-full flex-col justify-between px-4 py-10 lg:mx-auto lg:max-w-[1140px] lg:flex-row lg:px-2">
-      <div class="flex flex-col items-center p-2 lg:items-start">
-        <a href="https://iatistandard.org" class="h-20 w-80 bg-logo-white bg-contain bg-no-repeat text-transparent">
-          IATI Logo</a
-        >
-      </div>
-      <div class="flex flex-col p-2">
-        <h2 class="text-lg font-bold uppercase text-white">Useful links</h2>
-        <ul class="mt-0 mb-2 list-none pl-0 text-center text-white lg:text-left">
-          <li>
-            <a href="https://iatistandard.org/en/contact/" class="underline">Contact</a>
-          </li>
-          <li>
-            <a href="https://iatistandard.org/en/privacy-policy/" class="underline">Privacy policy</a>
-          </li>
-        </ul>
-      </div>
-      <div class="flex flex-col p-2 lg:flex-row">
-        <div class="text-center text-white">
-          <p class="m-0 text-sm">Part of the <b>IATI Unified Platform</b></p>
-          <p class="m-0 text-sm">
-            Code licensed under the
-            <a class="underline" href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU AGPL</a>.
-          </p>
-          <p class="m-0 text-sm">
-            Documentation licensed under
-            <a class="underline" href="https://creativecommons.org/licenses/by/4.0/">CC BY 3.0</a>.
-          </p>
-          <br />
-          <p v-if="showVersions">
-            <a class="underline" :href="releases.web.url">Web v{{ releases.web.version }}</a> |
-            <a class="underline" :href="releases.services.url">Services v{{ releases.services.version }}</a>
-            |
-            <a class="underline" :href="releases.api.url">API v{{ releases.api.version }}</a>
-          </p>
+  <footer class="iati-footer iati-brand-background">
+    <div class="iati-brand-background__content">
+      <div class="iati-footer__section iati-footer__section--first">
+        <div class="iati-footer__container">
+          <div class="iati-footer-block">
+            <h2 class="iati-footer-block__title">Additional Information</h2>
+            <div class="iati-footer-block__content">
+              <p>Part of the IATI Unified Platform.</p>
+              <p>
+                Code licensed under
+                <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU AGPL</a>.
+              </p>
+              <p>
+                Documentation licensed under
+                <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+              </p>
+              <p v-if="showVersions">
+                <a :href="releases.web.url">Web v{{ releases.web.version }}</a>
+              </p>
+              <p v-if="showVersions">
+                <a :href="releases.services.url">Services v{{ releases.services.version }}</a>
+              </p>
+              <p v-if="showVersions">
+                <a :href="releases.api.url">API v{{ releases.api.version }}</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="border-t border-iati-accent px-6 py-4">
-      <div class="flex w-full flex-col justify-between lg:mx-auto lg:max-w-[1140px] lg:flex-row">
-        <p class="lg-pb-0 float-left inline-block pb-4 text-white">Copyright IATI {{ year }}. All rights reserved</p>
-        <div class="float-right text-transparent">
-          <a href="https://twitter.com/IATI_aid" class="inline-block h-9 w-9 bg-twitter"> Twitter </a>
-          <a
-            href="https://www.youtube.com/channel/UCAVH1gcgJXElsj8ENC-bDQQ"
-            class="ml-2.5 inline-block h-9 w-9 bg-youtube"
-          >
-            Youtube
-          </a>
-          <a
-            href="https://www.linkedin.com/company/international-aid-transparency-initiative/"
-            class="ml-2.5 inline-block h-9 w-9 bg-linkedin"
-          >
-            LinkedIn
-          </a>
+      <div class="iati-footer__section iati-footer__section--last">
+        <div class="iati-footer__container">
+          <nav>
+            <ul class="iati-piped-list iati-footer__legal-nav">
+              <li><a href="https://iatistandard.org/en/privacy-policy/">Privacy Policy</a></li>
+              <li>
+                &copy; Copyright {{ year }} United Nations Development Programme, on behalf of the IATI Secretariat.
+              </li>
+            </ul>
+          </nav>
+          <LanguageSwitcher />
+          <div class="iati-footer__social">
+            <a href="https://www.linkedin.com/company/international-aid-transparency-initiative/" aria-label="LinkedIn">
+              <i class="iati-icon iati-icon--linkedin"></i>
+            </a>
+            <a href="https://x.com/IATI_aid" aria-label="X">
+              <i class="iati-icon iati-icon--x"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCAVH1gcgJXElsj8ENC-bDQQ" aria-label="YouTube">
+              <i class="iati-icon iati-icon--youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/IATIaid/" aria-label="Facebook">
+              <i class="iati-icon iati-icon--facebook"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
