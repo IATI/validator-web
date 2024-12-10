@@ -22,9 +22,10 @@
 
 <template>
   <LayoutHeader />
-  <NotificationBanner class="mb-4" />
-  <div class="flex-1">
+  <!-- TODO: NotificationBanner -->
+  <!-- <NotificationBanner class="mb-4" /> -->
+  <main class="iati-main">
     <router-view></router-view>
-  </div>
+  </main>
   <LayoutFooter />
 </template>
