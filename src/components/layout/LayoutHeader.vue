@@ -2,6 +2,7 @@
   import Logo from "../AppLogo.vue";
   import LanguageSwitcher from "../LanguageSwitcher.vue";
   import GeneralNav from "./GeneralNav.vue";
+  import MobileNav from "./MobileNav.vue";
   import ToolNav from "./ToolNav.vue";
 
   const generalNavItems = [
@@ -48,6 +49,7 @@
 </script>
 
 <template>
+  <MobileNav :general-nav-items="generalNavItems" :tool-nav-items="toolNavItems" />
   <header class="iati-header">
     <div class="iati-header__section iati-header__section--first">
       <div class="iati-header__container">
