@@ -3,7 +3,6 @@
   import { provide, ref, watch, watchEffect } from "vue";
   import { useRoute, useRouter } from "vue-router";
   import AppAlert from "../components/AppAlert.vue";
-  import BasicCard from "../components/BasicCard.vue";
   import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
   import FileStatusInfo from "../components/FileStatusInfo.vue";
   import IconChevron from "../components/IconChevron.vue";
@@ -145,29 +144,27 @@
     <CaptionedLoadingSpinner v-if="(!dataset || !dataset.report) && !errors.length">
       Loading Report ...
     </CaptionedLoadingSpinner>
-    <BasicCard class="mx-0">
-      <div class="grid-cols- -mx-3.5 -mb-3.5 -mt-3.5 grid">
-        <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 border-t-0 bg-white">
-          <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
-          <div :class="headerClassNames">Identified in Registry</div>
-          <div :class="headerClassNames">Validated</div>
-          <div :class="headerClassNames">Validation Status</div>
-          <div :class="headerClassNames">Available in IATI Datastore</div>
-        </div>
-        <div v-else class="grid grid-cols-4 gap-0 border-t-0 bg-white">
-          <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
-          <div :class="headerClassNames">Uploaded</div>
-          <div :class="headerClassNames">Validated</div>
-          <div :class="headerClassNames">Validation Status</div>
-        </div>
-        <ReportDocumentStatus
-          v-if="dataset && dataset.report"
-          :document="document"
-          :dataset="dataset"
-          :workspacedata="workSpaceData"
-        />
+    <div class="grid-cols grid">
+      <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 border-t-0 bg-white">
+        <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
+        <div :class="headerClassNames">Identified in Registry</div>
+        <div :class="headerClassNames">Validated</div>
+        <div :class="headerClassNames">Validation Status</div>
+        <div :class="headerClassNames">Available in IATI Datastore</div>
       </div>
-    </BasicCard>
+      <div v-else class="grid grid-cols-4 gap-0 border-t-0 bg-white">
+        <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
+        <div :class="headerClassNames">Uploaded</div>
+        <div :class="headerClassNames">Validated</div>
+        <div :class="headerClassNames">Validation Status</div>
+      </div>
+      <ReportDocumentStatus
+        v-if="dataset && dataset.report"
+        :document="document"
+        :dataset="dataset"
+        :workspacedata="workSpaceData"
+      />
+    </div>
   </div>
 
   <CaptionedLoadingSpinner v-if="loading && !errors.length">
@@ -186,11 +183,7 @@
     </ul>
   </AppAlert>
 
-  <div v-if="!loading && !errors.length" class="flex flex-wrap">
-    <BasicCard>
-      <FileStatusInfo />
-    </BasicCard>
-  </div>
+  <FileStatusInfo v-if="!loading && !errors.length" />
   <CaptionedLoadingSpinner v-if="!dataset && !errors.length">Loading Report ...</CaptionedLoadingSpinner>
   <DocumentReport v-if="(dataset && document) || dataset" :document="document" :report="dataset.report" />
 </template>
