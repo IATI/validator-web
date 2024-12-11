@@ -39,7 +39,7 @@
       <span>Return to your workspace</span>
     </RouterLink>
   </div>
-  <p class="mb-4">Upload your IATI file and receive validation feedback.</p>
+  <p>Upload your IATI file and receive validation feedback.</p>
   <fieldset class="border-none">
     <legend class="invisible">Upload options</legend>
     <CheckBox
