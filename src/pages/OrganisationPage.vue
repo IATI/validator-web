@@ -13,7 +13,6 @@
   import DocumentList from "../components/organisation/DocumentList.vue";
   import SelectInput from "../components/SelectInput.vue";
   import StyledLink from "../components/StyledLink.vue";
-  import { setPageTitle } from "../state";
   import {
     documentValidationStatus,
     fetchOrganisationByName,
@@ -29,7 +28,7 @@
   } from "../utils";
   import { constructCSV } from "../utils/document";
 
-  const layout = setPageTitle("Loading...");
+  const title = ref("Loading...");
   const route = useRoute();
   const loading = ref(true);
   const reportsLoading = ref(true);
@@ -58,7 +57,7 @@
       }
       if (status === 404) {
         errorMessage.value = `No organisation found with name "${route.params.name}"`;
-        layout.title = "Organisation Not Found";
+        title.value = "Organisation Not Found";
       }
     }
   });
@@ -67,7 +66,7 @@
       loading.value = false;
       console.log(organisationError.value);
     } else if (organisation.value && organisation.value) {
-      layout.title = organisation.value.title;
+      title.value = organisation.value.title;
     }
   });
   watchEffect(() => {
@@ -109,6 +108,7 @@
 
 <template>
   <ContentContainer>
+    <h1>{{ title }}</h1>
     <div>
       <AppAlert v-if="errorMessage" variant="error">
         <p class="font-semibold">{{ errorMessage }}</p>

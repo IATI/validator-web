@@ -12,7 +12,6 @@
   import DocumentReport from "../components/report/DocumentReport.vue";
   import ReportDocumentStatus from "../components/report/ReportDocumentStatus.vue";
   import StyledLink from "../components/StyledLink.vue";
-  import { setPageTitle } from "../state";
   import {
     fetchDocument,
     fetchOrganisationByID,
@@ -25,7 +24,6 @@
     getDocumentValidationStatus,
   } from "../utils";
 
-  setPageTitle("File validation report");
   const router = useRouter();
   const route = useRoute();
   const loading = ref(true);
@@ -130,6 +128,7 @@
 
 <template>
   <ContentContainer class="pt-0 pb-8">
+    <h1>File Validation Report</h1>
     <StyledLink v-if="isTestFile && dataset" :to="`/validate/${dataset.session_id}`" class="mr-2 inline-flex">
       <IconChevron class="mr-2" /> Return to your workspace
     </StyledLink>

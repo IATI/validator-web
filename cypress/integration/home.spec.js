@@ -2,9 +2,6 @@ describe("The Validator Homepage", () => {
   beforeEach(() => {
     cy.visit("/");
   });
-  it("Shows the correct h1 element", () => {
-    cy.get("h1").should("have.text", "IATI Validator");
-  });
   it("Check Data button navigates to /validate", () => {
     cy.get('a[role=button][href="/validate"]').click();
     cy.url().should("includes", "/validate");
