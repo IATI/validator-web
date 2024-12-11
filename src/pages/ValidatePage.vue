@@ -42,7 +42,7 @@
       </StyledLink>
     </div>
     <p class="mb-4">Upload your IATI file and receive validation feedback.</p>
-    <fieldset>
+    <fieldset class="border-none">
       <legend class="invisible">Upload options</legend>
       <CheckBox
         id="upload"
