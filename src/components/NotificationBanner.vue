@@ -16,7 +16,6 @@
     computed: {
       showBanner() {
         return import.meta.env.VUE_ENV_SHOW_MAINTENANCE_BANNER === "true";
-        // return true;
       },
     },
   };
