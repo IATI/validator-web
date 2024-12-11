@@ -43,17 +43,3 @@
     </CardiB>
   </div>
 </template>
-
-<script>
-  export default {
-    props: {
-      msg: {
-        type: String,
-        default: "",
-      },
-    },
-    setup(props) {
-      console.log(props.msg);
-    },
-  };
-</script>
