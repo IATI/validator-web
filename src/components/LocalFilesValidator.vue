@@ -1,7 +1,6 @@
 <script setup>
   import { forkJoin } from "rxjs";
   import { ref } from "vue";
-  import CardiB from "../components/CardiB.vue";
   import { uploadFile } from "../utils";
   import AppAlert from "./AppAlert.vue";
   import FileInputButton from "./FileInputButton.vue";
@@ -48,19 +47,17 @@
   };
 </script>
 <template>
-  <div class="-m-2.5 flex flex-wrap pt-4">
-    <CardiB heading="Step 1" class="w-[300px]" :class="{ 'border-t-iati-blue': activeStep !== 1 }">
-      <p class="mb-4 text-center">Select your IATI files. You can select multiple files at the same time.</p>
+  <div class="iati-card-gallery">
+    <div class="iati-card">
+      <p class="iati-card__title">Step 1</p>
+      <p>Select your IATI files. You can select multiple files at the same time.</p>
       <FileInputButton class="self-center mt-auto" accept=".xml" :multiple="true" @change="onAddFiles">
         Browse
       </FileInputButton>
-    </CardiB>
-    <CardiB
-      heading="Step 2"
-      class="w-[300px]"
-      :class="{ 'pointer-events-none opacity-50': activeStep === 1, 'border-t-iati-blue': activeStep !== 2 }"
-    >
-      <p class="mb-4 text-center">Upload your IATI files and start validation.</p>
+    </div>
+    <div class="iati-card" :class="{ 'pointer-events-none opacity-50': activeStep === 1 }">
+      <p class="iati-card__title">Step 2</p>
+      <p>Upload your IATI files and start validation.</p>
       <div v-if="requestStatus && requestStatus !== 'draft'" class="mb-3 text-sm">
         <AppAlert v-if="requestStatus === 'error'" variant="error">
           <template v-if="uploadErrorMessage === ''">
@@ -85,18 +82,13 @@
       <button class="iati-button self-center mt-auto" :disabled="requestStatus !== 'draft'" @click="uploadFiles">
         Upload
       </button>
-    </CardiB>
-    <CardiB
-      heading="Step 3"
-      class="w-[300px]"
-      :class="{ 'pointer-events-none opacity-50': activeStep !== 3, 'border-t-iati-blue': activeStep !== 3 }"
-    >
-      <p class="mb-4 text-center">
-        Your files are being validated - click below to view their progress and, when complete, reports.
-      </p>
+    </div>
+    <div class="iati-card" :class="{ 'pointer-events-none opacity-50': activeStep !== 3 }">
+      <p class="iati-card__title">Step 3</p>
+      <p>Your files are being validated - click below to view their progress and, when complete, reports.</p>
       <RouterLink :to="`/validate/${props.workspaceID}`" class="iati-button self-center mt-auto">
         View Progress and Reports
       </RouterLink>
-    </CardiB>
+    </div>
   </div>
 </template>

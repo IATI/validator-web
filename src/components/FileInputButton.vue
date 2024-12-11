@@ -53,7 +53,7 @@
       </p>
     </AppAlert>
   </div>
-  <div v-else class="mt-2 inline-block w-full">
+  <div v-else class="text-center">
     <p
       v-for="file in files"
       :key="file.name"
@@ -61,6 +61,6 @@
     >
       {{ file.name }}
     </p>
-    <button class="iati-button self-center mt-auto" @click="files = []">Clear</button>
+    <button class="iati-button" @click="files = []">Clear</button>
   </div>
 </template>
