@@ -6,7 +6,7 @@
   import CheckBox from "../components/CheckBox.vue";
   import IconChevron from "../components/IconChevron.vue";
   import LocalFilesValidator from "../components/LocalFilesValidator.vue";
-  import RemoteFIlesValidator from "../components/RemoteFIlesValidator.vue";
+  import RemoteFilesValidator from "../components/RemoteFilesValidator.vue";
 
   const route = useRoute();
   const workspaceID = computed(() => {
@@ -61,5 +61,5 @@
   </fieldset>
   <CaptionedLoadingSpinner v-if="!fileSource">Loading</CaptionedLoadingSpinner>
   <LocalFilesValidator v-if="fileSource === 'upload'" :workspace-i-d="workspaceID" />
-  <RemoteFIlesValidator v-if="fileSource === 'remote'" :workspace-i-d="workspaceID" />
+  <RemoteFilesValidator v-if="fileSource === 'remote'" :workspace-i-d="workspaceID" />
 </template>
