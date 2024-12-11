@@ -94,15 +94,13 @@
 
 <template>
   <h1>Validation Results</h1>
-  <div class="mb-4 inline-flex">
-    <p>
-      Your personal workspace is
-      <RouterLink :to="route.path">{{ `${baseURL}${route.fullPath}` }}</RouterLink>
-      <button class="ml-4 iati-button" :outline="true" @click="copyToClipboard(`${baseURL}${route.fullPath}`)">
-        {{ addressCopied ? "Copied to clipboard" : "Copy the address" }}
-      </button>
-    </p>
-  </div>
+  <p>
+    Your personal workspace is
+    <RouterLink :to="route.path">{{ `${baseURL}${route.fullPath}` }}</RouterLink>
+    <button class="ml-4 iati-button" :outline="true" @click="copyToClipboard(`${baseURL}${route.fullPath}`)">
+      {{ addressCopied ? "Copied to clipboard" : "Copy the address" }}
+    </button>
+  </p>
   <FileStatusInfo />
   <CaptionedLoadingSpinner v-if="!workspaceData.length && !workSpaceDataError">Loading</CaptionedLoadingSpinner>
 
@@ -150,6 +148,6 @@
 
   <div v-if="workspaceData.length" class="flex gap-2">
     <button class="iati-button" @click="onAddMoreFiles">Add more files</button>
-    <button class="iati-button" @click="onClearWorkspace">Clear Workspace</button>
+    <button class="iati-button" @click="onClearWorkspace">Clear workspace</button>
   </div>
 </template>
