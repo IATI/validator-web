@@ -1,11 +1,11 @@
 <template>
-  <p class="pb-3 text-base">
+  <p>
     This file has been tested against the IATI Standard XML Schema, and the IATI Standard Rulesets. For more
     information, see
-    <a href="https://docs.validator.iatistandard.org/" class="text-iati-green hover:underline">the documentation</a>.
+    <a href="https://docs.validator.iatistandard.org/">the documentation</a>.
   </p>
 
-  <ul class="list-disc pl-10 pb-3">
+  <ul>
     <li><span class="font-bold text-success">Success</span> - No errors, warnings or advisories.</li>
     <li>
       <span class="font-bold text-advisory">Success (with Advisories)</span> - No errors or warnings, but there are
@@ -21,9 +21,8 @@
     </li>
     <li>
       <span class="font-bold text-critical">Critical</span> - XML schema validation fails. This means that data will not
-      update in the
-      <a href="https://iatidatastore.iatistandard.org" class="text-iati-green hover:underline">IATI Datastore</a>. Data
-      may be unusable and/or missing from other tools.
+      update in the <a href="https://iatidatastore.iatistandard.org">IATI Datastore</a>. Data may be unusable and/or
+      missing from other tools.
     </li>
   </ul>
 </template>

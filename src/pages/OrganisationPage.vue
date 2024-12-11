@@ -109,9 +109,9 @@
   <h1>{{ title }}</h1>
   <div>
     <AppAlert v-if="errorMessage" variant="error">
-      <p class="font-semibold">{{ errorMessage }}</p>
+      <p>{{ errorMessage }}</p>
     </AppAlert>
-    <div v-if="organisation && organisation.image_url" class="mb-5 max-w-[200px]">
+    <div v-if="organisation && organisation.image_url" class="max-w-[200px]">
       <img
         :src="organisation.image_url"
         :alt="organisation.name"
@@ -119,22 +119,22 @@
       />
     </div>
     <div v-if="organisation && organisation.description">
-      <h3 class="font-bold">Description</h3>
-      <p class="my-3">{{ organisation.description }}</p>
+      <h2>Description</h2>
+      <p>{{ organisation.description }}</p>
     </div>
   </div>
 
-  <CaptionedLoadingSpinner v-if="loading && !errorMessage" class="pb-3">
+  <CaptionedLoadingSpinner v-if="loading && !errorMessage">
     {{ !organisation ? "Loading Info ..." : "Loading Reports..." }}
   </CaptionedLoadingSpinner>
 
-  <div v-if="!loading && !errorMessage" class="-mx-3.5 flex flex-wrap">
-    <BasicCard class="rounded-b-none">
+  <div v-if="!loading && !errorMessage" class="flex flex-wrap">
+    <BasicCard>
       <template #header>
-        <CardHeader>Public data</CardHeader>
+        <CardHeader><h3>Public Data</h3></CardHeader>
       </template>
 
-      <p class="pb-3 text-base font-bold">IATI files published in the IATI Registry</p>
+      <h4>IATI files published in the IATI Registry</h4>
       <FileStatusInfo />
 
       <div class="-mx-3.5 -mb-3.5">
@@ -142,13 +142,12 @@
           <div v-if="documents && documents.length" class="py-2">
             <span>{{ documents.length }} {{ documents.length === 1 ? "file" : "files" }}</span>
             <span v-for="status in documentValidationStatus(documents)" :key="status">
-              | <label :class="getStatusColor(status)">{{ status }}</label
-              >: {{ getDocumentCount(documents, status) }}
+              | <label :class="getStatusColor(status)">{{ status }}</label> : {{ getDocumentCount(documents, status) }}
             </span>
             <span v-if="!reportsLoading">
               |
-              <button class="underline" @click="downloadCSV()">Download Validation Report CSV</button></span
-            >
+              <button @click="downloadCSV()">Download Validation Report CSV</button>
+            </span>
           </div>
           <div v-if="documents && documents.length" class="flex flex-col sm:mt-0 sm:flex-row">
             <label id="documentSort" for="documentSort" class="whitespace-nowrap sm:py-2">Sort by:</label>
@@ -174,7 +173,7 @@
         <div v-else-if="documentsError || organisationError" class="m-3.5">
           <BasicAlert>
             Couldn't fetch the documents. Please try again later. If the problem persists, email support at
-            <StyledLink to="mailto:support@iatistandard.org" :external="true">support@iatistandard.org</StyledLink>
+            <a href="mailto:support@iatistandard.org">support@iatistandard.org</a>
           </BasicAlert>
         </div>
       </div>
