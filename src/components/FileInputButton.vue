@@ -61,7 +61,6 @@
     >
       {{ file.name }}
     </p>
-    <!-- FIXME: Refactor this component so that the Clear button appears in the correct place -->
     <button class="iati-button self-center mt-auto" @click="files = []">Clear</button>
   </div>
 </template>
