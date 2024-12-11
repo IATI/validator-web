@@ -10,7 +10,6 @@
   import DocumentInfo from "../components/report/DocumentInfo.vue";
   import DocumentReport from "../components/report/DocumentReport.vue";
   import ReportDocumentStatus from "../components/report/ReportDocumentStatus.vue";
-  import StyledLink from "../components/StyledLink.vue";
   import {
     fetchDocument,
     fetchOrganisationByID,
@@ -127,22 +126,23 @@
 
 <template>
   <h1>File Validation Report</h1>
-  <StyledLink v-if="isTestFile && dataset" :to="`/validate/${dataset.session_id}`" class="mr-2 inline-flex">
-    <IconChevron class="mr-2" /> Return to your workspace
-  </StyledLink>
+  <RouterLink v-if="isTestFile && dataset" :to="`/validate/${dataset.session_id}`" class="flex">
+    <IconChevron class="mr-2" />
+    <span>Return to your workspace</span>
+  </RouterLink>
   <div v-if="organisation || document || dataset">
-    <h3 class="text-lg">
+    <div>
       <template v-if="organisation">
-        <StyledLink :to="`/organisation/${organisation.name}`" class="underline">{{ organisation.title }}</StyledLink>
+        <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
         -
       </template>
-      <StyledLink v-if="document" :to="document.url" :external="true" class="underline">
+      <RouterLink v-if="document" :to="document.url" :external="true">
         {{ getDocumentFileName(document) }}
-      </StyledLink>
-      <div v-if="dataset && isTestFile" class="font-semibold">{{ dataset.filename }}</div>
-    </h3>
+      </RouterLink>
+      <div v-if="dataset && isTestFile">{{ dataset.filename }}</div>
+    </div>
     <DocumentInfo v-if="dataset && dataset.report" :document="document" :report="dataset.report" />
-    <CaptionedLoadingSpinner v-if="(!dataset || !dataset.report) && !errors.length" class="py-3">
+    <CaptionedLoadingSpinner v-if="(!dataset || !dataset.report) && !errors.length">
       Loading Report ...
     </CaptionedLoadingSpinner>
     <BasicCard class="mx-0">
@@ -170,29 +170,27 @@
     </BasicCard>
   </div>
 
-  <CaptionedLoadingSpinner v-if="loading && !errors.length" class="pb-3">
+  <CaptionedLoadingSpinner v-if="loading && !errors.length">
     {{ !organisation ? "Loading Document Info ..." : "Loading Report ..." }}
   </CaptionedLoadingSpinner>
 
-  <AppAlert v-if="errors.length" variant="error" class="mt-1">
-    <p v-for="error in errors" :key="error.source" class="font-bold">{{ error.message }}</p>
-    <ul class="list-disc px-4 pt-4 text-tiny">
+  <AppAlert v-if="errors.length" variant="error">
+    <p v-for="error in errors" :key="error.source">{{ error.message }}</p>
+    <ul>
       <li>
-        <a class="cursor-pointer text-iati-green hover:underline" @click="router.back()">
-          Go back to the previous page
-        </a>
+        <a @click="router.back()">Go back to the previous page</a>
       </li>
       <li>
-        <StyledLink to="/">Go to homepage</StyledLink>
+        <RouterLink to="/">Go to homepage</RouterLink>
       </li>
     </ul>
   </AppAlert>
 
-  <div v-if="!loading && !errors.length" class="-mx-3.5 flex flex-wrap">
+  <div v-if="!loading && !errors.length" class="flex flex-wrap">
     <BasicCard>
       <FileStatusInfo />
     </BasicCard>
   </div>
-  <CaptionedLoadingSpinner v-if="!dataset && !errors.length" class="py-3"> Loading Report ... </CaptionedLoadingSpinner>
+  <CaptionedLoadingSpinner v-if="!dataset && !errors.length">Loading Report ...</CaptionedLoadingSpinner>
   <DocumentReport v-if="(dataset && document) || dataset" :document="document" :report="dataset.report" />
 </template>
