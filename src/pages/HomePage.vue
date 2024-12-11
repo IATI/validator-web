@@ -1,6 +1,5 @@
 <script setup>
   import CardiB from "../components/CardiB.vue";
-  import LinkButton from "../components/LinkButton.vue";
 </script>
 
 <template>
@@ -17,7 +16,7 @@
         <li>Select and upload your IATI files OR add URL to files</li>
         <li>Get validation results</li>
       </ul>
-      <LinkButton to="/validate">Check data</LinkButton>
+      <RouterLink class="iati-button self-center mt-auto" to="/validate">Check Data</RouterLink>
     </CardiB>
     <CardiB heading="Public Data Viewer" class="w-[300px]">
       <p>Check all files published on the IATI Registry</p>
@@ -26,7 +25,7 @@
         <li>See the IATI files published by the organisation</li>
         <li>Get validation results of an IATI file</li>
       </ul>
-      <LinkButton to="/organisations"> Public data viewer </LinkButton>
+      <RouterLink class="iati-button self-center mt-auto" to="/organisations">Public Data Viewer</RouterLink>
     </CardiB>
     <CardiB heading="Public API" class="w-[300px]">
       <p>Validate IATI files or retrieve validation reports using the public IATI API</p>
@@ -34,13 +33,13 @@
         <li><code class="iati-code">GET</code> existing validation reports for published files</li>
         <li><code class="iati-code">POST</code> IATI XML and receive validation results</li>
       </ul>
-      <LinkButton
+      <a
         id="public-api-button"
-        to="https://developer.iatistandard.org/api-details#api=iati-validator-v2"
-        :external="true"
+        href="https://developer.iatistandard.org/api-details#api=iati-validator-v2"
+        class="iati-button self-center mt-auto"
       >
         Public API
-      </LinkButton>
+      </a>
     </CardiB>
   </div>
 </template>

@@ -1,6 +1,5 @@
 <script setup>
   import { ref, watch } from "vue";
-  import StyledButton from "./StyledButton.vue";
   import AppAlert from "./AppAlert.vue";
 
   const props = defineProps({
@@ -32,7 +31,7 @@
 </script>
 <template>
   <div v-if="!files.length" class="inline-block">
-    <label class="bg-iati-green px-5 py-2 uppercase !text-white hover:bg-iati-blue" for="file-upload">
+    <label class="iati-button" for="file-upload">
       <slot />
     </label>
     <input
@@ -62,6 +61,7 @@
     >
       {{ file.name }}
     </p>
-    <StyledButton class="mt-2 uppercase" @click="files = []">Clear</StyledButton>
+    <!-- FIXME: Refactor this component so that the Clear button appears in the correct place -->
+    <button class="iati-button self-center mt-auto" @click="files = []">Clear</button>
   </div>
 </template>

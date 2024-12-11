@@ -10,7 +10,6 @@
     getGuidanceLinksURL,
   } from "../../utils";
   import SearchFilter from "../SearchFilter.vue";
-  import StyledButton from "../StyledButton.vue";
   import ActivityErrors from "./ActivityErrors.vue";
   import CategoryItem from "./CategoryItem.vue";
   import FileErrors from "./FileErrors.vue";
@@ -192,7 +191,7 @@
             />
           </div>
           <div v-if="hasActiveFilter()" class="px-4 pt-2 pb-4">
-            <StyledButton class="w-full" @click="onClearFilters">Clear Filters</StyledButton>
+            <button class="iati-button w-full" @click="onClearFilters">Clear Filters</button>
           </div>
         </div>
       </div>

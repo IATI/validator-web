@@ -2,7 +2,6 @@
   import { computed, inject } from "vue";
   import AppAlert from "../AppAlert.vue";
   import { GUIDANCE_LINK_URL, containsQuotedTrailingWhitespace } from "../../utils";
-  import StyledLink from "../StyledLink.vue";
 
   const props = defineProps({ item: { type: Object, default: null } });
   const guidanceLinks = inject("guidanceLinks");
@@ -36,16 +35,8 @@
     <div>
       <span class="float-right">
         {{ props.item.id }}
-        <StyledLink
-          v-if="isGuidanceAvailable"
-          :to="guidanceLink"
-          :external="true"
-          :title="'Open guidance in a new window'"
-          >(see guidance)</StyledLink
-        >
-        <StyledLink v-if="codelistLink" :to="codelistLink" :external="true" :title="'Open guidance in a new window'"
-          >(see guidance)</StyledLink
-        >
+        <a v-if="isGuidanceAvailable" :href="guidanceLink" title="Open guidance in a new window">(see guidance)</a>
+        <a v-if="codelistLink" :href="codelistLink" title="Open guidance in a new window">(see guidance)</a>
       </span>
       <span>{{ props.item.message }}</span>
       <ul
@@ -53,10 +44,10 @@
         class="list-disc pl-10"
       >
         <li v-for="(context, index) of props.item.context" :key="index">
-          <span v-if="containsQuotedTrailingWhitespace(context.text)"
-            >{{ context.text }}
-            <p class="text-error">An empty space was added to the attribute</p></span
-          >
+          <span v-if="containsQuotedTrailingWhitespace(context.text)">
+            {{ context.text }}
+            <p class="text-error">An empty space was added to the attribute</p>
+          </span>
           <span v-else>{{ context.text }}</span>
         </li>
       </ul>

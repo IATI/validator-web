@@ -7,8 +7,6 @@
   import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
   import FileStatusInfo from "../components/FileStatusInfo.vue";
   import LoadingSpinner from "../components/LoadingSpinner.vue";
-  import StyledButton from "../components/StyledButton.vue";
-  import StyledLink from "../components/StyledLink.vue";
   import AppAlert from "../components/AppAlert.vue";
   import { fetchTempWorkspace, formatDate, getDocumentValidationStatus } from "../utils";
 
@@ -97,12 +95,12 @@
 <template>
   <h1>Validation Results</h1>
   <div class="mb-4 inline-flex">
-    <p class="mr-1">
+    <p>
       Your personal workspace is
-      <StyledLink :to="route.path" class="mr-2">{{ `${baseURL}${route.fullPath}` }}</StyledLink>
-      <StyledButton class="text-sm" :outline="true" @click="copyToClipboard(`${baseURL}${route.fullPath}`)">
+      <RouterLink :to="route.path">{{ `${baseURL}${route.fullPath}` }}</RouterLink>
+      <button class="ml-4 iati-button" :outline="true" @click="copyToClipboard(`${baseURL}${route.fullPath}`)">
         {{ addressCopied ? "Copied to clipboard" : "Copy the address" }}
-      </StyledButton>
+      </button>
     </p>
   </div>
   <FileStatusInfo />
@@ -150,8 +148,8 @@
     </div>
   </div>
 
-  <div v-if="workspaceData.length" class="mt-4">
-    <StyledButton class="mr-3 text-sm uppercase" @click="onAddMoreFiles">Add more files</StyledButton>
-    <StyledButton class="bg-iati-accent text-sm uppercase" @click="onClearWorkspace">Clear Workspace</StyledButton>
+  <div v-if="workspaceData.length" class="flex gap-2">
+    <button class="iati-button" @click="onAddMoreFiles">Add more files</button>
+    <button class="iati-button" @click="onClearWorkspace">Clear Workspace</button>
   </div>
 </template>

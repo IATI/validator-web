@@ -11,7 +11,6 @@
   import FileStatusInfo from "../components/FileStatusInfo.vue";
   import DocumentList from "../components/organisation/DocumentList.vue";
   import SelectInput from "../components/SelectInput.vue";
-  import StyledLink from "../components/StyledLink.vue";
   import {
     documentValidationStatus,
     fetchOrganisationByName,

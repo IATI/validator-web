@@ -2,12 +2,10 @@
   import { forkJoin } from "rxjs";
   import { ref } from "vue";
   import CardiB from "../components/CardiB.vue";
-  import LinkButton from "../components/LinkButton.vue";
   import { uploadFile } from "../utils";
   import AppAlert from "./AppAlert.vue";
   import FileInputButton from "./FileInputButton.vue";
   import LoadingSpinner from "./LoadingSpinner.vue";
-  import StyledButton from "./StyledButton.vue";
 
   const props = defineProps({ workspaceID: { type: String, default: "" } });
   const activeStep = ref(1);
@@ -53,12 +51,7 @@
   <div class="-m-2.5 flex flex-wrap pt-4">
     <CardiB heading="Step 1" class="w-[300px]" :class="{ 'border-t-iati-blue': activeStep !== 1 }">
       <p class="mb-4 text-center">Select your IATI files. You can select multiple files at the same time.</p>
-      <FileInputButton
-        accept=".xml"
-        :multiple="true"
-        class="mx-auto mt-auto text-center text-tiny"
-        @change="onAddFiles"
-      >
+      <FileInputButton class="self-center mt-auto" accept=".xml" :multiple="true" @change="onAddFiles">
         Browse
       </FileInputButton>
     </CardiB>
@@ -89,9 +82,9 @@
           </div>
         </AppAlert>
       </div>
-      <StyledButton class="text-tiny uppercase" :disabled="requestStatus !== 'draft'" @click="uploadFiles">
+      <button class="iati-button self-center mt-auto" :disabled="requestStatus !== 'draft'" @click="uploadFiles">
         Upload
-      </StyledButton>
+      </button>
     </CardiB>
     <CardiB
       heading="Step 3"
@@ -101,7 +94,9 @@
       <p class="mb-4 text-center">
         Your files are being validated - click below to view their progress and, when complete, reports.
       </p>
-      <LinkButton :to="`/validate/${props.workspaceID}`" class="text-tiny"> View Progress and Reports </LinkButton>
+      <RouterLink :to="`/validate/${props.workspaceID}`" class="iati-button self-center mt-auto">
+        View Progress and Reports
+      </RouterLink>
     </CardiB>
   </div>
 </template>
