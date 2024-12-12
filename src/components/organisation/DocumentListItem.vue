@@ -34,7 +34,7 @@
 
 <template>
   <div
-    class="flex flex-col gap-0 border-t border-solid border-gray-300 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
+    class="flex flex-col gap-0 border border-b-0 border-solid border-gray-300 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
     :class="{
       'hover:bg-gray-200': !hasProperLink(props.document),
       'cursor-pointer': !hasProperLink(props.document),
