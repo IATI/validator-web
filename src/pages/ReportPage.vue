@@ -34,7 +34,7 @@
     !isTestFile ? getDocumentURL(route.params?.name) : null,
     () => fetchDocument(route.params.name),
   );
-  const headerClassNames = "hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
+  const headerClassNames = "hidden border-0 border-y border-solid border-gray-300 p-2.5 font-bold sm:block";
 
   const { data: organisation, error: organisationError } = useSWRV(
     () => document.value && getOrganisationURL(document.value.publisher, "id"),

@@ -41,10 +41,10 @@
 <template>
   <div
     v-if="props.document"
-    class="flex flex-col gap-0 border-t border-solid border-gray-300 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
+    class="flex flex-col gap-0 border border-solid border-gray-300 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
   >
     <div class="py-2 pb-2 first:pl-3.5" :class="textClasses">
-      <p class="text-base font-bold sm:hidden">File Name</p>
+      <div class="text-base font-bold sm:hidden">File Name</div>
       <a
         v-if="hasProperLink(props.document)"
         :href="props.document.url"
@@ -55,11 +55,11 @@
       <span v-else>{{ fileName }}</span>
     </div>
     <div class="pl-3.5 pt-0 pb-2 sm:py-2" :class="textClasses">
-      <p class="text-base font-bold sm:hidden">Identified in Registry</p>
+      <div class="text-base font-bold sm:hidden">Identified in Registry</div>
       <span>{{ formatDate(props.document.modified || props.document.first_seen) }}</span>
     </div>
     <div class="pt-0 pb-2 pl-3.5 sm:py-2" :class="textClasses">
-      <p class="text-base font-bold sm:hidden">Validated</p>
+      <div class="text-base font-bold sm:hidden">Validated</div>
       <span v-if="validationDate">{{ validationDate }}</span>
       <span v-else>{{ getDocumentDownloadStatus(props.document) }}</span>
     </div>
@@ -68,7 +68,7 @@
       <span :class="validationStatusClass" class="text-base">{{ validationStatus.caption }}</span>
     </div>
     <div class="pt-0 pb-2 pl-3.5 sm:py-2" :class="textClasses">
-      <p class="text-base font-bold sm:hidden">Availability in Datastore</p>
+      <div class="text-base font-bold sm:hidden">Availability in Datastore</div>
       {{ datastoreAvailability }}
     </div>
   </div>
