@@ -1,6 +1,5 @@
 <script setup>
   import { computed, ref } from "vue";
-  import StyledLink from "../StyledLink.vue";
   import CaptionedLoadingSpinner from "../CaptionedLoadingSpinner.vue";
   import OrganisationSearchFilter from "./OrganisationSearchFilter.vue";
   import OrganisationAlphabetNavigator from "./OrganisationAlphabetNavigator.vue";
@@ -40,7 +39,7 @@
     <span :id="123"></span>
     <div v-for="organisation in organisations" :key="organisation.name" class="p-2">
       <span v-if="isAnchored(organisation.name)" :id="getAnchor(organisation.name).anchor"></span>
-      <StyledLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</StyledLink>
+      <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
     </div>
   </div>
 </template>

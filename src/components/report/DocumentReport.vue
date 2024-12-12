@@ -10,7 +10,6 @@
     getGuidanceLinksURL,
   } from "../../utils";
   import SearchFilter from "../SearchFilter.vue";
-  import StyledButton from "../StyledButton.vue";
   import ActivityErrors from "./ActivityErrors.vue";
   import CategoryItem from "./CategoryItem.vue";
   import FileErrors from "./FileErrors.vue";
@@ -156,10 +155,10 @@
 </script>
 
 <template>
-  <div class="-mx-3.5 flex flex-wrap">
+  <div class="flex flex-wrap">
     <div v-if="hasMessages" class="relative flex shrink grow flex-col sm:w-full md:basis-1/3">
       <div class="sticky top-0 m-2.5">
-        <h3 class="text-xl font-bold">Search and filter</h3>
+        <h3>Search and filter</h3>
         <div class="bg-slate-300">
           <div class="px-4 py-2">
             <SearchFilter
@@ -171,7 +170,7 @@
               @on-search="onFilter"
               @on-lose-focus="onSearchLoseFocus"
             />
-            <h4 class="text-base font-bold">View by message type</h4>
+            <h4>View by message type</h4>
             <div class="text-sm text-slate-700">Click to show or hide individual message types</div>
           </div>
           <SeverityItem
@@ -181,7 +180,7 @@
             @select="onFilterBySeverity"
           />
           <div class="px-4 pt-2">
-            <h4 class="text-base font-bold">View by category</h4>
+            <h4>View by category</h4>
           </div>
           <div class="px-4 py-2">
             <CategoryItem
@@ -192,14 +191,14 @@
             />
           </div>
           <div v-if="hasActiveFilter()" class="px-4 pt-2 pb-4">
-            <StyledButton class="w-full" @click="onClearFilters">Clear Filters</StyledButton>
+            <button class="iati-button w-full" @click="onClearFilters">Clear Filters</button>
           </div>
         </div>
       </div>
     </div>
     <div class="flex shrink grow flex-col" :class="hasMessages ? 'sm:w-full  md:basis-2/3' : 'w-full'">
       <div class="m-2.5">
-        <h3 class="text-xl font-bold">Feedback</h3>
+        <h3>Feedback</h3>
         <FileErrors
           v-if="props.report"
           :file-type="fileType"

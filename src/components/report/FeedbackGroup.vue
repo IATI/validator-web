@@ -6,7 +6,6 @@
   import AppAccordion from "../AppAccordion.vue";
   import AppBadge from "../AppBadge.vue";
   import AppIcon from "../AppIcon.vue";
-  import StyledLink from "../StyledLink.vue";
   import FeedbackList from "./FeedbackList.vue";
 
   const props = defineProps({ activity: { type: Object, default: null } });
@@ -62,14 +61,13 @@
           <AppIcon v-else icon="link-icon" class="ml-2" @click.stop="copyActivityLink(props.activity.identifier)" />
         </div>
         <div class="text-sm">
-          <StyledLink
-            :to="getDPortalLink(props.activity.identifier)"
-            :external="true"
+          <a
+            :href="getDPortalLink(props.activity.identifier)"
             :title="`Open this ${fileType} in d-portal`"
             class="mr-2"
           >
             {{ cleanIdentifier(props.activity.identifier) }}
-          </StyledLink>
+          </a>
           <AppBadge
             v-for="messageType in messageTypes"
             :key="messageType.type"
