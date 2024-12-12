@@ -87,7 +87,7 @@
     }
   };
 
-  const headerClassNames = "hidden border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
+  const headerClassNames = "hidden border-0 border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
   const textClasses =
     "overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny";
 </script>
@@ -146,7 +146,7 @@
     </div>
   </div>
 
-  <div v-if="workspaceData.length" class="flex gap-2">
+  <div v-if="workspaceData.length" class="flex gap-2 mt-2">
     <button class="iati-button" @click="onAddMoreFiles">Add more files</button>
     <button class="iati-button" @click="onClearWorkspace">Clear workspace</button>
   </div>
