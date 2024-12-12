@@ -1,7 +1,6 @@
 <script setup>
   import { forkJoin } from "rxjs";
   import { ref, watch } from "vue";
-  import CardiB from "../components/CardiB.vue";
   import { fetchFileFromURL } from "../utils";
   import AppAlert from "./AppAlert.vue";
   import LoadingSpinner from "./LoadingSpinner.vue";
@@ -70,28 +69,26 @@
   };
 </script>
 <template>
-  <div class="-m-2.5 flex flex-wrap pt-4">
-    <CardiB heading="Step 1" class="w-[300px]" :class="{ 'border-t-iati-blue': activeStep !== 1 }">
-      <label for="url" class="mb-4 text-center">
-        Add a web address (URL) of your IATI XML file. You can add multiple files by separating them with |
+  <div class="iati-card-gallery">
+    <div class="iati-card">
+      <p class="iati-card__title">Step 1</p>
+      <label for="url">
+        <p>Add a web address (URL) of your IATI XML file. You can add multiple files by separating them with "|".</p>
       </label>
       <input
         id="url"
         v-model="urls"
         type="text"
         placeholder="Enter web address"
-        class="mt-2 border border-solid border-iati-green p-2 pl-4"
+        class="border border-solid border-iati-green p-2 pl-4 mt-auto"
       />
       <p v-if="incorrectURLs.length" class="pt-2 text-sm text-warning">
         You have one or more incorrect web addresses: "{{ incorrectURLs.join(", ") }}"
       </p>
-    </CardiB>
-    <CardiB
-      heading="Step 2"
-      class="w-[300px]"
-      :class="{ 'pointer-events-none opacity-50': activeStep === 1, 'border-t-iati-blue': activeStep !== 2 }"
-    >
-      <p class="mb-4 text-center">Fetch the files from the web.</p>
+    </div>
+    <div class="iati-card" :class="{ 'pointer-events-none opacity-50': activeStep === 1 }">
+      <p class="iati-card__title">Step 2</p>
+      <p>Fetch the files from the web.</p>
       <div v-if="requestStatus && requestStatus !== 'draft'" class="mb-3 text-sm">
         <AppAlert v-if="requestStatus === 'error'" variant="error">
           <template v-if="includeGenericErrorMessage">
@@ -114,18 +111,13 @@
       <button class="iati-button self-center mt-auto" :disabled="requestStatus !== 'draft'" @click="fetchFiles">
         Fetch
       </button>
-    </CardiB>
-    <CardiB
-      heading="Step 3"
-      class="w-[300px]"
-      :class="{ 'pointer-events-none opacity-50': activeStep !== 3, 'border-t-iati-blue': activeStep !== 3 }"
-    >
-      <p class="mb-4 text-center">
-        Your URLs are being validated - click below to view their progress and, when complete, reports.
-      </p>
+    </div>
+    <div class="iati-card" :class="{ 'pointer-events-none opacity-50': activeStep !== 3 }">
+      <p class="iati-card__title">Step 3</p>
+      <p>Your URLs are being validated - click below to view their progress and, when complete, reports.</p>
       <RouterLink :to="`/validate/${props.workspaceID}`" class="iati-button self-center mt-auto">
         View Progress and Reports
       </RouterLink>
-    </CardiB>
+    </div>
   </div>
 </template>
