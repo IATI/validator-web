@@ -33,7 +33,7 @@
       </div>
     </template>
     <template #content>
-      <div class="border border-gray-200 p-4">
+      <div class="border border-solid border-gray-200 p-4">
         <AppAlert v-if="!messages.length" variant="success">
           <span>
             Congratulations! This IATI {{ props.fileType }} file has successfully passed IATI XML schema validation!

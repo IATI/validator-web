@@ -2,7 +2,7 @@
   import { getSortDirection, getSortValue, sortDocuments, sortOptions } from "../../utils";
   import DocumentListItem from "./DocumentListItem.vue";
 
-  const headerClassNames = "hidden border-y border-solid border-gray-300 p-2.5 font-bold sm:block";
+  const headerClassNames = "hidden border-0 border-y border-solid border-gray-300 p-2.5 font-bold sm:block";
   const props = defineProps({
     documents: { type: Object, default: () => {} },
     sortvariable: { type: String, default: "" },

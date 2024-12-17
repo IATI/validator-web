@@ -42,7 +42,12 @@
   <div>
     <span>IATI version: {{ props.report.iatiVersion }}</span>
     <span> | Type: {{ props.report.fileType }}</span>
-    <span> | <button @click="downloadCSV()">Download Validation Report CSV</button></span>
+    <span>
+      |
+      <button class="bg-transparent border-none underline p-0 m-0" @click="downloadCSV()">
+        Download Validation Report CSV
+      </button>
+    </span>
   </div>
   <h2 :class="validationStatusClass">{{ validationStatus.caption }}</h2>
 </template>

@@ -12,5 +12,5 @@
 </script>
 
 <template>
-  <div class="border-l-[6px] bg-slate-100 p-3" :class="borderColour"><slot /></div>
+  <div class="border-solid border-0 border-l-[6px] bg-slate-100 p-3" :class="borderColour"><slot /></div>
 </template>

@@ -137,7 +137,9 @@
         </span>
         <span v-if="!reportsLoading">
           |
-          <button @click="downloadCSV()">Download Validation Report CSV</button>
+          <button class="bg-transparent border-none underline p-0 m-0" @click="downloadCSV()">
+            Download Validation Report CSV
+          </button>
         </span>
       </div>
       <div v-if="documents && documents.length" class="flex flex-col sm:mt-0 sm:flex-row">
