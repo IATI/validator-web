@@ -26,15 +26,15 @@
     const visibleErrorTypes = errorTypes.value.filter((type) => type.show);
 
     return visibleErrorTypes.length !== errorTypes.value.length
-      ? `${visibleErrorTypes.length} of ${errorTypes.value.length} messages selected`
+      ? `${visibleErrorTypes.length} of ${errorTypes.value.length} selected`
       : "";
   });
-  const bgClass = {
-    "bg-success": props.severity.id === "success",
-    "bg-advisory": props.severity.id === "advisory",
-    "bg-warning": props.severity.id === "warning",
-    "bg-error": props.severity.id === "error",
-    "bg-critical": props.severity.id === "critical",
+  const textClass = {
+    "text-success": props.severity.id === "success",
+    "text-advisory": props.severity.id === "advisory",
+    "text-warning": props.severity.id === "warning",
+    "text-error": props.severity.id === "error",
+    "text-critical": props.severity.id === "critical",
   };
 
   watch(
@@ -76,15 +76,16 @@
     emit("select", { ...props.severity, types: errorTypes.value });
   };
 </script>
+
 <template>
-  <AppAccordion class="iati-accordion">
+  <AppAccordion :header-classes="'bg-slate-100'">
     <template #title>
-      <div :class="bgClass" class="inline-block w-full px-4 py-2 text-left text-white">
+      <div :class="textClass" class="flex w-full text-left font-bold items-center">
         <CheckBox
           :id="props.severity.name"
-          :label="label"
           :name="props.severity.name"
           :checked="selectAll"
+          :label="label"
           class="inline"
           @checked="onToggleSeverity"
           @unchecked="onToggleSeverity"
@@ -95,7 +96,7 @@
       </div>
     </template>
     <template #content>
-      <div class="border border-gray-200 bg-gray-100 px-4">
+      <div class="border border-solid border-slate-100 px-2">
         <div class="py-2 text-sm text-slate-700">{{ props.severity.description }}</div>
         <CheckBox
           v-for="errorType in errorTypes"

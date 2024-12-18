@@ -155,45 +155,33 @@
 </script>
 
 <template>
-  <div class="flex flex-wrap">
-    <div v-if="hasMessages" class="relative flex shrink grow flex-col sm:w-full md:basis-1/3">
-      <div class="sticky top-0 m-2.5">
-        <h3>Search and filter</h3>
-        <div class="bg-slate-300">
-          <div class="px-4 py-2">
-            <SearchFilter
-              placeholder="Search activity title and identifier..."
-              :search-text="searchText"
-              class="mb-4 mt-2 !w-full"
-              input-classes="!py-2 border-iati-blue text-base w-full"
-              :show-button="false"
-              @on-search="onFilter"
-              @on-lose-focus="onSearchLoseFocus"
-            />
-            <h4>View by message type</h4>
-            <div class="text-sm text-slate-700">Click to show or hide individual message types</div>
-          </div>
-          <SeverityItem
-            v-for="severity in severities"
-            :key="severity.id"
-            :severity="severity"
-            @select="onFilterBySeverity"
-          />
-          <div class="px-4 pt-2">
-            <h4>View by category</h4>
-          </div>
-          <div class="px-4 py-2">
-            <CategoryItem
-              v-for="category in categories"
-              :key="category.id"
-              :category="category"
-              @select="onFilterByCategory"
-            />
-          </div>
-          <div v-if="hasActiveFilter()" class="px-4 pt-2 pb-4">
-            <button class="iati-button w-full" @click="onClearFilters">Clear Filters</button>
-          </div>
-        </div>
+  <div class="flex gap-x-4 flex-col md:flex-row">
+    <div v-if="hasMessages" class="iati-card md:self-start md:sticky md:top-6 md:w-[400px]">
+      <p class="iati-card__title">Search</p>
+      <SearchFilter
+        placeholder="Search activity title and identifier..."
+        :search-text="searchText"
+        :show-button="false"
+        @on-search="onFilter"
+        @on-lose-focus="onSearchLoseFocus"
+      />
+      <p class="iati-card__title pt-2">Filter</p>
+      <p class="iati-card__subtitle">Filter by message type</p>
+      <SeverityItem
+        v-for="severity in severities"
+        :key="severity.id"
+        :severity="severity"
+        @select="onFilterBySeverity"
+      />
+      <p class="iati-card__subtitle pt-2">Filter by category</p>
+      <CategoryItem
+        v-for="category in categories"
+        :key="category.id"
+        :category="category"
+        @select="onFilterByCategory"
+      />
+      <div v-if="hasActiveFilter()" class="mt-4">
+        <button class="iati-button w-full" @click="onClearFilters">Clear Filters</button>
       </div>
     </div>
     <div class="flex shrink grow flex-col" :class="hasMessages ? 'sm:w-full  md:basis-2/3' : 'w-full'">
@@ -215,9 +203,3 @@
     </div>
   </div>
 </template>
-
-<style>
-  .iati-accordion > button > svg {
-    color: #ffffff;
-  }
-</style>
