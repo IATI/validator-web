@@ -69,7 +69,12 @@
     </template>
     <template #content>
       <div class="border border-solid border-gray-200 p-4">
-        <FeedbackGroup v-for="activity in pageData" :key="activity.identifier" :activity="activity" />
+        <FeedbackGroup
+          v-for="activity in pageData"
+          :key="activity.identifier"
+          :activity="activity"
+          data-cy="feedback-group"
+        />
         <AppPagination v-if="filteredData.length > 10" @next="onNext" @previous="onPrevious">
           <span class="text-sm">Page {{ page }} of {{ Math.ceil(filteredData.length / PAGE_LIMIT) }}</span>
         </AppPagination>
