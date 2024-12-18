@@ -41,7 +41,7 @@
 <template>
   <div
     v-if="props.document"
-    class="flex flex-col gap-0 border border-solid border-gray-300 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
+    class="flex flex-col gap-0 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
   >
     <div class="py-2 pb-2 first:pl-3.5" :class="textClasses">
       <div class="text-base font-bold sm:hidden">File Name</div>

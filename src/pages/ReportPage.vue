@@ -34,7 +34,7 @@
     !isTestFile ? getDocumentURL(route.params?.name) : null,
     () => fetchDocument(route.params.name),
   );
-  const headerClassNames = "hidden border-0 border-y border-solid border-gray-300 p-2.5 font-bold sm:block";
+  const headerClassNames = "hidden border-0 border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
 
   const { data: organisation, error: organisationError } = useSWRV(
     () => document.value && getOrganisationURL(document.value.publisher, "id"),
@@ -144,15 +144,15 @@
     <CaptionedLoadingSpinner v-if="(!dataset || !dataset.report) && !errors.length">
       Loading Report ...
     </CaptionedLoadingSpinner>
-    <div class="grid-cols grid">
-      <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 border-t-0 bg-white">
+    <div class="grid-cols grid border border-solid border-gray-300">
+      <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 bg-white">
         <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
         <div :class="headerClassNames">Identified in Registry</div>
         <div :class="headerClassNames">Validated</div>
         <div :class="headerClassNames">Validation Status</div>
         <div :class="headerClassNames">Available in IATI Datastore</div>
       </div>
-      <div v-else class="grid grid-cols-4 gap-0 border-t-0 bg-white">
+      <div v-else class="grid grid-cols-4 gap-0 bg-white">
         <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
         <div :class="headerClassNames">Uploaded</div>
         <div :class="headerClassNames">Validated</div>
