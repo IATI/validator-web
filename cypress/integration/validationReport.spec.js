@@ -7,7 +7,7 @@ describe("The Validation Report page", () => {
     cy.visit("/report/ares-activities");
     cy.wait("@validation");
     cy.contains("Error");
-    cy.get(".iati-accordion").eq(2).children("div").find("button").eq(0).click({ force: true });
+    cy.get("[data-cy='feedback-group']").eq(0).find("button").click({ force: true });
     cy.contains("An empty space was added to the attribute");
   });
 
@@ -20,8 +20,8 @@ describe("The Validation Report page", () => {
     cy.wait("@validation");
     cy.contains("Error");
     cy.get("#search").should("have.value", "BE-BCE_KBO-0546740696-PG2017-2021_CD");
-    cy.get(".iati-accordion").eq(2).children("div").find("button").should("have.length", 1);
-    cy.get(".iati-accordion").eq(2).children("div").find("button").eq(0).click({ force: true });
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").find("button").click({ force: true });
     cy.contains("An empty space was added to the attribute");
   });
 
@@ -32,10 +32,11 @@ describe("The Validation Report page", () => {
     }).as("validation");
     cy.visit("/report/ares-activities");
     cy.wait("@validation");
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 10);
-    cy.get(".iati-accordion").eq(2).find("span").eq(-1).should("contain", "Page 1 of");
-    cy.get(".iati-accordion").eq(2).children("div").find("button").eq(-1).click({ force: true });
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 3);
+    cy.get("[data-cy='feedback-group']").should("have.length", 10);
+    cy.contains("Page 1 of 2");
+    cy.get("[data-cy='next-page'").click({ force: true });
+    cy.contains("Page 2 of 2");
+    cy.get("[data-cy='feedback-group']").should("have.length", 3);
   });
 
   it("filters results when passed an IATI Identifier on query string and paging is in operation", () => {
@@ -47,10 +48,10 @@ describe("The Validation Report page", () => {
     cy.wait("@validation");
     cy.contains("Error");
     cy.get("#search").should("have.value", "XM-TEST-VALIDATION-01-A-PROJECT-01626");
-    cy.get(".iati-accordion").eq(2).children("div").find("button").should("have.length", 1);
-    cy.get(".iati-accordion").eq(2).children("div").find("button").eq(0).click({ force: true });
-    cy.contains("The organisation role is invalid");
-    cy.contains("Budget Period must not be longer than one year");
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").find("button").click({ force: true });
+    cy.get("[data-cy='feedback-group']").contains("The organisation role is invalid");
+    cy.get("[data-cy='feedback-group']").contains("Budget Period must not be longer than one year");
   });
 
   it("filters results and still uses paging when search for IATI Identifier on query string gives more than 10 results", () => {
@@ -62,10 +63,10 @@ describe("The Validation Report page", () => {
     cy.wait("@validation");
     cy.contains("Error");
     cy.get("#search").should("have.value", "XM-TEST-VALIDATION-01-A");
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 10);
-    cy.get(".iati-accordion").eq(2).find("span").eq(-1).should("contain", "Page 1 of");
-    cy.get(".iati-accordion").eq(2).children("div").find("button").eq(-1).click({ force: true });
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").should("have.length", 10);
+    cy.contains("Page 1 of 2");
+    cy.get("[data-cy='next-page'").click({ force: true });
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
   });
 
   it("updates the displayed results after user does new search when on first page of search results", () => {
@@ -77,11 +78,11 @@ describe("The Validation Report page", () => {
     cy.wait("@validation");
     cy.contains("Error");
     cy.get("#search").should("have.value", "XM-TEST-VALIDATION-01-A");
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 10);
-    cy.get(".iati-accordion").eq(2).find("span").eq(-1).should("contain", "Page 1 of");
+    cy.get("[data-cy='feedback-group']").should("have.length", 10);
+    cy.contains("Page 1 of 2");
     cy.get("#search").clear();
     cy.get("#search").type("XM-TEST-VALIDATION-01-B-PROJECT-01926");
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
   });
 
   it("updates the displayed results after user does new search when not on first page of search results", () => {
@@ -93,14 +94,14 @@ describe("The Validation Report page", () => {
     cy.wait("@validation");
     cy.contains("Error");
     cy.get("#search").should("have.value", "XM-TEST-VALIDATION-01-A");
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 10);
-    cy.get(".iati-accordion").eq(2).find("span").eq(-1).should("contain", "Page 1 of");
-    cy.get(".iati-accordion").eq(2).children("div").find("button").eq(-1).click({ force: true });
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").should("have.length", 10);
+    cy.contains("Page 1 of 2");
+    cy.get("[data-cy='next-page'").click({ force: true });
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
 
     cy.get("#search").clear();
     cy.get("#search").type("XM-TEST-VALIDATION-01-B-PROJECT-01926");
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
   });
 
   it("updates the query string after user loads page then does new search", () => {
@@ -115,9 +116,8 @@ describe("The Validation Report page", () => {
     cy.get("#search").clear();
     cy.get("#search").type("XM-TEST-VALIDATION-01-B-PROJECT-01926");
     cy.get("#search").blur();
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 1);
+    cy.get("[data-cy='feedback-group']").should("have.length", 1);
     cy.location().should((loc) => {
-      console.log(loc);
       expect(loc.search).to.eq("?id=XM-TEST-VALIDATION-01-B-PROJECT-01926");
     });
   });
@@ -134,9 +134,8 @@ describe("The Validation Report page", () => {
     cy.get("#search").clear();
     cy.get("#search").type("XM-TEST-VALIDATION-01-B");
     cy.get("#search").blur();
-    cy.get(".iati-accordion").eq(2).find("div.mb-4").should("have.length", 2);
+    cy.get("[data-cy='feedback-group']").should("have.length", 2);
     cy.location().should((loc) => {
-      console.log(loc);
       expect(loc.search).to.eq("?id=XM-TEST-VALIDATION-01-B");
     });
   });

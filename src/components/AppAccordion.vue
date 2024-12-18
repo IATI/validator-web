@@ -1,7 +1,10 @@
 <script setup>
   import { ref } from "vue";
 
-  const props = defineProps({ open: { type: Boolean, default: false } });
+  const props = defineProps({
+    open: { type: Boolean, default: false },
+    headerClasses: { type: String, default: "" },
+  });
 
   const isOpen = ref(props.open);
 
@@ -13,14 +16,15 @@
 <template>
   <div v-auto-animate class="w-full">
     <button
-      class="relative flex w-full items-center space-x-3 p-0 border-none"
+      :class="props.headerClasses"
+      class="flex w-full items-center border-none"
       :aria-expanded="isOpen"
       @click="toggleAccordion()"
     >
       <slot name="title" />
 
       <svg
-        class="absolute right-4 w-3 transform transition-all duration-200"
+        class="w-3 h-3 transform transition-all duration-200 float-right"
         :class="{
           'rotate-180': isOpen,
           'rotate-0': !isOpen,

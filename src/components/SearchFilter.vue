@@ -32,16 +32,17 @@
 </script>
 
 <template>
-  <div class="flex w-full flex-row flex-wrap justify-around sm:w-[500px]">
+  <div class="iati-search-bar">
     <input
       id="search"
       v-model="search"
-      class="m-0 w-full border px-4 py-3 text-lg focus-visible:outline-none sm:w-[350px]"
       :class="props.inputClasses"
+      class="flex-1 p-4 border border-solid border-slate-200"
       :placeholder="props.placeholder"
       autofocus
       @blur="onLoseFocus"
     />
+    <!-- TODO: Button -->
     <button
       v-if="props.showButton"
       class="relative mt-4 inline w-full border-0 bg-iati-blue p-3 text-base uppercase sm:mt-0 sm:w-[150px]"
@@ -49,6 +50,6 @@
     >
       {{ props.buttonCaption }}
     </button>
-    <label id="search" for="search" class="invisible">Search</label>
+    <label id="search" for="search" class="hidden">Search</label>
   </div>
 </template>

@@ -52,9 +52,9 @@
   };
 </script>
 <template>
-  <AppAccordion :open="false" class="mb-4">
+  <AppAccordion :open="false" class="mb-4" :header-classes="'bg-slate-100 px-4 py-2'">
     <template #title>
-      <div class="w-full bg-slate-100 px-4 py-2 text-left">
+      <div class="w-full text-left">
         <div class="font-medium">
           {{ props.activity.title || "Untitled Activity" }}
           <span v-if="show" class="text-[12px]">Link copied</span>
@@ -80,7 +80,7 @@
       </div>
     </template>
     <template #content>
-      <div class="border border-gray-100 px-4 py-2">
+      <div class="border border-solid border-gray-100 px-4 py-2">
         <FeedbackList v-for="(message, index) in messages" :key="index" :message="message" class="pb-2" />
         <span v-if="!messages.length">There is no feedback to display</span>
       </div>
