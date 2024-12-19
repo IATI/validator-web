@@ -2,7 +2,6 @@
   import useSWRV from "swrv";
   import { ref, watchEffect } from "vue";
   import { useRoute } from "vue-router";
-  import placeholderImage from "../assets/images/placeholder-organization.png";
   import AppAlert from "../components/AppAlert.vue";
   import BasicAlert from "../components/BasicAlert.vue";
   import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
@@ -108,17 +107,6 @@
     <AppAlert v-if="errorMessage" variant="error">
       <p>{{ errorMessage }}</p>
     </AppAlert>
-    <div v-if="organisation && organisation.image_url" class="max-w-[200px]">
-      <img
-        :src="organisation.image_url"
-        :alt="organisation.name"
-        @error="(event) => (event.target.src = placeholderImage)"
-      />
-    </div>
-    <div v-if="organisation && organisation.description">
-      <h2>Description</h2>
-      <p>{{ organisation.description }}</p>
-    </div>
   </div>
 
   <CaptionedLoadingSpinner v-if="loading && !errorMessage">
