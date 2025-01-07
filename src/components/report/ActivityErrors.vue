@@ -61,15 +61,20 @@
 </script>
 
 <template>
-  <AppAccordion :open="true" class="iati-accordion">
+  <AppAccordion :open="true" :header-classes="'text-white bg-iati-green px-4 py-2'">
     <template #title>
-      <div class="w-full bg-iati-green px-4 py-2 text-left text-white">
+      <div class="w-full text-left">
         {{ props.title }}
       </div>
     </template>
     <template #content>
       <div class="border border-solid border-gray-200 p-4">
-        <FeedbackGroup v-for="activity in pageData" :key="activity.identifier" :activity="activity" />
+        <FeedbackGroup
+          v-for="activity in pageData"
+          :key="activity.identifier"
+          :activity="activity"
+          data-cy="feedback-group"
+        />
         <AppPagination v-if="filteredData.length > 10" @next="onNext" @previous="onPrevious">
           <span class="text-sm">Page {{ page }} of {{ Math.ceil(filteredData.length / PAGE_LIMIT) }}</span>
         </AppPagination>

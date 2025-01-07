@@ -5,7 +5,7 @@
     with data on development and humanitarian resources and results.
   </p>
 
-  <div class="iati-card-gallery">
+  <div class="iati-card-gallery my-12">
     <div class="iati-card">
       <p class="iati-card__title">Check Data</p>
       <p class="iati-card__subtitle">Check your IATI data</p>
