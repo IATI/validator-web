@@ -34,7 +34,7 @@
   <AppAlert class="mt-2" :variant="props.item.severity">
     <div>
       <span class="float-right">
-        {{ props.item.id }}
+        <span class="font-bold">{{ props.item.id }}</span>
         <a v-if="isGuidanceAvailable" :href="guidanceLink" title="Open guidance in a new window">(see guidance)</a>
         <a v-if="codelistLink" :href="codelistLink" title="Open guidance in a new window">(see guidance)</a>
       </span>
@@ -43,7 +43,7 @@
         v-if="props.item.context.length > 1 || (props.item.context.length && props.item.context[0].text !== '')"
         class="list-disc pl-10"
       >
-        <li v-for="(context, index) of props.item.context" :key="index">
+        <li v-for="(context, index) of props.item.context" :key="index" class="iati-code bg-white pl-2">
           <span v-if="containsQuotedTrailingWhitespace(context.text)">
             {{ context.text }}
             <p class="text-error">An empty space was added to the attribute</p>
