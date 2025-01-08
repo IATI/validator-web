@@ -40,29 +40,33 @@
 <template>
   <footer class="iati-footer iati-brand-background">
     <div class="iati-brand-background__content">
-      <div class="iati-footer__section iati-footer__section--first">
+      <div class="iati-footer__section">
         <div class="iati-footer__container">
           <div class="iati-footer-block">
             <h2 class="iati-footer-block__title">Additional Information</h2>
-            <div class="iati-footer-block__content">
-              <p>Part of the IATI Unified Platform.</p>
-              <p>
-                Code licensed under
-                <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU AGPL</a>.
-              </p>
-              <p>
-                Documentation licensed under
-                <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
-              </p>
-              <p v-if="showVersions">
-                <a :href="releases.web.url">Web v{{ releases.web.version }}</a>
-              </p>
-              <p v-if="showVersions">
-                <a :href="releases.services.url">Services v{{ releases.services.version }}</a>
-              </p>
-              <p v-if="showVersions">
-                <a :href="releases.api.url">API v{{ releases.api.version }}</a>
-              </p>
+            <div class="iati-footer-block__content iati-footer-block__content--columns">
+              <div>
+                <p>Part of the IATI Unified Platform.</p>
+                <p>
+                  Code licensed under
+                  <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU AGPL</a>.
+                </p>
+                <p>
+                  Documentation licensed under
+                  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+                </p>
+              </div>
+              <div v-if="showVersions">
+                <p>
+                  <a :href="releases.web.url">Web v{{ releases.web.version }}</a>
+                </p>
+                <p>
+                  <a :href="releases.services.url">Services v{{ releases.services.version }}</a>
+                </p>
+                <p>
+                  <a :href="releases.api.url">API v{{ releases.api.version }}</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
