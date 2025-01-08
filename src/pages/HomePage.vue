@@ -1,8 +1,7 @@
 <template>
   <p>
-    The IATI Validator is an online tool for checking if data aligns with the rules and guidance of IATI Standard. It
-    allows users to check and improve the quality of IATI data to ensure it is accessible and useful to anyone working
-    with data on development and humanitarian resources and results.
+    The IATI Validator is a tool for assessing data using the rules and guidance of the IATI Standard. It provides
+    information on how to improve the quality of IATI data to ensure it is accessible and useful to data users.
   </p>
 
   <div class="iati-card-gallery my-12">

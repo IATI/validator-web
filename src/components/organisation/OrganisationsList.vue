@@ -13,8 +13,9 @@
   const anchors = computed(() =>
     organisations.value.reduce((items, curr) => {
       const firstChar = curr.title.split("")[0].toLowerCase();
-      return isNaN(Number(firstChar)) && !items.map((item) => item.anchor).includes(firstChar)
-        ? items.concat({ anchor: firstChar, name: curr.name })
+      const identifier = isNaN(Number(firstChar)) ? firstChar : "123";
+      return !items.map((item) => item.anchor).includes(identifier)
+        ? items.concat({ anchor: identifier, name: curr.name })
         : items;
     }, []),
   );
@@ -36,9 +37,8 @@
       Found <b>{{ organisations.length }}</b> organisations.
     </div>
     <hr class="mb-2" />
-    <span :id="123"></span>
     <div v-for="organisation in organisations" :key="organisation.name" class="p-2">
-      <span v-if="isAnchored(organisation.name)" :id="getAnchor(organisation.name).anchor"></span>
+      <span v-if="isAnchored(organisation.name)" :id="getAnchor(organisation.name).anchor" class="scroll-mt-12"></span>
       <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
     </div>
   </div>

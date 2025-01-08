@@ -1,7 +1,6 @@
 <template>
   <p>
-    This file has been tested against the IATI Standard XML Schema, and the IATI Standard Rulesets. For more
-    information, see
+    This data has been tested against the IATI Standard XML Schema and IATI Standard Rulesets. For more information, see
     <a href="https://docs.validator.iatistandard.org/">the documentation</a>.
   </p>
 

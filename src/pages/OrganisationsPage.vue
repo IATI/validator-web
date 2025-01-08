@@ -21,9 +21,9 @@
 <template>
   <h1>Public Data Viewer</h1>
   <p>
-    Search for an organisation and access the validation results on their public IATI data. The organisation list and
-    the public IATI data is regularly refreshed from the IATI Registry. New organisations and IATI files will not
-    immediately be visible here, but after at most a day.
+    Search for an organisation and access the validation results of their public IATI data. The organisation list and
+    the public IATI data is regularly refreshed from the IATI Registry. New organisations and IATI files will be visible
+    within 24 hours.
   </p>
   <OrganisationsList :is-fetching="isFetching" :organisations="organisations" />
 </template>
