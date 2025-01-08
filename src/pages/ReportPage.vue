@@ -130,7 +130,7 @@
     <span>Return to your workspace</span>
   </RouterLink>
   <div v-if="organisation || document || dataset">
-    <div>
+    <h2 class="text-xl">
       <template v-if="organisation">
         <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
         -
@@ -139,7 +139,7 @@
         {{ getDocumentFileName(document) }}
       </RouterLink>
       <div v-if="dataset && isTestFile">{{ dataset.filename }}</div>
-    </div>
+    </h2>
     <DocumentInfo v-if="dataset && dataset.report" :document="document" :report="dataset.report" />
     <CaptionedLoadingSpinner v-if="(!dataset || !dataset.report) && !errors.length">
       Loading Report ...
