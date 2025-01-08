@@ -124,11 +124,11 @@
 </script>
 
 <template>
-  <h1>File Validation Report</h1>
   <RouterLink v-if="isTestFile && dataset" :to="`/validate/${dataset.session_id}`" class="flex">
     <IconChevron class="mr-2" />
     <span>Return to your workspace</span>
   </RouterLink>
+  <h1>File Validation Report</h1>
   <div v-if="organisation || document || dataset">
     <h2 class="text-xl">
       <template v-if="organisation">
