@@ -41,7 +41,7 @@
       <span>{{ props.item.message }}</span>
       <ul
         v-if="props.item.context.length > 1 || (props.item.context.length && props.item.context[0].text !== '')"
-        class="list-disc pl-10"
+        class="list-none px-0"
       >
         <li v-for="(context, index) of props.item.context" :key="index" class="iati-code bg-white pl-2">
           <span v-if="containsQuotedTrailingWhitespace(context.text)">
