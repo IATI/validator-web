@@ -29,7 +29,7 @@
   };
 
   const textClasses =
-    "overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny";
+    "overflow-hidden text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal text-tiny self-center";
 </script>
 
 <template>
