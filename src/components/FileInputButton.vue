@@ -1,6 +1,5 @@
 <script setup>
   import { ref, watch } from "vue";
-  import StyledButton from "./StyledButton.vue";
   import AppAlert from "./AppAlert.vue";
 
   const props = defineProps({
@@ -32,7 +31,7 @@
 </script>
 <template>
   <div v-if="!files.length" class="inline-block">
-    <label class="bg-iati-green px-5 py-2 uppercase !text-white hover:bg-iati-blue" for="file-upload">
+    <label class="iati-button" for="file-upload">
       <slot />
     </label>
     <input
@@ -54,7 +53,7 @@
       </p>
     </AppAlert>
   </div>
-  <div v-else class="mt-2 inline-block w-full">
+  <div v-else class="text-center">
     <p
       v-for="file in files"
       :key="file.name"
@@ -62,6 +61,6 @@
     >
       {{ file.name }}
     </p>
-    <StyledButton class="mt-2 uppercase" @click="files = []">Clear</StyledButton>
+    <button class="iati-button" @click="files = []">Clear</button>
   </div>
 </template>

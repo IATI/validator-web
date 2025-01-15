@@ -1,64 +1,43 @@
-<script setup>
-  import CardiB from "../components/CardiB.vue";
-  import ContentContainer from "../components/layout/ContentContainer.vue";
-  import LinkButton from "../components/LinkButton.vue";
-</script>
-
 <template>
-  <ContentContainer class="pt-6 pb-8">
-    <p class="pb-4 text-lg">
-      The IATI Validator is an online tool for checking if data aligns with the rules and guidance of IATI Standard. It
-      allows users to check and improve the quality of IATI data to ensure it is accessible and useful to anyone working
-      with data on development and humanitarian resources and results.
-    </p>
+  <p>
+    The IATI Validator is a tool for assessing data using the rules and guidance of the IATI Standard. It provides
+    information on how to improve the quality of IATI data to ensure it is accessible and useful to data users.
+  </p>
 
-    <div class="-m-2.5 flex flex-wrap pt-4">
-      <CardiB heading="Check Data" class="w-[300px]">
-        <p>Check your IATI data</p>
-        <ul class="my-4 list-disc pl-10">
-          <li>Select and upload your IATI files OR add URL to files</li>
-          <li>Get validation results</li>
-        </ul>
-        <LinkButton to="/validate" class="text-tiny"> Check data </LinkButton>
-      </CardiB>
-      <CardiB heading="Public Data Viewer" class="w-[300px]">
-        <p>Check all files published on the IATI Registry</p>
-        <ul class="my-4 list-disc pl-10">
-          <li>Find an organisation</li>
-          <li>See the IATI files published by the organisation</li>
-          <li>Get validation results of an IATI file</li>
-        </ul>
-        <LinkButton to="/organisations" class="text-tiny"> Public data viewer </LinkButton>
-      </CardiB>
-      <CardiB heading="Public API" class="w-[300px]">
-        <p>Validate IATI files or retrieve validation reports using the public IATI API</p>
-        <ul class="my-4 list-disc pl-10">
-          <li><code class="text-iati-code">GET</code> existing validation reports for published files</li>
-          <li><code class="text-iati-code">POST</code> IATI XML and receive validation results</li>
-        </ul>
-        <LinkButton
-          id="public-api-button"
-          to="https://developer.iatistandard.org/api-details#api=iati-validator-v2"
-          :external="true"
-          class="text-tiny"
-        >
-          Public API
-        </LinkButton>
-      </CardiB>
+  <div class="iati-card-gallery my-12">
+    <div class="iati-card">
+      <p class="iati-card__title">Check Data</p>
+      <p class="iati-card__subtitle">Check your IATI data</p>
+      <ul>
+        <li>Select and upload your IATI files OR add URL to files</li>
+        <li>Get validation results</li>
+      </ul>
+      <RouterLink class="iati-button self-center mt-auto" to="/validate">Check Data</RouterLink>
     </div>
-  </ContentContainer>
+    <div class="iati-card">
+      <p class="iati-card__title">Public Data Viewer</p>
+      <p class="iati-card__subtitle">Check all files published on the IATI Registry</p>
+      <ul>
+        <li>Find an organisation</li>
+        <li>See the IATI files published by the organisation</li>
+        <li>Get validation results of an IATI file</li>
+      </ul>
+      <RouterLink class="iati-button self-center mt-auto" to="/organisations">Public Data Viewer</RouterLink>
+    </div>
+    <div class="iati-card">
+      <p class="iati-card__title">Public API</p>
+      <p class="iati-card__subtitle">Validate IATI files or retrieve validation reports using the public IATI API</p>
+      <ul>
+        <li><code class="iati-code">GET</code> existing validation reports for published files</li>
+        <li><code class="iati-code">POST</code> IATI XML and receive validation results</li>
+      </ul>
+      <a
+        id="public-api-button"
+        href="https://developer.iatistandard.org/api-details#api=iati-validator-v2"
+        class="iati-button self-center mt-auto"
+      >
+        Public API
+      </a>
+    </div>
+  </div>
 </template>
-
-<script>
-  export default {
-    props: {
-      msg: {
-        type: String,
-        default: "",
-      },
-    },
-    setup(props) {
-      console.log(props.msg);
-    },
-  };
-</script>

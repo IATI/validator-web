@@ -58,7 +58,6 @@
     position: relative;
     vertical-align: top;
     margin-bottom: 0;
-    font-weight: normal;
     cursor: pointer;
   }
 
@@ -156,12 +155,12 @@
 
   .icheck-green > input:first-child:not(:checked):not(:disabled):hover + label::before,
   .icheck-green > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
-    border-color: #155336;
+    border-color: #155366;
   }
 
   .icheck-green > input:first-child:checked + label::before,
   .icheck-green > input:first-child:checked + input[type="hidden"] + label::before {
-    background-color: #155336;
-    border-color: #155336;
+    background-color: #155366;
+    border-color: #155366;
   }
 </style>

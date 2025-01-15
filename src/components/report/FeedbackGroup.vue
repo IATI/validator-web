@@ -6,7 +6,6 @@
   import AppAccordion from "../AppAccordion.vue";
   import AppBadge from "../AppBadge.vue";
   import AppIcon from "../AppIcon.vue";
-  import StyledLink from "../StyledLink.vue";
   import FeedbackList from "./FeedbackList.vue";
 
   const props = defineProps({ activity: { type: Object, default: null } });
@@ -53,23 +52,22 @@
   };
 </script>
 <template>
-  <AppAccordion :open="false" class="mb-4">
+  <AppAccordion :open="false" class="mb-4" :header-classes="'bg-slate-100 px-4 py-2'">
     <template #title>
-      <div class="w-full bg-slate-100 px-4 py-2 text-left">
+      <div class="w-full text-left">
         <div class="font-medium">
           {{ props.activity.title || "Untitled Activity" }}
           <span v-if="show" class="text-[12px]">Link copied</span>
           <AppIcon v-else icon="link-icon" class="ml-2" @click.stop="copyActivityLink(props.activity.identifier)" />
         </div>
         <div class="text-sm">
-          <StyledLink
-            :to="getDPortalLink(props.activity.identifier)"
-            :external="true"
+          <a
+            :href="getDPortalLink(props.activity.identifier)"
             :title="`Open this ${fileType} in d-portal`"
             class="mr-2"
           >
             {{ cleanIdentifier(props.activity.identifier) }}
-          </StyledLink>
+          </a>
           <AppBadge
             v-for="messageType in messageTypes"
             :key="messageType.type"
@@ -82,7 +80,7 @@
       </div>
     </template>
     <template #content>
-      <div class="border border-gray-100 px-4 py-2">
+      <div class="border border-solid border-gray-100 px-4 py-2">
         <FeedbackList v-for="(message, index) in messages" :key="index" :message="message" class="pb-2" />
         <span v-if="!messages.length">There is no feedback to display</span>
       </div>

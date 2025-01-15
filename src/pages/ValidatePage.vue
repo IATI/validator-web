@@ -5,13 +5,8 @@
   import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
   import CheckBox from "../components/CheckBox.vue";
   import IconChevron from "../components/IconChevron.vue";
-  import ContentContainer from "../components/layout/ContentContainer.vue";
   import LocalFilesValidator from "../components/LocalFilesValidator.vue";
-  import RemoteFIlesValidator from "../components/RemoteFIlesValidator.vue";
-  import StyledLink from "../components/StyledLink.vue";
-  import { setPageTitle } from "../state";
-
-  setPageTitle("Check data");
+  import RemoteFilesValidator from "../components/RemoteFilesValidator.vue";
 
   const route = useRoute();
   const workspaceID = computed(() => {
@@ -37,34 +32,34 @@
 </script>
 
 <template>
-  <ContentContainer class="pb-8">
-    <div v-if="route.query.tempWorkspaceID && workspaceID" class="mb-6 inline-flex">
-      <StyledLink :to="`/validate/${workspaceID}`" class="mr-2 inline-flex">
-        <IconChevron class="mr-2" /> Return to your workspace
-      </StyledLink>
-    </div>
-    <p class="mb-4">Upload your IATI file and receive validation feedback.</p>
-    <fieldset>
-      <legend class="invisible">Upload options</legend>
-      <CheckBox
-        id="upload"
-        label="I have a file(s) to upload"
-        name="fileSource"
-        type="radio"
-        :checked="fileSource === 'upload'"
-        @checked="fileSource = 'upload'"
-      />
-      <CheckBox
-        id="remote"
-        type="radio"
-        label="I have a URL to a remote file(s)"
-        name="fileSource"
-        :checked="fileSource === 'remote'"
-        @checked="fileSource = 'remote'"
-      />
-    </fieldset>
-    <CaptionedLoadingSpinner v-if="!fileSource">Loading</CaptionedLoadingSpinner>
-    <LocalFilesValidator v-if="fileSource === 'upload'" :workspace-i-d="workspaceID" />
-    <RemoteFIlesValidator v-if="fileSource === 'remote'" :workspace-i-d="workspaceID" />
-  </ContentContainer>
+  <h1>Check Data</h1>
+  <div v-if="route.query.tempWorkspaceID && workspaceID">
+    <RouterLink :to="`/validate/${workspaceID}`">
+      <IconChevron class="mr-2" />
+      <span>Return to your workspace</span>
+    </RouterLink>
+  </div>
+  <p>Upload your IATI file and receive validation feedback.</p>
+  <fieldset class="border-none">
+    <legend class="invisible">Upload options</legend>
+    <CheckBox
+      id="upload"
+      label="I have a file(s) to upload"
+      name="fileSource"
+      type="radio"
+      :checked="fileSource === 'upload'"
+      @checked="fileSource = 'upload'"
+    />
+    <CheckBox
+      id="remote"
+      type="radio"
+      label="I have a URL to a remote file(s)"
+      name="fileSource"
+      :checked="fileSource === 'remote'"
+      @checked="fileSource = 'remote'"
+    />
+  </fieldset>
+  <CaptionedLoadingSpinner v-if="!fileSource">Loading</CaptionedLoadingSpinner>
+  <LocalFilesValidator v-if="fileSource === 'upload'" :workspace-i-d="workspaceID" />
+  <RemoteFilesValidator v-if="fileSource === 'remote'" :workspace-i-d="workspaceID" />
 </template>

@@ -6,8 +6,7 @@
   const validationStatus = computed(() => getDocumentValidationStatus({ ...props.document, report: props.report }));
   const validationStatusClass = computed(() => {
     const status = validationStatus.value.value;
-    const commonClasses = "font-bold text-2xl pt-2";
-    return status !== "normal" ? `text-${status} ${commonClasses}` : commonClasses;
+    return status !== "normal" ? `text-${status}` : ``;
   });
   const downloadCSV = () => {
     const registryName = props.document ? props.document.name : "adhoc_file";
@@ -43,7 +42,12 @@
   <div>
     <span>IATI version: {{ props.report.iatiVersion }}</span>
     <span> | Type: {{ props.report.fileType }}</span>
-    <span> | <button class="underline" @click="downloadCSV()">Download Validation Report CSV</button></span>
+    <span>
+      |
+      <button class="bg-transparent border-none underline p-0 m-0" @click="downloadCSV()">
+        Download Validation Report CSV
+      </button>
+    </span>
   </div>
-  <div :class="validationStatusClass">{{ validationStatus.caption }}</div>
+  <h2 :class="validationStatusClass">{{ validationStatus.caption }}</h2>
 </template>

@@ -1,12 +1,9 @@
 <script setup>
   import useSWRV from "swrv";
   import { ref, watchEffect } from "vue";
-  import { setPageTitle } from "../state";
-  import ContentContainer from "../components/layout/ContentContainer.vue";
   import { fetchOrganisations, getOrganisationsURL } from "../utils";
   import OrganisationsList from "../components/organisation/OrganisationsList.vue";
 
-  setPageTitle("Public data viewer");
   const isFetching = ref(true);
 
   const { data: organisations, error } = useSWRV(getOrganisationsURL(), () => fetchOrganisations());
@@ -22,12 +19,11 @@
 </script>
 
 <template>
-  <ContentContainer>
-    <p class="mb-4">
-      Search for an organisation and access the validation results on their public IATI data. The organisation list and
-      the public IATI data is regularly refreshed from the IATI Registry. New organisations and IATI files will not
-      immediately be visible here, but after at most a day.
-    </p>
-    <OrganisationsList :is-fetching="isFetching" :organisations="organisations" />
-  </ContentContainer>
+  <h1>Public Data Viewer</h1>
+  <p>
+    Search for an organisation and access the validation results of their public IATI data. The organisation list and
+    the public IATI data is regularly refreshed from the IATI Registry. New organisations and IATI files will be visible
+    within 24 hours.
+  </p>
+  <OrganisationsList :is-fetching="isFetching" :organisations="organisations" />
 </template>

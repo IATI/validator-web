@@ -3,7 +3,7 @@ describe("The Ad Hoc Validate Check Data page", () => {
     cy.visit("/validate");
   });
   it("has the expected header contents", () => {
-    cy.get("h1").should("have.text", "IATI Validator").siblings().should("have.text", "Check data");
+    cy.get("h1").should("have.text", "Check Data");
   });
   it("starts with correctly active/inactive buttons", () => {
     cy.contains("label", "Browse").should("not.be.disabled");
@@ -18,11 +18,11 @@ describe("The Ad Hoc Validate Check Data page", () => {
     cy.contains("a", "View Progress and Reports").parent().should("not.have.class", "pointer-events-none");
     cy.contains("a", "View Progress and Reports").click();
     cy.url().should("includes", "/validate/");
-    cy.contains("Validation results");
+    cy.get("h1").should("have.text", "Validation Results");
     cy.contains("iati-act-no-errors.xml");
     cy.get(".doc-list-item").eq(0).contains("Warning", { timeout: 20000 });
     cy.get(".doc-list-item").eq(0).click();
-    cy.get("h1").should("have.text", "IATI Validator").siblings().should("have.text", "File validation report");
+    cy.get("h1").should("have.text", "File Validation Report");
     cy.contains("IATI version");
     cy.contains("Type");
   });
@@ -42,13 +42,13 @@ describe("The Ad Hoc Validate Check Data page", () => {
     cy.contains("a", "View Progress and Reports").parent().should("not.have.class", "pointer-events-none");
     cy.contains("a", "View Progress and Reports").click();
     cy.url().should("includes", "/validate/");
-    cy.contains("Validation results");
+    cy.get("h1").should("have.text", "Validation Results");
     cy.contains(
       "https://raw.githubusercontent.com/IATI/IATI-Extra-Documentation/version-2.03/en/activity-standard/activity-standard-example-annotated.xml",
     );
     cy.get(".doc-list-item").eq(0).contains("Error", { timeout: 20000 });
     cy.get(".doc-list-item").eq(0).click();
-    cy.get("h1").should("have.text", "IATI Validator").siblings().should("have.text", "File validation report");
+    cy.get("h1").should("have.text", "File Validation Report");
     cy.contains("IATI version");
     cy.contains("Type");
   });

@@ -6,7 +6,7 @@ describe("The Public Data Viewer (organisations) page", () => {
   });
 
   it("has the expected header contents", () => {
-    cy.get("h1").should("have.text", "IATI Validator").siblings().should("have.text", "Public data viewer");
+    cy.get("h1").should("have.text", "Public Data Viewer");
   });
   it("has the organisation count", () => {
     cy.get("#org-count");

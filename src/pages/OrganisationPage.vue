@@ -2,18 +2,12 @@
   import useSWRV from "swrv";
   import { ref, watchEffect } from "vue";
   import { useRoute } from "vue-router";
-  import placeholderImage from "../assets/images/placeholder-organization.png";
   import AppAlert from "../components/AppAlert.vue";
   import BasicAlert from "../components/BasicAlert.vue";
-  import BasicCard from "../components/BasicCard.vue";
   import CaptionedLoadingSpinner from "../components/CaptionedLoadingSpinner.vue";
-  import CardHeader from "../components/CardHeader.vue";
   import FileStatusInfo from "../components/FileStatusInfo.vue";
-  import ContentContainer from "../components/layout/ContentContainer.vue";
   import DocumentList from "../components/organisation/DocumentList.vue";
   import SelectInput from "../components/SelectInput.vue";
-  import StyledLink from "../components/StyledLink.vue";
-  import { setPageTitle } from "../state";
   import {
     documentValidationStatus,
     fetchOrganisationByName,
@@ -29,7 +23,7 @@
   } from "../utils";
   import { constructCSV } from "../utils/document";
 
-  const layout = setPageTitle("Loading...");
+  const title = ref("Loading...");
   const route = useRoute();
   const loading = ref(true);
   const reportsLoading = ref(true);
@@ -58,7 +52,7 @@
       }
       if (status === 404) {
         errorMessage.value = `No organisation found with name "${route.params.name}"`;
-        layout.title = "Organisation Not Found";
+        title.value = "Organisation Not Found";
       }
     }
   });
@@ -67,7 +61,7 @@
       loading.value = false;
       console.log(organisationError.value);
     } else if (organisation.value && organisation.value) {
-      layout.title = organisation.value.title;
+      title.value = organisation.value.title;
     }
   });
   watchEffect(() => {
@@ -108,79 +102,60 @@
 </script>
 
 <template>
-  <ContentContainer>
-    <div>
-      <AppAlert v-if="errorMessage" variant="error">
-        <p class="font-semibold">{{ errorMessage }}</p>
-      </AppAlert>
-      <div v-if="organisation && organisation.image_url" class="mb-5 max-w-[200px]">
-        <img
-          :src="organisation.image_url"
-          :alt="organisation.name"
-          @error="(event) => (event.target.src = placeholderImage)"
+  <h1>{{ title }}</h1>
+  <div>
+    <AppAlert v-if="errorMessage" variant="error">
+      <p>{{ errorMessage }}</p>
+    </AppAlert>
+  </div>
+
+  <CaptionedLoadingSpinner v-if="loading && !errorMessage">
+    {{ !organisation ? "Loading Info ..." : "Loading Reports..." }}
+  </CaptionedLoadingSpinner>
+
+  <div v-if="!loading && !errorMessage">
+    <h2>Public Data</h2>
+    <h3>IATI files published in the IATI Registry</h3>
+    <FileStatusInfo />
+    <div class="flex flex-col p-3 sm:flex-row sm:justify-between">
+      <div v-if="documents && documents.length" class="py-2">
+        <span>{{ documents.length }} {{ documents.length === 1 ? "file" : "files" }}</span>
+        <span v-for="status in documentValidationStatus(documents)" :key="status">
+          | <label :class="getStatusColor(status)">{{ status }}</label> : {{ getDocumentCount(documents, status) }}
+        </span>
+        <span v-if="!reportsLoading">
+          |
+          <button class="bg-transparent border-none underline p-0 m-0" @click="downloadCSV()">
+            Download Validation Report CSV
+          </button>
+        </span>
+      </div>
+      <div v-if="documents && documents.length" class="flex flex-col sm:mt-0 sm:flex-row">
+        <label id="documentSort" for="documentSort" class="whitespace-nowrap sm:py-2">Sort by:</label>
+        <SelectInput
+          id="documentSort"
+          v-model="selected"
+          :options="documents && documents.length ? sortOptions(documents).map((option) => option.label) : []"
+          placeholder="Sort by"
+          :allow-empty="false"
+          :selected-label="''"
+          :deselect-label="''"
+          class="min-w-[300px] sm:ml-1"
         />
       </div>
-      <div v-if="organisation && organisation.description">
-        <h3 class="font-bold">Description</h3>
-        <p class="my-3">{{ organisation.description }}</p>
-      </div>
     </div>
-
-    <CaptionedLoadingSpinner v-if="loading && !errorMessage" class="pb-3">
-      {{ !organisation ? "Loading Info ..." : "Loading Reports..." }}
-    </CaptionedLoadingSpinner>
-
-    <div v-if="!loading && !errorMessage" class="-mx-3.5 flex flex-wrap">
-      <BasicCard class="rounded-b-none">
-        <template #header>
-          <CardHeader>Public data</CardHeader>
-        </template>
-
-        <p class="pb-3 text-base font-bold">IATI files published in the IATI Registry</p>
-        <FileStatusInfo />
-
-        <div class="-mx-3.5 -mb-3.5">
-          <div class="flex flex-col p-3 sm:flex-row sm:justify-between">
-            <div v-if="documents && documents.length" class="py-2">
-              <span>{{ documents.length }} {{ documents.length === 1 ? "file" : "files" }}</span>
-              <span v-for="status in documentValidationStatus(documents)" :key="status">
-                | <label :class="getStatusColor(status)">{{ status }}</label
-                >: {{ getDocumentCount(documents, status) }}
-              </span>
-              <span v-if="!reportsLoading">
-                |
-                <button class="underline" @click="downloadCSV()">Download Validation Report CSV</button></span
-              >
-            </div>
-            <div v-if="documents && documents.length" class="flex flex-col sm:mt-0 sm:flex-row">
-              <label id="documentSort" for="documentSort" class="whitespace-nowrap sm:py-2">Sort by:</label>
-              <SelectInput
-                id="documentSort"
-                v-model="selected"
-                :options="documents && documents.length ? sortOptions(documents).map((option) => option.label) : []"
-                placeholder="Sort by"
-                :allow-empty="false"
-                :selected-label="''"
-                :deselect-label="''"
-                class="min-w-[300px] sm:ml-1"
-              />
-            </div>
-          </div>
-          <DocumentList
-            v-if="documents && documents.length"
-            :key="Math.random()"
-            :documents="documents"
-            :sortvariable="selected"
-          >
-          </DocumentList>
-          <div v-else-if="documentsError || organisationError" class="m-3.5">
-            <BasicAlert>
-              Couldn't fetch the documents. Please try again later. If the problem persists, email support at
-              <StyledLink to="mailto:support@iatistandard.org" :external="true">support@iatistandard.org</StyledLink>
-            </BasicAlert>
-          </div>
-        </div>
-      </BasicCard>
+    <DocumentList
+      v-if="documents && documents.length"
+      :key="Math.random()"
+      :documents="documents"
+      :sortvariable="selected"
+    >
+    </DocumentList>
+    <div v-else-if="documentsError || organisationError" class="m-3.5">
+      <BasicAlert>
+        Couldn't fetch the documents. Please try again later. If the problem persists, email support at
+        <a href="mailto:support@iatistandard.org">support@iatistandard.org</a>
+      </BasicAlert>
     </div>
-  </ContentContainer>
+  </div>
 </template>
