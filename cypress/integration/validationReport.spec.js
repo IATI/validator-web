@@ -139,4 +139,14 @@ describe("The Validation Report page", () => {
       expect(loc.search).to.eq("?id=XM-TEST-VALIDATION-01-B");
     });
   });
+
+  it("opens the validation report page and presents the correct XML URLs in the document link", () => {
+    cy.fixture("validationReport01ares");
+    cy.intercept("**/existing?name=ares-activities", {
+      fixture: "validationReport01ares.json",
+    }).as("validation");
+    cy.visit("/report/ares-activities?id=BE-BCE_KBO-0546740696-PG2017-2021_CD");
+    cy.get("[data-cy='document-url-anchor']").should("have.attr", "href", "https://aidstream.s3.us-west-2.amazonaws.com/xml/ares-activities.xml");
+    cy.get("[data-cy='document-url-anchor']").should("have.text", "ares-activities.xml");
+  });
 });
