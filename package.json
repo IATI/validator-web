@@ -27,7 +27,7 @@
     "lodash": "^4.17.21",
     "plausible-tracker": "^0.3.9",
     "rxjs": "^7.8.1",
-    "swrv": "^1.0.4",
+    "swrv": "^1.1.0",
     "uuid": "^11.0.5",
     "vue": "^3.5.13",
     "vue-multiselect": "^3.1.0",
@@ -37,7 +37,7 @@
     "@eslint/js": "^9.17.0",
     "@vitejs/plugin-vue": "^3.2.0",
     "autoprefixer": "^10.4.20",
-    "cypress": "^13.17.0",
+    "cypress": "^14.0.0",
     "eslint": "^9.18.0",
     "eslint-config-flat-gitignore": "^1.0.0",
     "eslint-config-prettier": "^10.0.1",
@@ -46,12 +46,12 @@
     "globals": "^15.14.0",
     "postcss": "^8.5.1",
     "prettier": "3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
+    "prettier-plugin-tailwindcss": "^0.6.10",
     "sass": "^1.83.4",
     "serve": "^14.2.4",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0",
+    "typescript-eslint": "^8.21.0",
     "vite": "^3.2.5"
   }
 }
