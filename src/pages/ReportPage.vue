@@ -135,7 +135,7 @@
         <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
         -
       </template>
-      <RouterLink v-if="document" :to="document.url" :external="true">
+      <RouterLink v-if="document" :href="document.url" :external="true">
         {{ getDocumentFileName(document) }}
       </RouterLink>
       <div v-if="dataset && isTestFile">{{ dataset.filename }}</div>
