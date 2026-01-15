@@ -33,12 +33,14 @@
   const { data: documentResponse, error: documentError } = useSWRV(
     !isTestFile ? getDocumentURL(route.params?.name) : null,
     () => fetchDocument(route.params.name),
+    { revalidateOnFocus: false },
   );
   const headerClassNames = "hidden border-0 border-b border-solid border-gray-300 p-2.5 font-bold sm:block";
 
   const { data: organisation, error: organisationError } = useSWRV(
     () => document.value && getOrganisationURL(document.value.publisher, "id"),
     () => fetchOrganisationByID(document.value.publisher),
+    { revalidateOnFocus: false },
   );
   const { data: datasetResponse, error: datasetError } = useSWRV(
     () =>
@@ -46,6 +48,7 @@
         ? document.value && validationReportURL(route.params.name, "name")
         : validationReportURL(route.params.name, "id"),
     () => fetchValidationReport(route.params.name, isTestFile),
+    { revalidateOnFocus: false },
   );
   provide("organisation", organisation);
 
@@ -135,7 +138,7 @@
         <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
         -
       </template>
-      <a data-cy="document-url-anchor" v-if="document" :href="document.url">{{ getDocumentFileName(document) }}</a>
+      <a v-if="document" data-cy="document-url-anchor" :href="document.url">{{ getDocumentFileName(document) }}</a>
       <div v-if="dataset && isTestFile">{{ dataset.filename }}</div>
     </h2>
     <DocumentInfo v-if="dataset && dataset.report" :document="document" :report="dataset.report" />
