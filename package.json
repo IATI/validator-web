@@ -3,6 +3,9 @@
   "type": "module",
   "private": true,
   "version": "2.9.2",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "start": "npm run dev",
     "dev": "vite --mode development",
