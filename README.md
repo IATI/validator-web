@@ -41,7 +41,8 @@ To make a production build using (`./envs/.env.production` vars):
 
 `npm run build:production`
 
-To serve a production build locally for testing:
+To serve a production build locally for testing (you likely need to run this for
+testing because the dev server won't be fast enough for the page speed tests):
 
 `npm run serve`
 
