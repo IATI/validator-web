@@ -53,7 +53,7 @@
       <span v-else>{{ fileName }}</span>
     </div>
     <div class="pl-3.5 pt-0 pb-2 sm:py-2" :class="textClasses">
-      <p class="text-base font-bold sm:hidden">Identified in Registry</p>
+      <p class="text-base font-bold sm:hidden">First Registered</p>
       <span>{{ formatDate(props.document.modified || props.document.first_seen) }}</span>
     </div>
     <div class="pt-0 pb-2 pl-3.5 sm:py-2" :class="textClasses">

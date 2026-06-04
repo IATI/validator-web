@@ -115,7 +115,6 @@
 
   <div v-if="!loading && !errorMessage">
     <h2>Public Data</h2>
-    <h3>IATI files published in the IATI Registry</h3>
     <FileStatusInfo />
     <div class="flex flex-col p-3 sm:flex-row sm:justify-between">
       <div v-if="documents && documents.length" class="py-2">

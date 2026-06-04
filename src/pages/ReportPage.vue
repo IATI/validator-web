@@ -148,7 +148,7 @@
     <div class="grid-cols grid border border-solid border-gray-300">
       <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 bg-white">
         <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
-        <div :class="headerClassNames">Identified in Registry</div>
+        <div :class="headerClassNames">First Registered</div>
         <div :class="headerClassNames">Validated</div>
         <div :class="headerClassNames">Validation Status</div>
         <div :class="headerClassNames">Available in IATI Datastore</div>
