@@ -2,7 +2,7 @@
   "name": "validator-web",
   "type": "module",
   "private": true,
-  "version": "2.9.3",
+  "version": "2.9.4",
   "engines": {
     "node": ">=24.0.0"
   },
