@@ -13,7 +13,6 @@
     fetchDocument,
     fetchOrganisationByID,
     fetchValidationReport,
-    getDocumentFileName,
     getDocumentURL,
     getOrganisationURL,
     validationReportURL,
@@ -131,14 +130,14 @@
     <IconChevron class="mr-2" />
     <span>Return to your workspace</span>
   </RouterLink>
-  <h1>File Validation Report</h1>
+  <h1>Dataset Validation Report</h1>
   <div v-if="organisation || document || dataset">
     <h2 class="text-xl">
       <template v-if="organisation">
         <RouterLink :to="`/organisation/${organisation.name}`">{{ organisation.title }}</RouterLink>
         -
       </template>
-      <a v-if="document" data-cy="document-url-anchor" :href="document.url">{{ getDocumentFileName(document) }}</a>
+      <a v-if="document" data-cy="document-url-anchor" :href="document.url">{{ document.name }}</a>
       <div v-if="dataset && isTestFile">{{ dataset.filename }}</div>
     </h2>
     <DocumentInfo v-if="dataset && dataset.report" :document="document" :report="dataset.report" />
@@ -147,7 +146,7 @@
     </CaptionedLoadingSpinner>
     <div class="grid-cols grid border border-solid border-gray-300">
       <div v-if="!isTestFile" class="grid grid-cols-5 gap-0 bg-white">
-        <div class="first:pl-3.5" :class="headerClassNames">File Name</div>
+        <div class="first:pl-3.5" :class="headerClassNames">Dataset Short Name</div>
         <div :class="headerClassNames">First Registered</div>
         <div :class="headerClassNames">Validated</div>
         <div :class="headerClassNames">Validation Status</div>

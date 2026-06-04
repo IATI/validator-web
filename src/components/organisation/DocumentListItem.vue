@@ -4,7 +4,6 @@
   import {
     getDocumentDatastoreAvailability,
     getDocumentDownloadStatus,
-    getDocumentFileName,
     getDocumentValidationStatus,
     hasProperLink,
   } from "../../utils/document";
@@ -13,7 +12,6 @@
   const props = defineProps({ document: { type: Object, default: () => {} } });
   const router = useRouter();
 
-  const fileName = computed(() => getDocumentFileName(props.document) || "No filename available");
   const validationDate = computed(() => formatDate(props.document.validation_created));
   const validationStatus = computed(() => getDocumentValidationStatus(props.document));
   const validationStatusClass = computed(() => {
@@ -42,15 +40,15 @@
     @click="onClick"
   >
     <div class="py-2 pb-2 first:pl-3.5" :class="textClasses">
-      <p class="text-base font-bold sm:hidden">File Name</p>
+      <p class="text-base font-bold sm:hidden">Dataset Short Name</p>
       <a
         v-if="hasProperLink(props.document)"
         :href="props.document.url"
         target="_blank"
         class="text-iati-green hover:underline"
-        >{{ fileName }}</a
+        >{{ props.document.name }}</a
       >
-      <span v-else>{{ fileName }}</span>
+      <span v-else>{{ props.document.name }}</span>
     </div>
     <div class="pl-3.5 pt-0 pb-2 sm:py-2" :class="textClasses">
       <p class="text-base font-bold sm:hidden">First Registered</p>

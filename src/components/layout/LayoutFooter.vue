@@ -70,7 +70,10 @@
             </div>
             <div class="iati-footer-block__content">
               <div>
-                <p>Please report bugs and request features using <a href="https://github.com/IATI/validator-web/issues">GitHub issues</a> or via <a href="https://iatistandard.org/en/guidance/get-support/">IATI Support</a>.
+                <p>
+                  Please report bugs and request features using
+                  <a href="https://github.com/IATI/validator-web/issues">GitHub issues</a> or via
+                  <a href="https://iatistandard.org/en/guidance/get-support/">IATI Support</a>.
                 </p>
               </div>
             </div>

@@ -2,8 +2,6 @@ import { stringify } from "csv-stringify/browser/esm/sync";
 import { formatDate } from ".";
 
 const validationStatusOrder = ["Critical", "Error", "Warning", "Success (with Advisories)", "Success", "N/A"];
-export const getDocumentFileName = (document) =>
-  document.url ? window.decodeURI(document.url).replace(/\/$/, "").split("/").pop() : "";
 export const compareDocumentSeverity = (docOne, docTwo) => getDocumentSeverity(docOne) - getDocumentSeverity(docTwo);
 
 export const hasProperLink = (document) =>
@@ -476,10 +474,10 @@ export const sortDocuments = (documents, sortKey, sortDirection) => {
 };
 
 const partialSortOptions = [
-  { label: "File Name: A - Z", direction: "ascending", value: "fileName" },
-  { label: "File Name: Z - A", direction: "descending", value: "fileName" },
-  { label: "Identified in Registry: Newest", direction: "descending", value: "registryIdentity" },
-  { label: "Identified in Registry: Oldest", direction: "ascending", value: "registryIdentity" },
+  { label: "Dataset Short Name: A - Z", direction: "ascending", value: "fileName" },
+  { label: "Dataset Short Name: Z - A", direction: "descending", value: "fileName" },
+  { label: "First Registered: Newest", direction: "descending", value: "registryIdentity" },
+  { label: "First Registered: Oldest", direction: "ascending", value: "registryIdentity" },
   { label: "Validated: Newest", direction: "descending", value: "validationDate" },
   { label: "Validated: Oldest", direction: "ascending", value: "validationDate" },
   { label: "Available in IATI Datastore: Newest", direction: "descending", value: "dataStoreAvailability" },

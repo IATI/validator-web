@@ -22,7 +22,7 @@ describe("The Ad Hoc Validate Check Data page", () => {
     cy.contains("iati-act-no-errors.xml");
     cy.get(".doc-list-item").eq(0).contains("Warning", { timeout: 20000 });
     cy.get(".doc-list-item").eq(0).click();
-    cy.get("h1").should("have.text", "File Validation Report");
+    cy.get("h1").should("have.text", "Dataset Validation Report");
     cy.contains("IATI version");
     cy.contains("Type");
   });
@@ -48,7 +48,7 @@ describe("The Ad Hoc Validate Check Data page", () => {
     );
     cy.get(".doc-list-item").eq(0).contains("Error", { timeout: 20000 });
     cy.get(".doc-list-item").eq(0).click();
-    cy.get("h1").should("have.text", "File Validation Report");
+    cy.get("h1").should("have.text", "Dataset Validation Report");
     cy.contains("IATI version");
     cy.contains("Type");
   });

@@ -3,7 +3,6 @@
   import {
     getDocumentDatastoreAvailability,
     getDocumentDownloadStatus,
-    getDocumentFileName,
     getDocumentValidationStatus,
     hasProperLink,
   } from "../../utils/document";
@@ -15,7 +14,6 @@
     workspacedata: { type: Array, default: () => [] },
   });
 
-  const fileName = computed(() => getDocumentFileName(props.document) || "No filename available");
   const validationDate = computed(() => formatDate(props.document.validation_created));
   const validationStatus = computed(() =>
     getDocumentValidationStatus({ ...props.document, report: props.dataset.report }),
@@ -44,15 +42,15 @@
     class="flex flex-col gap-0 odd:bg-white even:bg-slate-100 sm:grid sm:grid-cols-5 sm:border-0"
   >
     <div class="py-2 pb-2 first:pl-3.5" :class="textClasses">
-      <div class="text-base font-bold sm:hidden">File Name</div>
+      <div class="text-base font-bold sm:hidden">Dataset Short Name</div>
       <a
         v-if="hasProperLink(props.document)"
         :href="props.document.url"
         target="_blank"
         class="text-iati-green hover:underline"
-        >{{ fileName }}</a
+        >{{ props.document.name }}</a
       >
-      <span v-else>{{ fileName }}</span>
+      <span v-else>{{ props.document.name }}</span>
     </div>
     <div class="pl-3.5 pt-0 pb-2 sm:py-2" :class="textClasses">
       <div class="text-base font-bold sm:hidden">First Registered</div>
