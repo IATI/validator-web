@@ -16,7 +16,7 @@
     </div>
     <div class="iati-card">
       <p class="iati-card__title">Public Data Viewer</p>
-      <p class="iati-card__subtitle">Check all files published on the IATI Registry</p>
+      <p class="iati-card__subtitle">Check all published datasets</p>
       <ul>
         <li>Find an organisation</li>
         <li>See the IATI files published by the organisation</li>
