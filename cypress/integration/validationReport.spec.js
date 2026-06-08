@@ -151,6 +151,6 @@ describe("The Validation Report page", () => {
       "href",
       "https://aidstream.s3.us-west-2.amazonaws.com/xml/ares-activities.xml",
     );
-    cy.get("[data-cy='document-url-anchor']").should("have.text", "ares-activities.xml");
+    cy.get("[data-cy='document-url-anchor']").should("have.text", "ares-activities");
   });
 });
