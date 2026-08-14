@@ -153,4 +153,16 @@ describe("The Validation Report page", () => {
     );
     cy.get("[data-cy='document-url-anchor']").should("have.text", "ares-activities");
   });
+
+  it("does not link activity identifiers to d-portal for ad hoc validation results", () => {
+    cy.fixture("validationReport01ares");
+    cy.intercept("**/existing?testfile=ares-activities", {
+      fixture: "validationReport01ares.json",
+    }).as("validation");
+    cy.visit("/report/ares-activities?isTestFile=true");
+    cy.wait("@validation");
+    cy.get("[data-cy='feedback-group']").should("exist");
+    cy.contains("BE-BCE_KBO-0546740696-PG2017-2021_CD").should("be.visible");
+    cy.get("[title='Open this activity in d-portal']").should("not.exist");
+  });
 });
