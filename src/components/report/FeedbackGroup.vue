@@ -62,12 +62,14 @@
         </div>
         <div class="text-sm">
           <a
+            v-if="!route.query.isTestFile"
             :href="getDPortalLink(props.activity.identifier)"
             :title="`Open this ${fileType} in d-portal`"
             class="mr-2"
           >
             {{ cleanIdentifier(props.activity.identifier) }}
           </a>
+          <span v-else class="mr-2">{{ cleanIdentifier(props.activity.identifier) }}</span>
           <AppBadge
             v-for="messageType in messageTypes"
             :key="messageType.type"
